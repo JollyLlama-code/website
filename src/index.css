@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Basic resets to make the app look clean */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+/* Fix for the animations you used in App.jsx */
+.animate-in {
+  animation-duration: 700ms;
+}
