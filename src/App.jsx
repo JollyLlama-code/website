@@ -7,8 +7,9 @@ const COLOR_DESCRIPTIONS = {
   LUX: "Fenntartható luxusszövetek és műbőr részletek"
 };
 
+// Relatív útvonal a Netlify public/images mappájához
 const IMAGE_BASE_URL = "/images";
-// Segédfüggvény a fájlnevek generálásához (szóközök cseréje kötőjelre, kisbetűsítés)
+
 const formatName = (str) => str.toLowerCase().replace(/\s+/g, '-');
 
 const PRODUCTS = [
@@ -204,7 +205,8 @@ const CatalogImage = ({ product }) => {
   const [imgError, setImgError] = useState(false);
   const firstColor = formatName(product.colors[0].name);
   const firstSet = product.sets ? 'alone' : 'alone';
-  const src = `${IMAGE_BASE_URL}/${product.id}-${firstSet}-${firstColor}-1.jpg`;
+  // Itt is 01-re cseréltem a kezdőképet
+  const src = `${IMAGE_BASE_URL}/${product.id}-${firstSet}-${firstColor}-01.jpg`;
 
   if (product.category || imgError) {
     return product.category ? <BagIcon color={product.colors[0]?.hex} /> : <StrollerIcon color={product.colors[0]?.hex} />;
@@ -219,9 +221,7 @@ const App = () => {
   const [activeSetIdx, setActiveSetIdx] = useState(0);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
   
-  // Automatikusan generált, érvényes kép linkek
   const [validUrls, setValidUrls] = useState([]);
-  
   const [cart, setCart] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
@@ -235,13 +235,11 @@ const App = () => {
     let isMounted = true;
     
     const loadImages = async () => {
-      // Ha nincs termék, vagy kiegészítőről van szó (ahol még nincs kép), nullázzuk
       if (!selectedProduct || selectedProduct.category) {
         setValidUrls([]);
         return;
       }
 
-      // Képek ürítése töltés közben
       setValidUrls([]);
 
       const setId = selectedProduct.sets ? (selectedProduct.sets[activeSetIdx]?.id || 'alone') : 'alone';
@@ -250,9 +248,11 @@ const App = () => {
       
       const validImages = [];
       
-      // Megpróbálunk betölteni maximum 15 képet (biztos, ami biztos)
+      // Megpróbálunk betölteni maximum 15 képet
       for (let i = 1; i <= 15; i++) {
-        const url = `${IMAGE_BASE_URL}/${selectedProduct.id}-${setId}-${formattedColor}-${i}.jpg`;
+        // ITT VAN A VARÁZSLAT: a számot stringgé alakítjuk, és ha 10 alatti, egy 0-t teszünk elé (pl. 01, 02)
+        const paddedIndex = i.toString().padStart(2, '0');
+        const url = `${IMAGE_BASE_URL}/${selectedProduct.id}-${setId}-${formattedColor}-${paddedIndex}.jpg`;
         
         const isValid = await new Promise(resolve => {
           const img = new Image();
@@ -266,7 +266,7 @@ const App = () => {
         if (isValid) {
           validImages.push(url);
         } else {
-          // Ha megszakad a sorozat (pl. a 4. kép nincs meg), megállítjuk a keresést
+          // Ha megszakad a sorozat (pl. a 04. kép nincs meg), megállítjuk a keresést
           break; 
         }
       }
@@ -301,7 +301,7 @@ const App = () => {
       color: selectedProduct.colors[activeColor].name,
       price: currentTotalPrice,
       quantity: 1,
-      image: validUrls[0] || null // Kosárba az első kép kerül be
+      image: validUrls[0] || null
     };
     setCart([...cart, item]);
     setSelectedProduct(null);
@@ -400,7 +400,6 @@ const App = () => {
                 
                 <div className="relative group/gallery">
                   <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar scroll-smooth">
-                    {/* Ha van betöltött kép, akkor abból építünk listát, ha nincs (mert kiegészítő vagy nincs még feltöltve), akkor mutatunk 4 ikont */}
                     {(validUrls.length > 0 ? validUrls : [0, 1, 2, 3]).map((item, idx) => (
                       <button 
                         key={idx} 
@@ -707,4 +706,3 @@ const App = () => {
 };
 
 export default App;
-
