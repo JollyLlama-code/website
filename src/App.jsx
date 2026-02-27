@@ -7,8 +7,7 @@ const COLOR_DESCRIPTIONS = {
   LUX: "Fenntartható luxusszövetek és műbőr részletek"
 };
 
-const IMAGE_BASE_URL = "https://raw.githubusercontent.com/JollyLlama-code/website/main/public/images";
-
+const IMAGE_BASE_URL = "/images";
 // Segédfüggvény a fájlnevek generálásához (szóközök cseréje kötőjelre, kisbetűsítés)
 const formatName = (str) => str.toLowerCase().replace(/\s+/g, '-');
 
@@ -708,3 +707,4 @@ const App = () => {
 };
 
 export default App;
+
