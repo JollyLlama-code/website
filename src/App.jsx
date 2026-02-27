@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingCart, ChevronRight, Star, Shield, Truck, Package, Heart, X, Check, Menu, Info, ShoppingBag, Box, ChevronLeft, Maximize2, Mail, Phone, MapPin, Clock, CreditCard, Trash2, Globe, Award, Sparkles, Anchor, Settings, Layers } from 'lucide-react';
 
-// ==========================================
-// ÚTMUTATÓ A SZÍNEKHEZ ÉS ÁRAKHOZ
-// ==========================================
-// 1. Keresd meg a PRODUCTS listát lent.
-// 2. A "colors" tömbben minden színnél találsz egy "extraPrice" mezőt.
-// 3. Ha pl. a Soft Taupe 10.000 Ft-tal drágább, írd be: extraPrice: 10000
-// 4. A rendszer automatikusan hozzáadja ezt a választott csomag árához.
-// ==========================================
-
 const COLOR_DESCRIPTIONS = {
+  CLASSIC: "Klasszikus és időtálló elegancia",
   STYLE: "Finom hálós szövetek a kiváló légáramlásért",
   LUX: "Fenntartható luxusszövetek és műbőr részletek"
 };
+
+const IMAGE_BASE_URL = "https://raw.githubusercontent.com/JollyLlama-code/website/main/public/images";
+
+// Segédfüggvény a fájlnevek generálásához (szóközök cseréje kötőjelre, kisbetűsítés)
+const formatName = (str) => str.toLowerCase().replace(/\s+/g, '-');
 
 const PRODUCTS = [
   {
@@ -24,7 +21,6 @@ const PRODUCTS = [
     reviews: 156,
     tagline: 'Minden évszakra. Minden terepre. Korlátok nélkül.',
     description: 'A SMILE 5Z az eddigi legsokoldalúbb babakocsink. Akár a zsúfolt városi utcákon navigál, akár a természetet fedezi fel, a fejlett központi felfüggesztés és a kerekek zökkenőmentes utazást biztosítanak.',
-    images: [], 
     specs: {
       kor: 'Születéstől - 4 éves korig (22 kg)',
       suly: '13.8 kg',
@@ -32,14 +28,15 @@ const PRODUCTS = [
       kosar: '7 kg teherbírás',
     },
     colors: [
-      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', images: [], extraPrice: 0 },
-      { name: 'Mineral Grey', hex: '#71717a', collection: 'STYLE', images: [], extraPrice: 0 },
-      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', images: [], extraPrice: 0 },
-      { name: 'Harbor Blue', hex: '#1e3a8a', collection: 'STYLE', images: [], extraPrice: 0 },
-      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', images: [], extraPrice: 15000 }, // Példa felár
-      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', images: [], extraPrice: 15000 },
-      { name: 'Linen Grey', hex: '#d1d5db', collection: 'LUX', images: [], extraPrice: 15000 },
-      { name: 'Warm Caramel', hex: '#a0522d', collection: 'LUX', images: [], extraPrice: 15000 }
+      { name: 'Galaxy Black', hex: '#0a0a0a', collection: 'CLASSIC', extraPrice: 0, availableSets: ['alone', 'comfort', 'comfort-plus'] },
+      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0, availableSets: ['alone', 'essential'] },
+      { name: 'Mineral Grey', hex: '#71717a', collection: 'STYLE', extraPrice: 0, availableSets: ['alone', 'essential'] },
+      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0, availableSets: ['alone', 'essential'] },
+      { name: 'Harbor Blue', hex: '#1e3a8a', collection: 'STYLE', extraPrice: 0, availableSets: ['alone', 'essential'] },
+      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 15000, availableSets: ['alone', 'comfort', 'comfort-plus'] },
+      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 15000, availableSets: ['alone', 'comfort', 'comfort-plus'] },
+      { name: 'Linen Grey', hex: '#d1d5db', collection: 'LUX', extraPrice: 15000, availableSets: ['alone', 'comfort', 'comfort-plus'] },
+      { name: 'Warm Caramel', hex: '#a0522d', collection: 'LUX', extraPrice: 15000, availableSets: ['alone', 'comfort', 'comfort-plus'] }
     ],
     features: ['Központi felfüggesztés', 'Megfordítható ülésegység', 'UPF 50+ extra nagy kupola', 'Papucsbarát fékrendszer'],
     sets: [
@@ -67,7 +64,6 @@ const PRODUCTS = [
     reviews: 92,
     tagline: 'Stílus és kényelem a városi kalandokhoz.',
     description: 'A RIO a modern szülők igényeire lett tervezve: rendkívül könnyű váz, agilis manőverezhetőség és prémium anyaghasználat jellemzi.',
-    images: [], 
     specs: {
       kor: '6 hónapos kortól - 22 kg-ig',
       suly: '8.2 kg',
@@ -75,10 +71,10 @@ const PRODUCTS = [
       kosar: '5 kg teherbírás',
     },
     colors: [
-      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', images: [], extraPrice: 0 },
-      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', images: [], extraPrice: 0 },
-      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', images: [], extraPrice: 10000 },
-      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', images: [], extraPrice: 10000 }
+      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 10000 },
+      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 10000 }
     ],
     features: ['Ultrakönnyű váz', 'Egykezes összecsukás', 'Állítható lábtartó', 'Bolygósítható első kerekek'],
     sets: [
@@ -106,7 +102,6 @@ const PRODUCTS = [
     reviews: 74,
     tagline: 'Az utazás szabadsága, súlytalanul.',
     description: 'A FLYLITE a legkönnyebb utazó babakocsink, amely akár a repülőgépek fedélzetére is felvihető.',
-    images: [], 
     specs: {
       kor: 'Születéstől - 15 kg-ig',
       suly: '5.9 kg',
@@ -114,9 +109,9 @@ const PRODUCTS = [
       kosar: '3 kg teherbírás',
     },
     colors: [
-      { name: 'Carbon Black', hex: '#1a1a1a', images: [], extraPrice: 0 },
-      { name: 'Teak', hex: '#4d3a2b', images: [], extraPrice: 0 },
-      { name: 'Sage Green', hex: '#8a9a5b', images: [], extraPrice: 0 }
+      { name: 'Carbon Black', hex: '#1a1a1a', extraPrice: 0 },
+      { name: 'Teak', hex: '#4d3a2b', extraPrice: 0 },
+      { name: 'Sage Green', hex: '#8a9a5b', extraPrice: 0 }
     ],
     features: ['Kézipoggyász méret', 'Vállpántos hordozó', 'Dönthető háttámla', 'Légáteresztő szövet'],
     generalData: [
@@ -134,66 +129,88 @@ const PRODUCTS = [
 
 const ACCESSORIES = [
   {
-    id: 'smile-5z-cot',
-    name: 'SMILE 5Z Mózeskosár',
-    price: 79900,
-    category: 'Mózeskosár',
-    compatible: 'SMILE 5Z',
-    description: 'Puha belső bélés és kiváló szellőzés a baba kényelméért.',
-    images: [],
+    id: 'style-bag', name: 'Pelenkázótáska', price: 38900, category: 'Táska', compatible: 'Univerzális', description: 'STÍLUSOS. TÁGAS. INTELLIGENS.',
     colors: [
-      { name: 'Space Black', hex: '#1a1a1a', images: [], extraPrice: 0 },
-      { name: 'Teak', hex: '#4d3a2b', images: [], extraPrice: 0 }
+      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 0 }
     ]
   },
   {
-    id: 'rio-cot',
-    name: 'RIO Mózeskosár',
-    price: 64900,
-    category: 'Mózeskosár',
-    compatible: 'RIO',
-    description: 'Könnyen rögzíthető a RIO vázra.',
-    images: [],
+    id: 'rio-cot', name: 'Mózeskosár – RIO', price: 64900, category: 'Mózeskosár', compatible: 'RIO', description: 'MÉRETBEN KICSI, VÁROSI KALANDOKBAN ÓRIÁSI.',
     colors: [
-      { name: 'Urban Grey', hex: '#71717a', images: [], extraPrice: 0 },
-      { name: 'Midnight', hex: '#020617', images: [], extraPrice: 0 }
+      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 0 },
+      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 0 }
     ]
   },
   {
-    id: 'flylite-bag',
-    name: 'FLYLITE Utazótáska',
-    price: 19900,
-    category: 'Táska',
-    compatible: 'FLYLITE',
-    description: 'Megvédi babakocsiját a szennyeződésektől repülés közben.',
-    images: [],
+    id: 'flylite-bag', name: 'Utazótáska – FLYLITE', price: 19900, category: 'Táska', compatible: 'FLYLITE', description: 'SZABAD KEZEK, KÖNNYED UTAZÁS.',
+    colors: [{ name: 'Black', hex: '#000000', extraPrice: 0 }]
+  },
+  {
+    id: 'smile-5z-cot', name: 'Mózeskosár – SMILE 5Z', price: 79900, category: 'Mózeskosár', compatible: 'SMILE 5Z', description: 'MINDEN ÉVSZAKBAN. MINDEN TEREPEN. NINCSENEK KORLÁTOK.',
     colors: [
-      { name: 'Black', hex: '#000000', images: [], extraPrice: 0 }
+      { name: 'Galaxy Black', hex: '#0a0a0a', collection: 'CLASSIC', extraPrice: 0 },
+      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Mineral Grey', hex: '#71717a', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Harbor Blue', hex: '#1e3a8a', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 0 },
+      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 0 },
+      { name: 'Linen Grey', hex: '#d1d5db', collection: 'LUX', extraPrice: 0 },
+      { name: 'Warm Caramel', hex: '#a0522d', collection: 'LUX', extraPrice: 0 }
     ]
   },
   {
-    id: 'stay-cool-canopy',
-    name: 'Stay Cool Naptető',
-    price: 14900,
-    category: 'Időjárás védelem',
-    compatible: 'SMILE 5Z / SMILE III / SMILE 4',
-    description: 'Biztonságosabb utazások, hálós panelek a tökéletes légáramlásért.',
-    images: [],
-    colors: [
-      { name: 'Grey', hex: '#d1d5db', images: [], extraPrice: 0 }
-    ]
+    id: 'stay-cool-canopy', name: 'Stay Cool naptető', price: 14900, category: 'Időjárás védelem', compatible: 'SMILE 5Z / SMILE III / SMILE 4', description: 'BIZTONSÁGOSABB UTAZÁSOK, HOSSZABB ALVÁSOK.',
+    colors: [{ name: 'Grey', hex: '#d1d5db', extraPrice: 0 }]
+  },
+  {
+    id: 'stay-cool-liner', name: 'Stay Cool ülésbetét', price: 12500, category: 'Ülésbetét', compatible: 'SMILE 5Z / SMILE 4 / SMILE III', description: 'A LEGMENŐBB SMILE A VÁROSBAN.',
+    colors: [{ name: 'Light Grey', hex: '#e5e7eb', extraPrice: 0 }]
   }
 ];
 
 const CONTACT_INFO = {
-  email: 'kid@kid.hu',
-  phone: '+36-30-595-0055',
-  address: '1112 Budapest, Ördögorom út 4.',
-  hours: 'Hétfő - Péntek: 10:00 - 18:00'
+  email: 'kid@kid.hu', phone: '+36-30-595-0055', address: '1112 Budapest, Ördögorom út 4.', hours: 'Hétfő - Péntek: 10:00 - 18:00'
 };
 
-const formatPrice = (price) => {
-  return new Intl.NumberFormat('hu-HU').format(price);
+const formatPrice = (price) => new Intl.NumberFormat('hu-HU').format(price);
+
+// Fallback Ikonok
+const StrollerIcon = ({ color, variant = 0 }) => {
+  const transforms = ['', 'scaleX(-1)', 'scale(1.2) translateY(-10px)', 'rotate(-5deg) scale(0.9)', 'scale(0.8) rotate(10deg)'];
+  const transform = transforms[variant % transforms.length];
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke={color || "currentColor"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full p-12 transition-all duration-700 ease-in-out opacity-80" style={{ transform }}>
+      <circle cx="6" cy="19" r="2" /><circle cx="17" cy="19" r="2" /><path d="M17 17h-11v-12h-3" /><path d="M6 8h11l2 5h-13" /><path d="M10 8l1-3h6" />
+    </svg>
+  );
+};
+
+const BagIcon = ({ color, variant = 0 }) => {
+  const transforms = ['', 'scale(1.1) rotate(5deg)', 'scaleX(-1)', 'translateY(-20px) scale(1.3)'];
+  const transform = transforms[variant % transforms.length];
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke={color || "currentColor"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full p-12 transition-all duration-700 ease-in-out opacity-80" style={{ transform }}>
+      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" />
+    </svg>
+  );
+};
+
+// Intelligens Catalog kép betöltő (főoldalra)
+const CatalogImage = ({ product }) => {
+  const [imgError, setImgError] = useState(false);
+  const firstColor = formatName(product.colors[0].name);
+  const firstSet = product.sets ? 'alone' : 'alone';
+  const src = `${IMAGE_BASE_URL}/${product.id}-${firstSet}-${firstColor}-1.jpg`;
+
+  if (product.category || imgError) {
+    return product.category ? <BagIcon color={product.colors[0]?.hex} /> : <StrollerIcon color={product.colors[0]?.hex} />;
+  }
+  return <img src={src} onError={() => setImgError(true)} className="w-full h-full object-contain p-4 mix-blend-multiply" alt={product.name} />;
 };
 
 const App = () => {
@@ -202,75 +219,79 @@ const App = () => {
   const [activeColor, setActiveColor] = useState(0);
   const [activeSetIdx, setActiveSetIdx] = useState(0);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
+  
+  // Automatikusan generált, érvényes kép linkek
+  const [validUrls, setValidUrls] = useState([]);
+  
   const [cart, setCart] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    delivery: 'pickup',
-    payment: 'cash_pickup',
-    message: ''
+    name: '', email: '', phone: '', address: '', delivery: 'pickup', payment: 'cash_pickup', message: ''
   });
 
-  const getAvailableImages = (product, colorIdx) => {
-    const colorImgs = product.colors?.[colorIdx]?.images || [];
-    const generalImgs = product.images || [];
-    if (colorImgs.length > 0) return colorImgs;
-    if (generalImgs.length > 0) return generalImgs;
-    return [];
-  };
+  // Dinamikus, intelligens képkereső Effect
+  useEffect(() => {
+    let isMounted = true;
+    
+    const loadImages = async () => {
+      // Ha nincs termék, vagy kiegészítőről van szó (ahol még nincs kép), nullázzuk
+      if (!selectedProduct || selectedProduct.category) {
+        setValidUrls([]);
+        return;
+      }
 
-  const currentImageList = selectedProduct ? getAvailableImages(selectedProduct, activeColor) : [];
+      // Képek ürítése töltés közben
+      setValidUrls([]);
 
-  // Dinamikus árkalkuláció a kiválasztott szín alapján
+      const setId = selectedProduct.sets ? (selectedProduct.sets[activeSetIdx]?.id || 'alone') : 'alone';
+      const colorName = selectedProduct.colors[activeColor]?.name || '';
+      const formattedColor = formatName(colorName);
+      
+      const validImages = [];
+      
+      // Megpróbálunk betölteni maximum 15 képet (biztos, ami biztos)
+      for (let i = 1; i <= 15; i++) {
+        const url = `${IMAGE_BASE_URL}/${selectedProduct.id}-${setId}-${formattedColor}-${i}.jpg`;
+        
+        const isValid = await new Promise(resolve => {
+          const img = new Image();
+          img.onload = () => resolve(true);
+          img.onerror = () => resolve(false);
+          img.src = url;
+        });
+
+        if (!isMounted) return;
+
+        if (isValid) {
+          validImages.push(url);
+        } else {
+          // Ha megszakad a sorozat (pl. a 4. kép nincs meg), megállítjuk a keresést
+          break; 
+        }
+      }
+
+      if (isMounted) {
+        setValidUrls(validImages);
+      }
+    };
+
+    loadImages();
+    return () => { isMounted = false; };
+  }, [selectedProduct, activeSetIdx, activeColor]);
+
+  // Árkalkuláció
   const calculateCurrentPrice = () => {
     if (!selectedProduct) return 0;
     const base = selectedProduct.sets ? selectedProduct.sets[activeSetIdx].price : (selectedProduct.basePrice || selectedProduct.price);
-    const extra = selectedProduct.colors[activeColor]?.extraPrice || 0;
+    const isAloneSet = selectedProduct.sets?.[activeSetIdx]?.id === 'alone' || !selectedProduct.sets;
+    const extra = isAloneSet ? (selectedProduct.colors[activeColor]?.extraPrice || 0) : 0;
     return base + extra;
   };
 
   const currentTotalPrice = calculateCurrentPrice();
-
-  const ProductImage = ({ src, product, variantIdx, className = "" }) => {
-    if (src) {
-      return (
-        <img 
-          src={src} 
-          alt={product.name} 
-          className={`w-full h-full object-contain p-4 ${className}`} 
-          onError={(e) => { e.target.src = 'https://via.placeholder.com/600?text=Kép+hiba'; }} 
-        />
-      );
-    }
-    return product.category ? 
-      <BagIcon color={product.colors[activeColor]?.hex} variant={variantIdx} /> : 
-      <StrollerIcon color={product.colors[activeColor]?.hex} variant={variantIdx} />;
-  };
-
-  const StrollerIcon = ({ color, variant = 0 }) => {
-    const transforms = ['', 'scaleX(-1)', 'scale(1.2) translateY(-10px)', 'rotate(-5deg) scale(0.9)', 'scale(0.8) rotate(10deg)'];
-    const transform = transforms[variant % transforms.length];
-    return (
-      <svg viewBox="0 0 24 24" fill="none" stroke={color || "currentColor"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full p-12 transition-all duration-700 ease-in-out opacity-80" style={{ transform }}>
-        <circle cx="6" cy="19" r="2" /><circle cx="17" cy="19" r="2" /><path d="M17 17h-11v-12h-3" /><path d="M6 8h11l2 5h-13" /><path d="M10 8l1-3h6" />
-      </svg>
-    );
-  };
-
-  const BagIcon = ({ color, variant = 0 }) => {
-    const transforms = ['', 'scale(1.1) rotate(5deg)', 'scaleX(-1)', 'translateY(-20px) scale(1.3)'];
-    const transform = transforms[variant % transforms.length];
-    return (
-      <svg viewBox="0 0 24 24" fill="none" stroke={color || "currentColor"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full p-12 transition-all duration-700 ease-in-out opacity-80" style={{ transform }}>
-        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" />
-      </svg>
-    );
-  };
+  const activeSetId = selectedProduct?.sets?.[activeSetIdx]?.id || 'alone';
 
   const addToCart = () => {
     const item = {
@@ -281,17 +302,14 @@ const App = () => {
       color: selectedProduct.colors[activeColor].name,
       price: currentTotalPrice,
       quantity: 1,
-      image: currentImageList[0] || null
+      image: validUrls[0] || null // Kosárba az első kép kerül be
     };
     setCart([...cart, item]);
     setSelectedProduct(null);
     setView('checkout');
   };
 
-  const removeFromCart = (id) => {
-    setCart(cart.filter(item => item.id !== id));
-  };
-
+  const removeFromCart = (id) => setCart(cart.filter(item => item.id !== id));
   const totalPriceInCart = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
   const navigateTo = (newView) => {
@@ -342,6 +360,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden">
+      {/* Navigáció */}
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -370,15 +389,32 @@ const App = () => {
               <ChevronLeft className="w-4 h-4" /> Vissza a kínálathoz
             </button>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+              {/* Dinamikus Galéria */}
               <div className="sticky top-32 space-y-8">
                 <div className="aspect-square bg-slate-50 rounded-[3rem] flex items-center justify-center relative overflow-hidden shadow-inner group">
-                   <ProductImage src={currentImageList[activeImageIdx]} product={selectedProduct} variantIdx={activeImageIdx} />
+                   {validUrls.length > 0 ? (
+                     <img src={validUrls[activeImageIdx] || validUrls[0]} className="w-full h-full object-contain p-4 mix-blend-multiply" />
+                   ) : (
+                     selectedProduct.category ? <BagIcon color={selectedProduct.colors[activeColor]?.hex} variant={activeImageIdx} /> : <StrollerIcon color={selectedProduct.colors[activeColor]?.hex} variant={activeImageIdx} />
+                   )}
                 </div>
+                
                 <div className="relative group/gallery">
                   <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar scroll-smooth">
-                    {(currentImageList.length > 0 ? currentImageList : [0, 1, 2, 3, 4, 5]).map((img, idx) => (
-                      <button key={idx} onClick={() => setActiveImageIdx(idx)} className={`aspect-square w-20 h-20 rounded-2xl bg-slate-50 border-2 flex items-center justify-center cursor-pointer transition-all flex-shrink-0 overflow-hidden ${activeImageIdx === idx ? 'border-blue-600 ring-4 ring-blue-50' : 'border-transparent hover:border-slate-200'}`}>
-                        <div className="w-full h-full p-2"><ProductImage src={currentImageList[idx]} product={selectedProduct} variantIdx={idx} className="scale-75" /></div>
+                    {/* Ha van betöltött kép, akkor abból építünk listát, ha nincs (mert kiegészítő vagy nincs még feltöltve), akkor mutatunk 4 ikont */}
+                    {(validUrls.length > 0 ? validUrls : [0, 1, 2, 3]).map((item, idx) => (
+                      <button 
+                        key={idx} 
+                        onClick={() => setActiveImageIdx(idx)} 
+                        className={`aspect-square w-20 h-20 rounded-2xl bg-slate-50 border-2 flex items-center justify-center cursor-pointer transition-all flex-shrink-0 overflow-hidden ${activeImageIdx === idx ? 'border-blue-600 ring-4 ring-blue-50' : 'border-transparent hover:border-slate-200'}`}
+                      >
+                        <div className="w-full h-full p-2">
+                           {validUrls.length > 0 ? (
+                             <img src={item} className="w-full h-full object-contain scale-90 mix-blend-multiply" />
+                           ) : (
+                             selectedProduct.category ? <BagIcon color={selectedProduct.colors[activeColor]?.hex} variant={idx} /> : <StrollerIcon color={selectedProduct.colors[activeColor]?.hex} variant={idx} />
+                           )}
+                        </div>
                       </button>
                     ))}
                   </div>
@@ -394,12 +430,33 @@ const App = () => {
                     <div className="mb-10 p-6 bg-slate-50 rounded-[2rem] border border-slate-100">
                       <h4 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2"><Box className="w-4 h-4" /> Válasszon csomagot:</h4>
                       <div className="grid grid-cols-1 gap-3">
-                        {selectedProduct.sets.map((set, idx) => (
-                          <button key={set.id} onClick={() => setActiveSetIdx(idx)} className={`p-4 rounded-2xl border-2 text-left transition-all ${activeSetIdx === idx ? 'border-blue-600 bg-white shadow-md' : 'border-transparent hover:border-slate-200'}`}>
-                            <div className="flex justify-between items-center mb-1"><span className={`font-bold ${activeSetIdx === idx ? 'text-blue-900' : 'text-slate-700'}`}>{set.name}</span><span className="font-black text-sm">{formatPrice(set.price + (selectedProduct.colors[activeColor]?.extraPrice || 0))} Ft</span></div>
-                            <p className="text-xs text-slate-500">{set.contents}</p>
-                          </button>
-                        ))}
+                        {selectedProduct.sets.map((set, idx) => {
+                          const isSetAlone = set.id === 'alone';
+                          const btnExtraPrice = isSetAlone ? (selectedProduct.colors[activeColor]?.extraPrice || 0) : 0;
+                          
+                          return (
+                            <button 
+                              key={set.id} 
+                              onClick={() => {
+                                setActiveSetIdx(idx);
+                                setActiveImageIdx(0);
+                                const newSetId = set.id;
+                                const currentColorData = selectedProduct.colors[activeColor];
+                                if (currentColorData?.availableSets && !currentColorData.availableSets.includes(newSetId)) {
+                                  const firstAvail = selectedProduct.colors.findIndex(c => !c.availableSets || c.availableSets.includes(newSetId));
+                                  setActiveColor(firstAvail >= 0 ? firstAvail : 0);
+                                }
+                              }} 
+                              className={`p-4 rounded-2xl border-2 text-left transition-all ${activeSetIdx === idx ? 'border-blue-600 bg-white shadow-md' : 'border-transparent hover:border-slate-200'}`}
+                            >
+                              <div className="flex justify-between items-center mb-1">
+                                <span className={`font-bold ${activeSetIdx === idx ? 'text-blue-900' : 'text-slate-700'}`}>{set.name}</span>
+                                <span className="font-black text-sm">{formatPrice(set.price + btnExtraPrice)} Ft</span>
+                              </div>
+                              <p className="text-xs text-slate-500">{set.contents}</p>
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -415,11 +472,23 @@ const App = () => {
                   </h4>
                   
                   <div className="flex flex-wrap gap-4 mb-6">
-                    {selectedProduct.colors.map((color, idx) => (
-                      <button key={idx} onClick={() => {setActiveColor(idx); setActiveImageIdx(0);}} className={`w-14 h-14 rounded-full p-1 transition-all ${activeColor === idx ? 'ring-2 ring-blue-900 ring-offset-4' : 'hover:scale-110'}`}>
-                        <div className="w-full h-full rounded-full shadow-inner" style={{ backgroundColor: color.hex }} />
-                      </button>
-                    ))}
+                    {selectedProduct.colors.map((color, idx) => {
+                      const isAvailable = !color.availableSets || color.availableSets.includes(activeSetId);
+                      if (!isAvailable) return null;
+
+                      return (
+                        <button 
+                          key={idx} 
+                          onClick={() => {
+                            setActiveColor(idx); 
+                            setActiveImageIdx(0);
+                          }} 
+                          className={`w-14 h-14 rounded-full p-1 transition-all ${activeColor === idx ? 'ring-2 ring-blue-900 ring-offset-4' : 'hover:scale-110'}`}
+                        >
+                          <div className="w-full h-full rounded-full shadow-inner" style={{ backgroundColor: color.hex }} />
+                        </button>
+                      );
+                    })}
                   </div>
 
                   {selectedProduct.colors[activeColor].collection && (
@@ -427,7 +496,9 @@ const App = () => {
                       <p className="text-xs text-slate-600 italic">
                         <span className="font-bold text-blue-900 non-italic mr-1">{selectedProduct.colors[activeColor].collection}:</span>
                         {COLOR_DESCRIPTIONS[selectedProduct.colors[activeColor].collection]}
-                        {selectedProduct.colors[activeColor].extraPrice > 0 && <span className="block mt-1 text-blue-900 font-bold"> (+{formatPrice(selectedProduct.colors[activeColor].extraPrice)} Ft felár)</span>}
+                        {activeSetId === 'alone' && selectedProduct.colors[activeColor].extraPrice > 0 && (
+                          <span className="block mt-1 text-blue-900 font-bold"> (+{formatPrice(selectedProduct.colors[activeColor].extraPrice)} Ft felár)</span>
+                        )}
                       </p>
                     </div>
                   )}
@@ -556,13 +627,23 @@ const App = () => {
               {ACCESSORIES.map((acc) => (
                 <div key={acc.id} className="group bg-white rounded-[2.5rem] border border-slate-100 p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer" onClick={() => openProduct(acc)}>
                   <div className="aspect-square bg-slate-50 rounded-[2rem] flex items-center justify-center mb-8 relative overflow-hidden">
-                    <ProductImage src={getAvailableImages(acc, 0)[0]} product={acc} variantIdx={0} />
+                    <CatalogImage product={acc} />
                   </div>
                   <h3 className="text-xl font-bold group-hover:text-blue-900 transition-colors leading-tight">{acc.name}</h3>
                   <span className="font-black text-blue-900 block mt-2">{formatPrice(acc.price)} Ft</span>
                 </div>
               ))}
             </div>
+          </div>
+        ) : view === 'contact' ? (
+          <div className="max-w-7xl mx-auto px-6 py-20 animate-in fade-in slide-in-from-bottom-8 duration-700">
+             <div className="text-center mb-20"><h2 className="text-5xl font-black tracking-tight mb-4 uppercase">Kapcsolat</h2><p className="text-slate-500 text-xl">Látogasson el hozzánk vagy keressen minket bizalommal.</p></div>
+             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="p-10 bg-slate-50 rounded-[3rem] flex flex-col items-center text-center"><div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-blue-600 shadow-sm mb-6"><Mail /></div><h4 className="text-xl font-bold mb-2">E-mail</h4><a href={`mailto:${CONTACT_INFO.email}`} className="text-blue-900 font-black hover:underline">{CONTACT_INFO.email}</a></div>
+                <div className="p-10 bg-slate-50 rounded-[3rem] flex flex-col items-center text-center border-4 border-blue-900/5"><div className="w-16 h-16 bg-blue-900 rounded-2xl flex items-center justify-center text-white shadow-sm mb-6"><MapPin /></div><h4 className="text-xl font-bold mb-2">Üzletünk</h4><p className="text-slate-700 font-bold">{CONTACT_INFO.address}</p><p className="text-slate-400 text-sm mt-2">{CONTACT_INFO.hours}</p></div>
+                <div className="p-10 bg-slate-50 rounded-[3rem] flex flex-col items-center text-center"><div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-blue-600 shadow-sm mb-6"><Phone /></div><h4 className="text-xl font-bold mb-2">Telefon</h4><a href={`tel:${CONTACT_INFO.phone}`} className="text-blue-900 font-black hover:underline">{CONTACT_INFO.phone}</a></div>
+             </div>
+             <div className="mt-12 h-96 bg-slate-100 rounded-[3rem] relative overflow-hidden flex items-center justify-center border-2 border-slate-50"><div className="text-center p-8"><MapPin className="w-12 h-12 text-slate-300 mx-auto mb-4" /><p className="text-slate-400 font-bold tracking-widest uppercase text-sm">Budapest, Ördögorom út 4.</p></div></div>
           </div>
         ) : (
           <>
@@ -576,13 +657,14 @@ const App = () => {
                 </div>
               </div>
             </section>
+            
             <section id="shop" className="max-w-7xl mx-auto px-6 mb-32">
               <div className="text-center mb-16"><h2 className="text-4xl font-black tracking-tight mb-4 uppercase">Kiváló Minőségű Kínálat</h2><p className="text-slate-500 text-lg">Válassza ki az életstílusához legjobban illő modellt.</p></div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                 {PRODUCTS.map((product) => (
                   <div key={product.id} className="group flex flex-col cursor-pointer" onClick={() => openProduct(product)}>
                     <div className="relative aspect-[3/4] bg-slate-50 rounded-[2rem] flex items-center justify-center overflow-hidden mb-6 group-hover:shadow-2xl transition-all duration-500">
-                       <ProductImage src={getAvailableImages(product, 0)[0]} product={product} variantIdx={0} />
+                       <CatalogImage product={product} />
                     </div>
                     <div className="px-2">
                       <div className="flex justify-between items-center mb-2"><h3 className="text-2xl font-extrabold">{product.name}</h3><span className="font-black text-blue-900">{formatPrice(product.basePrice)} Ft-tól</span></div>
