@@ -248,7 +248,7 @@ const CatalogImage = ({ product }) => {
   const firstSet = product.sets ? 'alone' : 'alone';
   const src = `${IMAGE_BASE_URL}/${product.id}-${firstSet}-${firstColor}-01.jpg`;
 
-  if (product.category || imgError) {
+  if (imgError) {
     return product.category ? <BagIcon color={product.colors[0]?.hex} /> : <StrollerIcon color={product.colors[0]?.hex} />;
   }
   return <img src={src} onError={() => setImgError(true)} className="w-full h-full object-contain p-4 mix-blend-multiply" alt={product.name} />;
@@ -304,7 +304,7 @@ const App = () => {
     let isMounted = true;
     
     const loadImages = async () => {
-      if (!selectedProduct || selectedProduct.category) {
+      if (!selectedProduct) {
         setValidUrls([]);
         return;
       }
