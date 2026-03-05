@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, ChevronRight, Star, Shield, Truck, Package, Heart, X, Check, Menu, Info, ShoppingBag, Box, ChevronLeft, Maximize2, Mail, Phone, MapPin, Clock, CreditCard, Trash2, Globe, Award, Sparkles, Anchor, Settings, Layers } from 'lucide-react';
+import { ShoppingCart, ChevronRight, Star, Shield, Truck, Package, Heart, X, Check, Menu, Info, ShoppingBag, Box, ChevronLeft, Maximize2, Mail, Phone, MapPin, Clock, CreditCard, Trash2, Globe, Award, Sparkles, Anchor, Settings, Layers, ChevronDown, ChevronUp, FileText, ListChecks } from 'lucide-react';
 
 const COLOR_DESCRIPTIONS = {
   CLASSIC: "Klasszikus és időtálló elegancia",
@@ -16,165 +16,206 @@ const PRODUCTS = [
   {
     id: 'smile-5z',
     name: 'SMILE 5Z',
-    basePrice: 349900,
+    basePrice: 272990,
     rating: 4.9,
     reviews: 156,
     tagline: 'Minden évszakra. Minden terepre. Korlátok nélkül.',
-    description: 'A SMILE 5Z az eddigi legsokoldalúbb babakocsink. Akár a zsúfolt városi utcákon navigál, akár a természetet fedezi fel, a fejlett központi felfüggesztés és a kerekek zökkenőmentes utazást biztosítanak.',
+    description: 'A SMILE 5Z az eddigi legsokoldalúbb babakocsink. Akár a zsúfolt városi utcákon navigál, akár a természetet fedezi fel, a fejlett központi felfüggesztés és a kerekek zökkenőmentes utazást biztosítanak. Travel system: mózeskosárral vagy babahordozóval (Römer Baby-Safe Pro, 3 i-Size, 5Z2) már születéstől használható (a hordozó és mózes külön vásárolható). 2023-ban RedDot Design győztes modell.',
     specs: {
-      kor: 'Születéstől - 4 éves korig (22 kg)',
-      suly: '13.8 kg',
-      meret: '90 x 40 x 57 cm (összecsukva)',
-      kosar: '7 kg teherbírás',
+      'Életkor': 'Születéstől 4 éves korig',
+      'Max. teherbírás': '29 kg (Ülés: 22 kg, Kosár: 7 kg)',
+      'Összsúly': '13,8 kg (Váz: 9 kg, Ülés: 4,8 kg)',
+      'Nyitva (Ma x Sz x Mé)': '112 x 57 x 97,7 cm',
+      'Csukva üléssel (Ma x Sz x Mé)': '90 x 57 x 40 cm',
+      'Csukva csak váz (Ma x Sz x Mé)': '84 x 57 x 27 cm',
+      'Ülőfelület (Sz x Mé)': '30 x 23 cm',
+      'Háttámla (Ma x Sz)': '48 x 23 cm',
+      'Tolókar magassága': '80 - 113 cm',
+      'Kerekek (Első / Hátsó)': 'Ø 19 cm / Ø 28 cm',
+      'Szabvány': 'EN 1888: 2018-2'
     },
     colors: [
-      { name: 'Galaxy Black', hex: '#0a0a0a', collection: 'CLASSIC', extraPrice: 0, availableSets: ['alone', 'comfort', 'comfort-plus'] },
-      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0, availableSets: ['alone', 'essential'] },
-      { name: 'Mineral Grey', hex: '#71717a', collection: 'STYLE', extraPrice: 0, availableSets: ['alone', 'essential'] },
-      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0, availableSets: ['alone', 'essential'] },
-      { name: 'Harbor Blue', hex: '#1e3a8a', collection: 'STYLE', extraPrice: 0, availableSets: ['alone', 'essential'] },
-      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 15000, availableSets: ['alone', 'comfort', 'comfort-plus'] },
-      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 15000, availableSets: ['alone', 'comfort', 'comfort-plus'] },
-      { name: 'Linen Grey', hex: '#d1d5db', collection: 'LUX', extraPrice: 15000, availableSets: ['alone', 'comfort', 'comfort-plus'] },
-      { name: 'Warm Caramel', hex: '#a0522d', collection: 'LUX', extraPrice: 15000, availableSets: ['alone', 'comfort', 'comfort-plus'] }
+      { name: 'Galaxy Black', hex: '#0a0a0a', collection: 'CLASSIC', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'comfort', 'comfort-plus'] },
+      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'essential'] },
+      { name: 'Mineral Grey', hex: '#71717a', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'essential'] },
+      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'essential'] },
+      { name: 'Harbor Blue', hex: '#1e3a8a', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'essential'] },
+      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: { alone: 23000, essential: 23000, comfort: 72000, 'comfort-plus': 70700 }, availableSets: ['alone', 'comfort', 'comfort-plus'] },
+      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: { alone: 23000, essential: 23000, comfort: 72000, 'comfort-plus': 70700 }, availableSets: ['alone', 'comfort', 'comfort-plus'] },
+      { name: 'Linen Grey', hex: '#d1d5db', collection: 'LUX', extraPrice: { alone: 23000, essential: 23000, comfort: 72000, 'comfort-plus': 70700 }, availableSets: ['alone', 'comfort', 'comfort-plus'] },
+      { name: 'Warm Caramel', hex: '#a0522d', collection: 'LUX', extraPrice: { alone: 23000, essential: 23000, comfort: 72000, 'comfort-plus': 70700 }, availableSets: ['alone', 'comfort', 'comfort-plus'] }
     ],
-    features: ['Központi felfüggesztés', 'Megfordítható ülésegység', 'UPF 50+ extra nagy kupola', 'Papucsbarát fékrendszer'],
     sets: [
-      { id: 'alone', name: 'SMILE 5Z', price: 349900, contents: 'Sport babakocsi önmagában' },
-      { id: 'essential', name: 'Essential set', price: 364900, contents: 'Sport babakocsi + Esővédő + Szúnyogháló' },
-      { id: 'comfort', name: 'Comfort set', price: 429800, contents: 'Sport babakocsi + SMILE 5Z Mózeskosár' },
-      { id: 'comfort-plus', name: 'Comfort Plus set', price: 549700, contents: 'Sport babakocsi + Mózeskosár + BABY-SAFE Pro hordozó + Bázistalp' }
+      { id: 'alone', name: 'SMILE 5Z', price: 272990, contents: 'Babakocsi önmagában', imageIndex: 0 },
+      { id: 'essential', name: 'Essential set', price: 272990, originalPrice: 381990, contents: 'Babakocsi + SMILE 5Z Mózeskosár', imageIndex: 1 },
+      { id: 'comfort', name: 'Comfort set', price: 476990, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó', imageIndex: 2 },
+      { id: 'comfort-plus', name: 'Comfort Plus set', price: 596990, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó + Bázistalp', imageIndex: 3 }
     ],
     generalData: [
-      "Kiváló minőségű, tartós vázszerkezet",
-      "Defektmentes, minden terepen használható kerekek",
-      "3M™ Scotchlite™ fényvisszaverő csíkok a jobb láthatóságért",
-      "Egykezes, kompakt összecsukási mechanizmus",
-      "Állítható tolókar magasság",
-      "Nagy méretű, könnyen hozzáférhető bevásárlókosár",
-      "Párnázott, 5 pontos biztonsági övrendszer",
-      "Könnyen tisztítható, prémium minőségű huzatok"
+      "Menetirány szerint és háttal is beszerelhető, megfordítható sportülés",
+      "Keskeny kialakítás (57 cm) - kényelmesen elfér a szűk folyosókon és ajtókon",
+      "Központi és első kerék rugózás az egyenetlen terepen történő utazáshoz",
+      "Defektbiztos, habbal töltött műanyag kerekek",
+      "Bolygósítható és rögzíthető első kerekek",
+      "Könnyen, egy kézzel összecsukható, csukva marad és megáll önmagában",
+      "Lapos fekvőpozíció és fokozatmentesen állítható háttámla",
+      "Állítható lábtartó (kb. 23 cm) az optimális fekvőpozícióhoz",
+      "Extra nagy méretű kupola UV védelemmel és óriási szellőzőablakkal",
+      "5 pontos, egyszerűen állítható biztonsági öv kényelmes vállpárnákkal",
+      "Bőrhatású, állítható tolókar és oldalra kihajtható párnázott karfa",
+      "Lábfék indikátorral, fentről kioldható (a cipő tiszta marad)",
+      "Fényvisszaverő csíkok a sötétben való jobb láthatóságért",
+      "Extra nagy bevásárlókosár",
+      "Könnyen eltávolítható huzat (30 fokon, kímélő programon mosható)"
     ]
   },
   {
     id: 'rio',
     name: 'RIO',
-    basePrice: 189900,
+    basePrice: 169990,
     rating: 4.7,
     reviews: 92,
     tagline: 'Stílus és kényelem a városi kalandokhoz.',
-    description: 'A RIO a modern szülők igényeire lett tervezve: rendkívül könnyű váz, agilis manőverezhetőség és prémium anyaghasználat jellemzi.',
+    description: 'A RIO a modern szülők igényeire lett tervezve: rendkívül könnyű váz, agilis manőverezhetőség és prémium anyaghasználat jellemzi. Travel system: mózeskosárral vagy babahordozóval (Römer Baby-Safe Pro) már születéstől használható (a termékeket külön kell megvásárolni!).',
     specs: {
-      kor: '6 hónapos kortól - 22 kg-ig',
-      suly: '8.2 kg',
-      meret: '75 x 52 x 35 cm (összecsukva)',
-      kosar: '5 kg teherbírás',
+      'Életkor': 'Születéstől 4 éves korig',
+      'Max. teherbírás': '27 kg (Ülés: 22 kg, Kosár: 5 kg)',
+      'Összsúly': '10 kg (Váz: 7 kg)',
+      'Nyitva (Ma x Sz x Mé)': '110 x 55 x 93 cm',
+      'Csukva üléssel (Ma x Sz x Mé)': '78 x 55 x 32 cm',
+      'Ülőfelület (Sz x Mé)': '32 x 23 cm',
+      'Háttámla hossza': 'kb. 50 cm',
+      'Tolókar magassága': '98 - 110 cm',
+      'Kerekek (Első / Hátsó)': 'Ø 14 cm / Ø 19 cm',
+      'Szabvány': 'EN 1888-2:2018, +A1:2022'
     },
     colors: [
-      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
-      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
-      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 10000 },
-      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 10000 }
+      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 } },
+      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 } },
+      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: { alone: 15000, essential: 25000, comfort: 38000, 'comfort-plus': 32500 } },
+      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: { alone: 15000, essential: 25000, comfort: 38000, 'comfort-plus': 32500 } }
     ],
-    features: ['Ultrakönnyű váz', 'Egykezes összecsukás', 'Állítható lábtartó', 'Bolygósítható első kerekek'],
     sets: [
-      { id: 'alone', name: 'RIO', price: 189900, contents: 'RIO sport babakocsi önmagában' },
-      { id: 'essential', name: 'Essential set', price: 199900, contents: 'RIO sport babakocsi + Esővédő' },
-      { id: 'comfort', name: 'Comfort set', price: 254800, contents: 'RIO sport babakocsi + RIO Mózeskosár' },
-      { id: 'comfort-plus', name: 'Comfort Plus set', price: 344700, contents: 'RIO sport babakocsi + Mózeskosár + BABY-SAFE hordozó' }
+      { id: 'alone', name: 'RIO', price: 169990, contents: 'Babakocsi önmagában', imageIndex: 0 },
+      { id: 'essential', name: 'Essential set', price: 268990, originalPrice: 388970, contents: 'Babakocsi + RIO Mózeskosár + Baby-Safe Core Hordozó + Bázistalp', imageIndex: 1 },
+      { id: 'comfort', name: 'Comfort set', price: 383990, contents: 'Babakocsi + RIO Mózeskosár + BABY-SAFE Pro Hordozó', imageIndex: 2 },
+      { id: 'comfort-plus', name: 'Comfort Plus set', price: 504990, contents: 'Babakocsi + RIO Mózeskosár + BABY-SAFE Pro hordozó + Bázistalp', imageIndex: 3 }
     ],
     generalData: [
-      "Ultrakönnyű alumínium váz",
-      "Városi közlekedésre optimalizált szélesség",
-      "Automatikus összecsukás-gátló",
-      "Állítható napfénytető betekintő ablakkal",
-      "Puha tapintású tolókar borítás",
-      "Bolygósítható és fixálható első kerekek",
-      "Több fokozatban dönthető háttámla",
-      "Könnyen kezelhető központi fék"
+      "Tartozékok: adapter mózeskosárhoz, adapter babahordozóhoz, pohártartó",
+      "Menetirány szerint és háttal is beszerelhető, megfordítható sportülés",
+      "Könnyű és kompakt, keskeny kialakítás (55 cm) - minden ajtón átfér",
+      "Összkerék-felfüggesztés az egyenetlen terepen történő kényelmes utazáshoz",
+      "Defektbiztos, habbal töltött műanyag kerekek",
+      "Bolygósítható és rögzíthető első kerekek",
+      "Könnyen, egy kézzel összecsukható, csukva marad és megáll önmagában",
+      "Lapos fekvőpozíció és fokozatmentesen állítható háttámla",
+      "Állítható lábtartó (kb. 19 cm) az optimális fekvőpozícióhoz",
+      "Extra nagy méretű kupola UV védelemmel és óriási szellőzőablakkal",
+      "5 pontos, egyszerűen állítható biztonsági öv kényelmes vállpárnákkal",
+      "Teleszkópos, állítható magasságú bőrhatású tolókar",
+      "Bőrhatású, oldalra kihajtható párnázott karfa",
+      "Lábfék fentről kioldható (a cipő tiszta marad)",
+      "Extra nagy bevásárlókosár (max. 5 kg teherbírás)",
+      "Könnyen eltávolítható huzat (30 fokon, kímélő programon mosható)"
     ]
   },
   {
     id: 'flylite',
     name: 'FLYLITE',
-    basePrice: 124900,
+    basePrice: 149990,
     rating: 4.8,
     reviews: 74,
     tagline: 'Az utazás szabadsága, súlytalanul.',
     description: 'A FLYLITE a legkönnyebb utazó babakocsink, amely akár a repülőgépek fedélzetére is felvihető.',
     specs: {
-      kor: 'Születéstől - 15 kg-ig',
-      suly: '5.9 kg',
-      meret: '54 x 43 x 20 cm (kézipoggyász)',
-      kosar: '3 kg teherbírás',
+      'Életkor': '6 hónapos kortól kb. 4 éves korig',
+      'Max. teherbírás': '28 kg (Ülés: 22 kg, Kosár: 6 kg)',
+      'Összsúly': '7,1 kg (Váz: 6,9 kg)',
+      'Nyitva (Ma x Sz x Mé)': '103 x 45 x 78 cm',
+      'Csukva (Ma x Sz x Mé)': '56 x 45 x 25 cm',
+      'Ülőfelület (Sz x Mé)': '32 x 23 cm',
+      'Háttámla hossza': '48 cm',
+      'Tolókar magassága': 'kb. 103 cm',
+      'Kerekek (Első / Hátsó)': 'Ø 14 cm / Ø 16,5 cm',
+      'Szabvány': 'EN 1888-2:2018, +A1:2022'
     },
     colors: [
-      { name: 'Carbon Black', hex: '#1a1a1a', extraPrice: 0 },
-      { name: 'Teak', hex: '#4d3a2b', extraPrice: 0 },
-      { name: 'Sage Green', hex: '#8a9a5b', extraPrice: 0 }
+      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Sage Green', hex: '#8a9a5b', collection: 'STYLE', extraPrice: 0 }
     ],
-    features: ['Kézipoggyász méret', 'Vállpántos hordozó', 'Dönthető háttámla', 'Légáteresztő szövet'],
     generalData: [
-      "IATA szabvány szerinti kézipoggyász méret",
-      "Beépített hordozó pánt az egyszerű szállításhoz",
-      "Nagy sűrűségű hálós panelek a szellőzésért",
-      "Tágas lábtartó a kényelmes alváshoz",
-      "Gyorsan kioldható biztonsági csat",
-      "Tartozék hordtáska",
-      "Extra könnyű vázszerkezet",
-      "Párnázott ülésegység"
+      "Tartozékok: Pohártartó, Karfa, Ülésbetét",
+      "Menetirány szerinti sportülés",
+      "Extra könnyű és kompakt (45 cm széles) - minden ajtón átfér",
+      "Könnyen, egy kézzel összecsukható - nagyon kis helyet foglal",
+      "Csukva marad, és megáll önmagában",
+      "Összkerék-felfüggesztés az egyenetlen terepen történő utazáshoz",
+      "Defektbiztos, habbal töltött műanyag kerekek",
+      "Bolygósítható és rögzíthető első kerekek",
+      "Lapos fekvőpozíció és fokozatmentesen állítható háttámla",
+      "Állítható lábtartó (kb. 16 cm) az optimális fekvőpozícióhoz",
+      "Ülésbetét a még több kényelemért",
+      "Extra nagy méretű kupola UV védelemmel és óriási szellőzőablakkal",
+      "5 pontos, egyszerűen állítható biztonsági öv kényelmes vállpárnákkal",
+      "Bőrhatású tolókar (magassága nem állítható)",
+      "Bőrhatású, oldalra kihajtható párnázott karfa",
+      "Lábfék fentről kioldható (a cipő tiszta marad)",
+      "Bevásárlókosár (max. 6 kg teherbírás)"
     ]
   }
 ];
 
 const ACCESSORIES = [
   {
-    id: 'style-bag', name: 'Pelenkázótáska', price: 38900, category: 'Táska', compatible: 'Univerzális', description: 'STÍLUSOS. TÁGAS. INTELLIGENS.',
+    id: 'flylite-bag', 
+    name: 'Utazótáska – FLYLITE', 
+    price: 29990, 
+    category: 'Táska', 
+    compatible: 'FLYLITE', 
+    description: 'Kifejezetten utazáshoz tervezve, a FLYLITE utazótáska minden utazást még könnyedebbé tesz. Puha, párnázott és állítható pántjaival kényelmesen viselhető a háton, így a kezek szabadon maradnak, hogy a legfontosabb dolgokra koncentrálhasson. Könnyű és mosható, védi a babakocsit útközben, és minden utazást rugalmasabbá tesz.',
     colors: [
-      { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
-      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
-      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 0 }
+      { name: 'Black', hex: '#000000', extraPrice: 0 }
     ]
   },
   {
-    id: 'rio-cot', name: 'Mózeskosár – RIO', price: 64900, category: 'Mózeskosár', compatible: 'RIO', description: 'MÉRETBEN KICSI, VÁROSI KALANDOKBAN ÓRIÁSI.',
+    id: 'rio-cot', 
+    name: 'Mózeskosár – RIO', 
+    price: 99000, 
+    category: 'Mózeskosár', 
+    compatible: 'RIO', 
+    description: 'Tartsa gyermekét közel magához, és válassza a gerincének legmegfelelőbb megoldást – a RIO magasra szerelt, puha párnázottságú mózeskosarában a baba vízszintesen fekhet, miközben a napernyő alatt hűvösben marad. Kánikulában nyissa ki a panoráma szellőző ablakokat, hogy még hűvösebb utazást biztosítson. Ha gyermekét kényelmesen elhelyezte, könnyedén eltávolíthatja a kosarat az vázról, és egy kézzel viheti, hogy ő tovább pihenhessen, Ön pedig szabadon végezheti el a többi szülői teendőt.',
     colors: [
       { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
       { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
-      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 0 },
-      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 0 }
+      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 10000 },
+      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 10000 }
     ]
   },
   {
-    id: 'flylite-bag', name: 'Utazótáska – FLYLITE', price: 19900, category: 'Táska', compatible: 'FLYLITE', description: 'SZABAD KEZEK, KÖNNYED UTAZÁS.',
-    colors: [{ name: 'Black', hex: '#000000', extraPrice: 0 }]
-  },
-  {
-    id: 'smile-5z-cot', name: 'Mózeskosár – SMILE 5Z', price: 79900, category: 'Mózeskosár', compatible: 'SMILE 5Z', description: 'MINDEN ÉVSZAKBAN. MINDEN TEREPEN. NINCSENEK KORLÁTOK.',
+    id: 'smile-5z-cot', 
+    name: 'Mózeskosár – SMILE 5Z', 
+    price: 109000, 
+    category: 'Mózeskosár', 
+    compatible: 'SMILE 5Z', 
+    description: 'Nemcsak az újszülötteknek van szükségük sok alvásra – ezért a tágas, lapos fekvőhelyzetet biztosító mózeskosár minden évszakban gondoskodik gyermeke kényelméről és biztonságáról, egészen addig, amíg el nem éri a 9 kg-os testsúlyt, vagy el nem kezd átfordulni. Puha és ölelő, ez a leghatékonyabb és legegészségesebb megoldás a hosszú közös sétákhoz. A cipzáras lábzsák hidegebb időben is melegen tartja a babát, és megkönnyíti a ki- és beemelést, míg a panoráma szellőzőablak lehetővé teszi, hogy a kicsi szemlélődjön, és élvezze a tavaszi és nyári lágy szellőket.',
     colors: [
-      { name: 'Galaxy Black', hex: '#0a0a0a', collection: 'CLASSIC', extraPrice: 0 },
+      { name: 'Space Black', hex: '#0a0a0a', collection: 'CLASSIC', extraPrice: 0 },
       { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
+      { name: 'Harbor Blue', hex: '#1e3a8a', collection: 'STYLE', extraPrice: 0 },
       { name: 'Mineral Grey', hex: '#71717a', collection: 'STYLE', extraPrice: 0 },
       { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
-      { name: 'Harbor Blue', hex: '#1e3a8a', collection: 'STYLE', extraPrice: 0 },
-      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 0 },
-      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 0 },
-      { name: 'Linen Grey', hex: '#d1d5db', collection: 'LUX', extraPrice: 0 },
-      { name: 'Warm Caramel', hex: '#a0522d', collection: 'LUX', extraPrice: 0 }
+      { name: 'Linen Grey', hex: '#d1d5db', collection: 'LUX', extraPrice: 23000 },
+      { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: 23000 },
+      { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 23000 },
+      { name: 'Warm Caramel', hex: '#a0522d', collection: 'LUX', extraPrice: 23000 }
     ]
-  },
-  {
-    id: 'stay-cool-canopy', name: 'Stay Cool naptető', price: 14900, category: 'Időjárás védelem', compatible: 'SMILE 5Z / SMILE III / SMILE 4', description: 'BIZTONSÁGOSABB UTAZÁSOK, HOSSZABB ALVÁSOK.',
-    colors: [{ name: 'Grey', hex: '#d1d5db', extraPrice: 0 }]
-  },
-  {
-    id: 'stay-cool-liner', name: 'Stay Cool ülésbetét', price: 12500, category: 'Ülésbetét', compatible: 'SMILE 5Z / SMILE 4 / SMILE III', description: 'A LEGMENŐBB SMILE A VÁROSBAN.',
-    colors: [{ name: 'Light Grey', hex: '#e5e7eb', extraPrice: 0 }]
   }
 ];
 
 const CONTACT_INFO = {
-  email: 'kid@kid.hu', phone: '+36-30-595-0055', address: '1112 Budapest, Ördögorom út 4.', hours: 'Hétfő - Péntek: 10:00 - 18:00'
+  email: 'kid@kid.hu', phone: '+36-30-595-0055', address: '1112 Budapest, Ördögorom út 4.', hours: 'Hétfő - Péntek: 10:00 - 19:00, Szombat: 9:00 - 17:00'
 };
 
 const formatPrice = (price) => new Intl.NumberFormat('hu-HU').format(price);
@@ -205,7 +246,6 @@ const CatalogImage = ({ product }) => {
   const [imgError, setImgError] = useState(false);
   const firstColor = formatName(product.colors[0].name);
   const firstSet = product.sets ? 'alone' : 'alone';
-  // Itt is 01-re cseréltem a kezdőképet
   const src = `${IMAGE_BASE_URL}/${product.id}-${firstSet}-${firstColor}-01.jpg`;
 
   if (product.category || imgError) {
@@ -213,6 +253,35 @@ const CatalogImage = ({ product }) => {
   }
   return <img src={src} onError={() => setImgError(true)} className="w-full h-full object-contain p-4 mix-blend-multiply" alt={product.name} />;
 };
+
+// Összecsukható Harmonika Komponens
+const AccordionItem = ({ title, icon: Icon, defaultOpen = false, children }) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+  return (
+    <div className="border-b border-slate-100 last:border-0">
+      <button onClick={() => setIsOpen(!isOpen)} className="w-full py-5 flex items-center justify-between text-left focus:outline-none group">
+        <div className="flex items-center gap-3">
+          <Icon className={`w-5 h-5 transition-colors ${isOpen ? 'text-blue-600' : 'text-slate-400 group-hover:text-blue-600'}`} />
+          <span className={`font-bold uppercase tracking-widest text-xs ${isOpen ? 'text-slate-900' : 'text-slate-600 group-hover:text-slate-900'}`}>{title}</span>
+        </div>
+        {isOpen ? <ChevronUp className="w-4 h-4 text-slate-400" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+      </button>
+      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[2000px] pb-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+        {children}
+      </div>
+    </div>
+  );
+};
+
+// Jogi Szekciókhoz komponens
+const LegalSection = ({ title, children }) => (
+  <div className="mb-10">
+    <h3 className="text-xl font-black uppercase tracking-widest mb-4 text-slate-800">{title}</h3>
+    <div className="text-slate-600 leading-relaxed space-y-4">
+      {children}
+    </div>
+  </div>
+);
 
 const App = () => {
   const [view, setView] = useState('home');
@@ -227,10 +296,10 @@ const App = () => {
   const [orderComplete, setOrderComplete] = useState(false);
 
   const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', address: '', delivery: 'pickup', payment: 'cash_pickup', message: ''
+    name: '', email: '', phone: '', zipCode: '', city: '', street: '', delivery: 'pickup', payment: 'cash_pickup', message: ''
   });
 
-  // Dinamikus, intelligens képkereső Effect
+  // Gyorsított (párhuzamos) intelligens képkereső Effect
   useEffect(() => {
     let isMounted = true;
     
@@ -246,28 +315,34 @@ const App = () => {
       const colorName = selectedProduct.colors[activeColor]?.name || '';
       const formattedColor = formatName(colorName);
       
-      const validImages = [];
-      
-      // Megpróbálunk betölteni maximum 15 képet
-      for (let i = 1; i <= 15; i++) {
-        // ITT VAN A VARÁZSLAT: a számot stringgé alakítjuk, és ha 10 alatti, egy 0-t teszünk elé (pl. 01, 02)
-        const paddedIndex = i.toString().padStart(2, '0');
-        const url = `${IMAGE_BASE_URL}/${selectedProduct.id}-${setId}-${formattedColor}-${paddedIndex}.jpg`;
-        
-        const isValid = await new Promise(resolve => {
+      const checkImage = (index) => {
+        return new Promise((resolve) => {
+          const paddedIndex = index.toString().padStart(2, '0');
+          const url = `${IMAGE_BASE_URL}/${selectedProduct.id}-${setId}-${formattedColor}-${paddedIndex}.jpg`;
           const img = new Image();
-          img.onload = () => resolve(true);
-          img.onerror = () => resolve(false);
+          img.onload = () => resolve({ url, valid: true, index });
+          img.onerror = () => resolve({ url, valid: false, index });
           img.src = url;
         });
+      };
 
-        if (!isMounted) return;
+      const promises = [];
+      for (let i = 1; i <= 15; i++) {
+        promises.push(checkImage(i));
+      }
 
-        if (isValid) {
-          validImages.push(url);
+      const results = await Promise.all(promises);
+
+      if (!isMounted) return;
+
+      results.sort((a, b) => a.index - b.index);
+      
+      const validImages = [];
+      for (const res of results) {
+        if (res.valid) {
+          validImages.push(res.url);
         } else {
-          // Ha megszakad a sorozat (pl. a 04. kép nincs meg), megállítjuk a keresést
-          break; 
+          break;
         }
       }
 
@@ -283,9 +358,12 @@ const App = () => {
   // Árkalkuláció
   const calculateCurrentPrice = () => {
     if (!selectedProduct) return 0;
+    const activeSetId = selectedProduct.sets?.[activeSetIdx]?.id || 'alone';
     const base = selectedProduct.sets ? selectedProduct.sets[activeSetIdx].price : (selectedProduct.basePrice || selectedProduct.price);
-    const isAloneSet = selectedProduct.sets?.[activeSetIdx]?.id === 'alone' || !selectedProduct.sets;
-    const extra = isAloneSet ? (selectedProduct.colors[activeColor]?.extraPrice || 0) : 0;
+    
+    const ep = selectedProduct.colors?.[activeColor]?.extraPrice;
+    const extra = typeof ep === 'object' ? (ep[activeSetId] || 0) : (ep || 0);
+    
     return base + extra;
   };
 
@@ -333,6 +411,7 @@ const App = () => {
     const orderSummary = cart.map(item => `${item.name} (${item.setName || 'Alap'}), Szín: ${item.color}, Ár: ${formatPrice(item.price)} Ft`).join('\n');
     const payload = {
       ...formData,
+      teljes_cim: `${formData.zipCode} ${formData.city}, ${formData.street}`,
       rendeles_osszesito: orderSummary,
       vegosszeg: `${formatPrice(totalPriceInCart)} Ft`,
       szallitasi_mod: formData.delivery === 'pickup' ? 'Személyes átvétel (Budapest)' : 'Ingyenes kiszállítás',
@@ -358,13 +437,13 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden flex flex-col">
       {/* Navigáció */}
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigateTo('home')}>
-              <span className="text-2xl font-black tracking-tighter text-blue-900">BRITAX RÖMER</span>
+              <img src={`${IMAGE_BASE_URL}/logo.png`} alt="Gyerekülés Kft." className="h-10 w-auto object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-10 font-semibold text-sm uppercase tracking-wider text-slate-600">
               <button onClick={() => navigateTo('home')} className={`transition-colors ${view === 'home' && !selectedProduct ? 'text-blue-900' : 'hover:text-blue-900'}`}>Babakocsik</button>
@@ -381,7 +460,7 @@ const App = () => {
         </div>
       </nav>
 
-      <main className="pt-20">
+      <main className="pt-20 flex-grow">
         {selectedProduct ? (
           <div className="max-w-7xl mx-auto px-6 py-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
             <button onClick={() => setSelectedProduct(null)} className="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-blue-900 mb-12 transition-colors uppercase tracking-widest">
@@ -419,57 +498,71 @@ const App = () => {
                 </div>
               </div>
 
-              <div className="space-y-12">
+              {/* ÚJRATERVEZETT JOBB OLDALI SÁV */}
+              <div className="flex flex-col gap-8">
                 <div>
-                  <h1 className="text-6xl font-black mb-4 tracking-tight">{selectedProduct.name}</h1>
-                  <p className="text-3xl font-black text-blue-900 mb-8">{formatPrice(currentTotalPrice)} Ft</p>
-                  
-                  {selectedProduct.sets && (
-                    <div className="mb-10 p-6 bg-slate-50 rounded-[2rem] border border-slate-100">
-                      <h4 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2"><Box className="w-4 h-4" /> Válasszon csomagot:</h4>
-                      <div className="grid grid-cols-1 gap-3">
-                        {selectedProduct.sets.map((set, idx) => {
-                          const isSetAlone = set.id === 'alone';
-                          const btnExtraPrice = isSetAlone ? (selectedProduct.colors[activeColor]?.extraPrice || 0) : 0;
-                          
-                          return (
-                            <button 
-                              key={set.id} 
-                              onClick={() => {
-                                setActiveSetIdx(idx);
-                                setActiveImageIdx(0);
-                                const newSetId = set.id;
-                                const currentColorData = selectedProduct.colors[activeColor];
-                                if (currentColorData?.availableSets && !currentColorData.availableSets.includes(newSetId)) {
-                                  const firstAvail = selectedProduct.colors.findIndex(c => !c.availableSets || c.availableSets.includes(newSetId));
-                                  setActiveColor(firstAvail >= 0 ? firstAvail : 0);
-                                }
-                              }} 
-                              className={`p-4 rounded-2xl border-2 text-left transition-all ${activeSetIdx === idx ? 'border-blue-600 bg-white shadow-md' : 'border-transparent hover:border-slate-200'}`}
-                            >
-                              <div className="flex justify-between items-center mb-1">
-                                <span className={`font-bold ${activeSetIdx === idx ? 'text-blue-900' : 'text-slate-700'}`}>{set.name}</span>
-                                <span className="font-black text-sm">{formatPrice(set.price + btnExtraPrice)} Ft</span>
-                              </div>
-                              <p className="text-xs text-slate-500">{set.contents}</p>
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                  <p className="text-slate-500 text-xl leading-relaxed font-medium">{selectedProduct.description}</p>
+                  <h1 className="text-5xl font-black mb-2 tracking-tight">{selectedProduct.name}</h1>
+                  <p className="text-3xl font-black text-blue-900 flex items-center">
+                    {(() => {
+                      const origPrice = selectedProduct.sets?.[activeSetIdx]?.originalPrice;
+                      if (origPrice) {
+                        const ep = selectedProduct.colors[activeColor]?.extraPrice;
+                        const extra = typeof ep === 'object' ? (ep[activeSetId] || 0) : (ep || 0);
+                        return <span className="text-xl text-slate-400 line-through mr-3">{formatPrice(origPrice + extra)} Ft</span>;
+                      }
+                      return null;
+                    })()}
+                    {formatPrice(currentTotalPrice)} Ft
+                  </p>
                 </div>
                 
-                <div className="p-8 bg-slate-50 rounded-[2.5rem]">
-                  <h4 className="font-black uppercase tracking-widest text-xs text-slate-400 mb-6 flex justify-between items-center">
-                    <span>Szín: <span className="text-slate-900">{selectedProduct.colors[activeColor].name}</span></span>
+                {selectedProduct.sets && (
+                  <div className="space-y-3">
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-2"><Box className="w-3 h-3" /> Válasszon csomagot:</h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      {selectedProduct.sets.map((set, idx) => {
+                        const ep = selectedProduct.colors[activeColor]?.extraPrice;
+                        const btnExtraPrice = typeof ep === 'object' ? (ep[set.id] || 0) : (ep || 0);
+                        
+                        return (
+                          <button 
+                            key={set.id} 
+                            onClick={() => {
+                              setActiveSetIdx(idx);
+                              setActiveImageIdx(0);
+                              const newSetId = set.id;
+                              const currentColorData = selectedProduct.colors[activeColor];
+                              if (currentColorData?.availableSets && !currentColorData.availableSets.includes(newSetId)) {
+                                const firstAvail = selectedProduct.colors.findIndex(c => !c.availableSets || c.availableSets.includes(newSetId));
+                                setActiveColor(firstAvail >= 0 ? firstAvail : 0);
+                              }
+                            }} 
+                            className={`p-4 rounded-2xl border-2 text-left transition-all flex flex-col justify-center ${activeSetIdx === idx ? 'border-blue-600 bg-blue-50/50 shadow-md' : 'border-transparent bg-slate-50 hover:border-slate-200'}`}
+                          >
+                            <div className="flex justify-between items-center w-full mb-1">
+                              <span className={`font-bold text-sm ${activeSetIdx === idx ? 'text-blue-900' : 'text-slate-700'}`}>{set.name}</span>
+                              <div className="text-right">
+                                {set.originalPrice && <span className="text-xs text-slate-400 line-through block">{formatPrice(set.originalPrice + btnExtraPrice)} Ft</span>}
+                                <span className="font-black text-sm">{formatPrice(set.price + btnExtraPrice)} Ft</span>
+                              </div>
+                            </div>
+                            <p className="text-xs text-slate-500">{set.contents}</p>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+                
+                <div className="space-y-3">
+                  <h4 className="font-black uppercase tracking-widest text-[10px] text-slate-400 mb-3 flex justify-between items-center">
+                    <span>Szín: <span className="text-slate-900 ml-1">{selectedProduct.colors[activeColor].name}</span></span>
                     {selectedProduct.colors[activeColor].collection && (
-                      <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-[10px]">{selectedProduct.colors[activeColor].collection}</span>
+                      <span className="bg-blue-50 text-blue-800 px-2 py-1 rounded-md">{selectedProduct.colors[activeColor].collection}</span>
                     )}
                   </h4>
                   
-                  <div className="flex flex-wrap gap-4 mb-6">
+                  <div className="flex flex-wrap gap-3">
                     {selectedProduct.colors.map((color, idx) => {
                       const isAvailable = !color.availableSets || color.availableSets.includes(activeSetId);
                       if (!isAvailable) return null;
@@ -481,59 +574,190 @@ const App = () => {
                             setActiveColor(idx); 
                             setActiveImageIdx(0);
                           }} 
-                          className={`w-14 h-14 rounded-full p-1 transition-all ${activeColor === idx ? 'ring-2 ring-blue-900 ring-offset-4' : 'hover:scale-110'}`}
+                          className={`w-12 h-12 rounded-full p-1 transition-all ${activeColor === idx ? 'ring-2 ring-blue-900 ring-offset-2' : 'hover:scale-110'}`}
                         >
-                          <div className="w-full h-full rounded-full shadow-inner" style={{ backgroundColor: color.hex }} />
+                          <div className="w-full h-full rounded-full shadow-inner border border-slate-100" style={{ backgroundColor: color.hex }} />
                         </button>
                       );
                     })}
                   </div>
 
                   {selectedProduct.colors[activeColor].collection && (
-                    <div className="p-4 bg-white/50 border border-blue-50 rounded-2xl animate-in fade-in duration-300">
-                      <p className="text-xs text-slate-600 italic">
-                        <span className="font-bold text-blue-900 non-italic mr-1">{selectedProduct.colors[activeColor].collection}:</span>
-                        {COLOR_DESCRIPTIONS[selectedProduct.colors[activeColor].collection]}
-                        {activeSetId === 'alone' && selectedProduct.colors[activeColor].extraPrice > 0 && (
-                          <span className="block mt-1 text-blue-900 font-bold"> (+{formatPrice(selectedProduct.colors[activeColor].extraPrice)} Ft felár)</span>
-                        )}
-                      </p>
-                    </div>
+                    <p className="text-xs text-slate-500 mt-2">
+                      <span className="font-bold text-slate-700 mr-1">{selectedProduct.colors[activeColor].collection}:</span>
+                      {COLOR_DESCRIPTIONS[selectedProduct.colors[activeColor].collection]}
+                    </p>
                   )}
                 </div>
 
-                {selectedProduct.specs && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {Object.entries(selectedProduct.specs).map(([label, value]) => (
-                      <div key={label} className="p-6 border border-slate-100 rounded-3xl">
-                        <span className="block text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest">{label}</span>
-                        <span className="text-lg font-bold text-slate-800">{value}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                <button onClick={addToCart} className="w-full bg-blue-900 text-white py-6 rounded-[2rem] font-black text-lg hover:bg-blue-800 transition-all shadow-2xl shadow-blue-900/30 flex items-center justify-center gap-3 uppercase tracking-widest active:scale-95">
-                  <ShoppingCart className="w-6 h-6" /> Kosárba teszem
+                <button onClick={addToCart} className="w-full bg-blue-900 text-white py-5 rounded-[1.5rem] font-black text-lg hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-3 uppercase tracking-widest active:scale-95 mt-2">
+                  <ShoppingCart className="w-5 h-5" /> Kosárba teszem
                 </button>
-                
-                {selectedProduct.generalData && (
-                  <div className="pt-20 border-t border-slate-100 space-y-12">
-                     <div className="flex items-center gap-3 text-slate-900 font-black uppercase tracking-[0.2em] text-[10px]">
-                        <Settings className="w-4 h-4" /> Részletes jellemzők
-                     </div>
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-                        {selectedProduct.generalData.map((item, i) => (
-                          <div key={i} className="flex items-start gap-3 py-2 border-b border-slate-50">
-                             <Check className="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" />
-                             <span className="text-slate-600 text-sm font-medium">{item}</span>
-                          </div>
+
+                {/* Harmonikák: Leírás, Adatok, Jellemzők */}
+                <div className="pt-6 mt-2 border-t border-slate-100">
+                  <AccordionItem title="Termékleírás" icon={FileText} defaultOpen={true}>
+                    <p className="text-slate-600 leading-relaxed text-sm">{selectedProduct.description}</p>
+                  </AccordionItem>
+
+                  {selectedProduct.specs && (
+                    <AccordionItem title="Technikai adatok" icon={Settings}>
+                      <ul className="space-y-1">
+                        {Object.entries(selectedProduct.specs).map(([label, value]) => (
+                          <li key={label} className="flex justify-between py-2.5 border-b border-slate-50 last:border-0 text-sm">
+                            <span className="text-slate-500 pr-4">{label}</span>
+                            <span className="font-bold text-slate-900 text-right w-1/2">{value}</span>
+                          </li>
                         ))}
-                     </div>
-                  </div>
-                )}
+                      </ul>
+                    </AccordionItem>
+                  )}
+
+                  {selectedProduct.generalData && (
+                    <AccordionItem title="Részletes jellemzők" icon={ListChecks}>
+                      <ul className="space-y-3 pt-2">
+                        {selectedProduct.generalData.map((item, i) => (
+                          <li key={i} className="flex items-start gap-3 text-sm">
+                            <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                            <span className="text-slate-600 leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </AccordionItem>
+                  )}
+                </div>
               </div>
             </div>
+          </div>
+        ) : view === 'aszf' ? (
+          <div className="max-w-4xl mx-auto px-6 py-20 animate-in fade-in slide-in-from-bottom-8">
+            <h2 className="text-4xl font-black mb-12 uppercase tracking-tight">Általános Szerződési Feltételek</h2>
+            <LegalSection title="Jogfenntartás">
+              <p>A honlapon szereplő képek, leírások, egyéb megjelenések a Gyerekülés Kft. kizárólagos tulajdonát képezik, ezeknek bármilyen formában történő felhasználása kizárólag a cég ügyvezetője által aláírt hozzájárulással valósulhat meg.</p>
+            </LegalSection>
+            <LegalSection title="A Termékek">
+              <p>A honlapról való eladás/termékválasztás telefonon vagy emailen elektronikus úton történik, interneten keresztül.</p>
+              <p>A honlapon kizárólag gyári csomagolású új termékek kerülnek értékesítésre.</p>
+              <p>A kiválasztott termékek fő jellemzőit a megjelenített képek melletti leírás tartalmazza.</p>
+              <p>A vételár mindig a kiválasztott termék mellett feltüntetett ár, amely tartalmazza az Általános Forgalmi Adót is (bruttó ár).</p>
+            </LegalSection>
+            <LegalSection title="Garancia, Szavatosság">
+              <p>Az eladó az általa eladott árukra a hatályos jogszabályoknak megfelelően 2 év szavatossági időt vállal. A vevő hibás teljesítés esetén az észlelést követően haladéktalanul jelezze a hibát (e-mail, telefon), illetve közölje szavatossági igényét.</p>
+              <p>A fogyasztói kifogás megtételének helye a mindenkori telephely címén történik.</p>
+              <p>Az eladó szavatossági és jótállási felelősségére a Polgári Törvénykönyvben foglaltak az irányadóak.</p>
+            </LegalSection>
+            <LegalSection title="A vásárlástól való elállás joga online rendelés esetén">
+              <p>A távollevők között kötött szerződésekről szóló 45/2017. (II.26.) (rendelet) alapján úgynevezett elállási jog (a termék visszaküldésének joga, visszaküldési garancia) illeti meg a vásárlót internetes vásárlás esetén. A vevő jogosult a megrendelést követő 14 naptári napon belül a vásárlástól elállni, bárminemű indoklás nélkül illetve a korábban megrendelt terméket más típusúra cserélni.</p>
+              <p>Ezt az igényét jelezheti e-mailen vagy telefonon a honlapon szereplő telefonszámon. Ebben az esetben a vevőt terheli a visszaküldés költsége.</p>
+            </LegalSection>
+            <LegalSection title="Rendelés, áruátvétel, szállítás, fizetés">
+              <p>A honlapról kiválasztott termék/termékek megrendelése e-mailen vagy telefonon is leadható.</p>
+              <p>A honlapról való rendeléssel a vásárló kijelenti, hogy megismerte és elfogadja jelen szabályzatot, tisztában van a rendelés menetével, a termék jellemzőivel és annak vételi árával.</p>
+              <p>Az áruátvétel személyesen a mindenkori telephelyen történik, ahol az árut megtekintheti, kipróbálhatja és további információt kérhet a termékekre vonatkozóan.</p>
+              <p>Postai illetve futárszolgálati kiszállítás esetén vevő köteles a kiszállítás időpontjában a csomagban lévő terméket/termékeket tételesen ellenőrizni és hiánytalan teljesítés esetén az utánvételi elismervényt aláírni, ezt követően hiányosságokra vonatkozó reklamációkat nem áll módunkban elfogadni.</p>
+              <p>A termékek ellenértékének kiegyenlítése helyszíni (telephelyi) átvétel esetén készpénzben történik, postai/futárszolgálati utánvételes kiszállítás esetén szintén készpénzben a szállító cég alkalmazottjának.</p>
+            </LegalSection>
+            <LegalSection title="A felelősség korlátozása">
+              <p>A honlapról való megrendelés/vásárlás feltételezi a vásárló részéről az Internet lehetőségeinek és korlátainak ismeretét és elfogadását, különös tekintettel a technikai teljesítményekre és a felmerülő hibákra. A honlap tulajdonosa semmilyen módon nem felelős az alább felsorolt pontokban foglaltak miatt, bármilyen okból is következtek be:</p>
+              <ul className="list-disc pl-5 space-y-2 mt-4">
+                <li>Az Interneten küldött és / vagy fogadott bármilyen adat.</li>
+                <li>Bármilyen működési hiba az internetes hálózatban, ami megakadályozza a honlap akadálytalan működését és a megrendelést.</li>
+                <li>Bármilyen meghibásodás, bármely vételi eszközben a kommunikációs vonalakon.</li>
+                <li>Bármilyen programhiba, abnormális esemény vagy technikai hiba következményei.</li>
+              </ul>
+              <p className="mt-4">A honlap nem felelős semmilyen alapon, semmilyen közvetett vagy közvetlen kárért, ami a honlaphoz való csatlakozás miatt a vásárlónál következett be. A résztvevő felelőssége felmérni, hogy hogyan védheti meg a számítógépén tárolt adatait a behatolóktól.</p>
+              <p>A honlap üzemeltetője nem vonható felelősségre semmilyen esetben vis maior esetén vagy bármilyen eseménnyel kapcsolatosan, ami nem az ő érdekkörében merül fel.</p>
+              <p>A honlap üzemeltetője bármikor szabadon megváltoztathat bármilyen árat, szállítási határidőt. A változás a honlapon történt megjelenés időpontjától lép hatályba.</p>
+              <p>A honlap üzemeltetője bármikor szabadon módosíthatja a vásárlás feltételeit és szabályait vagy a honlap egyéb tartalmát, ezt teheti bármikor, értesítési és bárminemű kötelezettség nélkül arra nézve, hogy megindokolja a döntés helyességét, és a honlap üzemeltetője nem vonható felelősségre ezen cselekedete miatt. Bármely módosítás abban az időpontban lép életbe, amikor a módosítás on-line megtalálható a honlapon.</p>
+            </LegalSection>
+          </div>
+        ) : view === 'privacy' ? (
+          <div className="max-w-4xl mx-auto px-6 py-20 animate-in fade-in slide-in-from-bottom-8">
+            <h2 className="text-4xl font-black mb-12 uppercase tracking-tight">Adatvédelmi Tájékoztató</h2>
+            <LegalSection title="Személyes adatok kezelése">
+              <p>A megrendelők személyes adatainak felhasználása az Adatvédelmi törvény hatályos szabályozásának megfelelően történik.</p>
+              <p>Az eladó a vásárlók adatait a szerződés teljesítése, és a szerződés feltételeinek későbbi bizonyítása érdekében a szavatossági időtartamig tárolja, de az adatokat semmilyen módon nem jogosult ezen időtartamon túl megőrizni, felhasználni, illetve további személyeknek bármikor is átadni.</p>
+            </LegalSection>
+          </div>
+        ) : view === 'impressum' ? (
+          <div className="max-w-4xl mx-auto px-6 py-20 animate-in fade-in slide-in-from-bottom-8">
+            <h2 className="text-4xl font-black mb-12 uppercase tracking-tight">Impresszum</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-slate-50 p-8 rounded-[2rem]">
+                <h3 className="font-black uppercase tracking-widest mb-6 text-slate-800">Üzemeltető adatai</h3>
+                <ul className="space-y-3 text-slate-600 text-sm">
+                  <li><span className="font-bold text-slate-900 block">Cégnév:</span> Gyerekülés Kft.</li>
+                  <li><span className="font-bold text-slate-900 block">Felelős vezető:</span> Szondi Attila (ügyvezető)</li>
+                  <li><span className="font-bold text-slate-900 block">Székhely és Telephely:</span> 1112 Budapest, Ördögorom út 4.</li>
+                  <li><span className="font-bold text-slate-900 block">Cégjegyzékszám:</span> 01-09-283610 (Fővárosi Bíróság bejegyzése)</li>
+                  <li><span className="font-bold text-slate-900 block">Adószám:</span> 25584307-2-43</li>
+                  <li><span className="font-bold text-slate-900 block">Nyilvántartásba vételi szám:</span> ERK16/98342 (2016) - Budapest Főv. XI. ker. Önk.</li>
+                  <li className="pt-4 border-t border-slate-200"><span className="font-bold text-slate-900 block">Telefon:</span> +36-30-595-0055</li>
+                  <li><span className="font-bold text-slate-900 block">E-mail:</span> kid@kid.hu</li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 p-8 rounded-[2rem] h-fit">
+                <h3 className="font-black uppercase tracking-widest mb-6 text-slate-800">Tárhelyszolgáltató</h3>
+                <ul className="space-y-3 text-slate-600 text-sm">
+                  <li><span className="font-bold text-slate-900 block">Cégnév:</span> Netlify, Inc.</li>
+                  <li><span className="font-bold text-slate-900 block">Székhely:</span> 2325 3rd Street, Suite 296, San Francisco, CA 94107, USA</li>
+                  <li><span className="font-bold text-slate-900 block">Cégbíróság:</span> Fővárosi Bíróság</li>
+                  <li><span className="font-bold text-slate-900 block">Honlap:</span> <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.netlify.com</a></li>
+                  <li><span className="font-bold text-slate-900 block">E-mail:</span> support@netlify.com</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        ) : view === 'shipping' ? (
+          <div className="max-w-5xl mx-auto px-6 py-20 animate-in fade-in slide-in-from-bottom-8">
+            <h2 className="text-4xl font-black mb-6 uppercase tracking-tight">Szállítási és Fizetési Információk</h2>
+            <p className="text-slate-600 text-lg mb-12">Az általunk forgalmazott termékeket személyesen megtekinthetik, kipróbálhatják és megvásárolhatják a 1112 Budapest, Ördögorom út 4. szám alatt.</p>
+            
+            <h3 className="text-xl font-black uppercase tracking-widest mb-6 text-slate-800">Átvételi és Szállítási módok díjai</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <div className="p-8 bg-white rounded-[2rem] border-2 border-slate-100 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-2 bg-blue-900"></div>
+                <div className="font-black text-xl mb-2">Személyes átvétel</div>
+                <div className="text-green-600 font-black uppercase tracking-widest text-sm mb-4">Ingyenes</div>
+                <p className="text-sm text-slate-600 font-medium">1112 Budapest, Ördögorom út 4.<br/>Hétfőtől péntekig 10-től 19h-ig, szombaton 9-17 h-ig</p>
+              </div>
+              <div className="p-8 bg-white rounded-[2rem] border-2 border-slate-100 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-2 bg-green-500"></div>
+                <div className="font-black text-xl mb-2">Ingyenes szállítás</div>
+                <div className="text-green-600 font-black uppercase tracking-widest text-sm mb-4">Ingyenes</div>
+                <p className="text-sm text-slate-600 font-medium">Minden olyan rendelés amiben babakocsi vagy babakocsi és egyéb termékek együttes vásárlása történik.</p>
+              </div>
+              <div className="p-8 bg-white rounded-[2rem] border-2 border-slate-100 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-2 bg-slate-300"></div>
+                <div className="font-black text-xl mb-2">Postai utánvét</div>
+                <div className="text-slate-900 font-black uppercase tracking-widest text-sm mb-4">2.990 Ft</div>
+                <p className="text-sm text-slate-600 font-medium">Babakocsi nélküli, azaz csak kiegészítők, alkatrészek és egyéb termék rendelése esetén.</p>
+              </div>
+            </div>
+
+            <div className="bg-slate-50 p-10 rounded-[3rem]">
+              <ul className="space-y-4 text-slate-700 font-medium">
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" /> A babakocsik kiszállítása ingyenes az ország egész területén (kivétel csak kiegészítők, alkatrészek).</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" /> Postai utánvéttel szállítjuk a termékeket. (MPL)</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" /> Rendelést telefonon, e-mailen és a honlapról is elfogadunk!</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" /> A termékek vadonatújak, gyári csomagolásban vannak, tartalmaznak magyar nyelvű használati útmutatót és 2 év gyártói garanciával rendelkeznek.</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" /> A raktáron nem lévő termékeket 2-3 nap szállítási határidővel beszerezzük.</li>
+              </ul>
+            </div>
+          </div>
+        ) : view === 'cookies' ? (
+          <div className="max-w-4xl mx-auto px-6 py-20 animate-in fade-in slide-in-from-bottom-8">
+            <h2 className="text-4xl font-black mb-12 uppercase tracking-tight">Sütikezelési (Cookie) Tájékoztató</h2>
+            <LegalSection title="Mik azok a sütik?">
+              <p>A sütik (cookie-k) kisméretű szöveges fájlok, amelyeket a weboldal tárol el az Ön számítógépén vagy mobil eszközén a weboldal látogatásakor. Ezek segítségével a weboldal bizonyos ideig megjegyzi az Ön műveleteit és beállításait (pl. a kosár tartalmát), így nem kell azokat minden alkalommal újra megadnia, amikor visszatér az oldalra.</p>
+            </LegalSection>
+            <LegalSection title="Milyen sütiket használunk?">
+              <p>Weboldalunk kizárólag olyan <strong>Feltétlenül szükséges sütiket</strong> használ, amelyek az oldal alapvető működéséhez és a vásárlási folyamat lebonyolításához elengedhetetlenek. Ilyen például a virtuális bevásárlókosár tartalmának megjegyzése a böngészés során.</p>
+              <p>Ezek a sütik nem gyűjtenek személyes adatokat marketing célokra, és a böngésző bezárásával, vagy a munkamenet lejártával automatikusan törlődnek.</p>
+            </LegalSection>
+            <LegalSection title="Sütik kezelése és törlése">
+              <p>Önnek lehetősége van a sütik kezelésére, illetve azok törlésére a böngészője beállításaiban. Kérjük, vegye figyelembe, hogy a feltétlenül szükséges sütik letiltása esetén előfordulhat, hogy a weboldal bizonyos funkciói (pl. a rendelés leadása) nem fognak megfelelően működni.</p>
+            </LegalSection>
           </div>
         ) : view === 'checkout' ? (
           <div className="max-w-7xl mx-auto px-6 py-20">
@@ -558,6 +782,14 @@ const App = () => {
                       </div>
                     </section>
                     <section className="space-y-6">
+                      <h3 className="text-xl font-black uppercase tracking-widest flex items-center gap-2"><MapPin className="w-5 h-5 text-blue-600" /> Cím Adatok</h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <input required type="text" placeholder="Irányítószám" className="p-5 rounded-2xl bg-slate-50 border-none outline-none focus:ring-2 ring-blue-600 transition-all sm:col-span-1" value={formData.zipCode} onChange={e => setFormData({...formData, zipCode: e.target.value})} />
+                        <input required type="text" placeholder="Település" className="p-5 rounded-2xl bg-slate-50 border-none outline-none focus:ring-2 ring-blue-600 transition-all sm:col-span-2" value={formData.city} onChange={e => setFormData({...formData, city: e.target.value})} />
+                      </div>
+                      <input required type="text" placeholder="Utca, házszám" className="w-full p-5 rounded-2xl bg-slate-50 border-none outline-none focus:ring-2 ring-blue-600 transition-all" value={formData.street} onChange={e => setFormData({...formData, street: e.target.value})} />
+                    </section>
+                    <section className="space-y-6">
                       <h3 className="text-xl font-black uppercase tracking-widest flex items-center gap-2"><Truck className="w-5 h-5 text-blue-600" /> Szállítási Mód</h3>
                       <div className="space-y-3">
                         <label className={`flex items-start gap-4 p-5 rounded-2xl border-2 transition-all cursor-pointer ${formData.delivery === 'pickup' ? 'border-blue-600 bg-blue-50/30' : 'border-slate-100 hover:border-slate-200'}`}>
@@ -571,7 +803,6 @@ const App = () => {
                           <span className="ml-auto font-black text-green-600 uppercase text-xs">Ingyenes</span>
                         </label>
                       </div>
-                      {formData.delivery === 'shipping' && <textarea required placeholder="Pontos szállítási cím" className="w-full p-5 rounded-2xl bg-slate-50 border-none outline-none focus:ring-2 ring-blue-600 transition-all mt-4" value={formData.address} onChange={e => setFormData({...formData, address: e.target.value})} />}
                     </section>
                     <section className="space-y-6">
                       <h3 className="text-xl font-black uppercase tracking-widest flex items-center gap-2"><CreditCard className="w-5 h-5 text-blue-600" /> Fizetési Mód</h3>
@@ -641,7 +872,17 @@ const App = () => {
                 <div className="p-10 bg-slate-50 rounded-[3rem] flex flex-col items-center text-center border-4 border-blue-900/5"><div className="w-16 h-16 bg-blue-900 rounded-2xl flex items-center justify-center text-white shadow-sm mb-6"><MapPin /></div><h4 className="text-xl font-bold mb-2">Üzletünk</h4><p className="text-slate-700 font-bold">{CONTACT_INFO.address}</p><p className="text-slate-400 text-sm mt-2">{CONTACT_INFO.hours}</p></div>
                 <div className="p-10 bg-slate-50 rounded-[3rem] flex flex-col items-center text-center"><div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-blue-600 shadow-sm mb-6"><Phone /></div><h4 className="text-xl font-bold mb-2">Telefon</h4><a href={`tel:${CONTACT_INFO.phone}`} className="text-blue-900 font-black hover:underline">{CONTACT_INFO.phone}</a></div>
              </div>
-             <div className="mt-12 h-96 bg-slate-100 rounded-[3rem] relative overflow-hidden flex items-center justify-center border-2 border-slate-50"><div className="text-center p-8"><MapPin className="w-12 h-12 text-slate-300 mx-auto mb-4" /><p className="text-slate-400 font-bold tracking-widest uppercase text-sm">Budapest, Ördögorom út 4.</p></div></div>
+             <div className="mt-12 h-96 bg-slate-100 rounded-[3rem] relative overflow-hidden flex items-center justify-center border-2 border-slate-50">
+               <iframe 
+                 src="https://maps.google.com/maps?q=1112%20Budapest,%20%C3%96rd%C3%B6gorom%20%C3%BAt%204.&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                 width="100%" 
+                 height="100%" 
+                 style={{ border: 0 }} 
+                 allowFullScreen="" 
+                 loading="lazy" 
+                 referrerPolicy="no-referrer-when-downgrade"
+               ></iframe>
+             </div>
           </div>
         ) : (
           <>
@@ -649,9 +890,25 @@ const App = () => {
               <div className="absolute inset-0 opacity-50 bg-gradient-to-tr from-blue-950 via-slate-900 to-transparent z-10"></div>
               <div className="relative z-20 max-w-7xl mx-auto px-6 w-full text-white text-center md:text-left">
                 <div className="max-w-3xl">
-                  <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight leading-[0.9]">PRÉMIUM <br /><span className="text-blue-500 italic">BABAKOCSIK.</span></h1>
-                  <p className="text-xl md:text-2xl mb-10 text-slate-300 max-w-xl font-light leading-relaxed">Német mérnöki precizitás, amely generációk óta védi a legfontosabb utast az életében.</p>
+                  {/* Itt módosult a méretezés: text-4xl mobilra, sm:text-6xl tabletre, md:text-8xl asztali gépre */}
+                  <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 tracking-tight leading-[0.9] break-words">PRÉMIUM <br /><span className="text-blue-500 italic">BABAKOCSIK</span></h1>
+                  <p className="text-xl md:text-2xl mb-10 text-slate-300 max-w-xl font-light leading-relaxed mx-auto md:mx-0">Német minőség, amely generációk óta szolgálja és kényezteti a legdrágább kincsünket.</p>
                   <button onClick={() => document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })} className="bg-blue-600 text-white px-10 py-5 rounded-full font-bold hover:bg-blue-500 transition-all flex items-center gap-3 shadow-xl shadow-blue-600/20 mx-auto md:mx-0">Kollekció megtekintése <ChevronRight className="w-5 h-5" /></button>
+                  
+                  <div className="flex flex-col sm:flex-row items-center md:justify-start justify-center gap-8 mt-12 text-lg font-medium text-slate-300">
+                    <a href={`tel:${CONTACT_INFO.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center gap-3 hover:text-white transition-colors group cursor-pointer">
+                      <Phone className="w-6 h-6 text-blue-400 group-hover:scale-110 transition-transform" />
+                      <span>{CONTACT_INFO.phone}</span>
+                    </a>
+                    <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-3 hover:text-white transition-colors group cursor-pointer">
+                      <Mail className="w-6 h-6 text-blue-400 group-hover:scale-110 transition-transform" />
+                      <span>{CONTACT_INFO.email}</span>
+                    </a>
+                    <a href={`https://maps.google.com/?q=${encodeURIComponent(CONTACT_INFO.address)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors group cursor-pointer">
+                      <MapPin className="w-6 h-6 text-blue-400 group-hover:scale-110 transition-transform" />
+                      <span>{CONTACT_INFO.address}</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </section>
@@ -676,12 +933,15 @@ const App = () => {
         )}
       </main>
 
-      <footer className="bg-slate-950 text-white pt-24 pb-12 mt-20">
+      <footer className="bg-slate-950 text-white pt-24 pb-12 mt-auto">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
-            <div><span className="text-2xl font-black tracking-tighter text-white mb-8 block">BRITAX RÖMER</span><p className="text-slate-400 font-medium leading-relaxed">Biztonság és kényelem 1930 óta.</p></div>
             <div>
-              <h5 className="font-black uppercase tracking-widest text-sm mb-8 text-blue-500">Oldaltérkép</h5>
+              <img src={`${IMAGE_BASE_URL}/logo-footer.png`} alt="Gyerekülés Kft." className="h-12 w-auto object-contain mb-6" />
+              <p className="text-slate-400 font-medium leading-relaxed">Biztonság és kényelem 1930 óta.</p>
+            </div>
+            <div>
+              <h5 className="font-black uppercase tracking-widest text-sm mb-8 text-blue-500">Termékek</h5>
               <ul className="text-slate-400 space-y-4 font-medium">
                 <li><button onClick={() => navigateTo('home')} className="hover:text-white transition-colors">Babakocsik</button></li>
                 <li><button onClick={() => navigateTo('accessories')} className="hover:text-white transition-colors">Kiegészítők</button></li>
@@ -689,16 +949,27 @@ const App = () => {
               </ul>
             </div>
             <div>
-              <h5 className="font-black uppercase tracking-widest text-sm mb-8 text-blue-500">Kapcsolat</h5>
+              <h5 className="font-black uppercase tracking-widest text-sm mb-8 text-blue-500">Információk</h5>
               <ul className="text-slate-400 space-y-4 font-medium">
+                <li><button onClick={() => navigateTo('aszf')} className="hover:text-white transition-colors">Általános Szerződési Feltételek</button></li>
+                <li><button onClick={() => navigateTo('privacy')} className="hover:text-white transition-colors">Adatvédelmi tájékoztató</button></li>
+                <li><button onClick={() => navigateTo('impressum')} className="hover:text-white transition-colors">Impresszum</button></li>
+                <li><button onClick={() => navigateTo('cookies')} className="hover:text-white transition-colors">Sütikezelési tájékoztató</button></li>
+                <li><button onClick={() => navigateTo('shipping')} className="hover:text-white transition-colors">Szállítási információk</button></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-black uppercase tracking-widest text-sm mb-8 text-blue-500">Kapcsolat</h5>
+              <ul className="text-slate-400 space-y-4 font-medium mb-8">
                 <li className="flex items-center gap-3"><Phone className="w-4 h-4" /> {CONTACT_INFO.phone}</li>
                 <li className="flex items-center gap-3"><Mail className="w-4 h-4" /> {CONTACT_INFO.email}</li>
                 <li className="flex items-start gap-3"><MapPin className="w-4 h-4 mt-1" /> {CONTACT_INFO.address}</li>
               </ul>
+              <h5 className="font-black uppercase tracking-widest text-sm mb-4 text-blue-500">Nyitvatartás</h5>
+              <p className="text-slate-400 font-medium flex items-center gap-3"><Clock className="w-4 h-4" /> {CONTACT_INFO.hours}</p>
             </div>
-            <div><h5 className="font-black uppercase tracking-widest text-sm mb-8 text-blue-500">Nyitvatartás</h5><p className="text-slate-400 font-medium flex items-center gap-3"><Clock className="w-4 h-4" /> {CONTACT_INFO.hours}</p></div>
           </div>
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 border-t border-slate-900 pt-12 text-center md:text-left">© 2024 Britax Römer Premium Store Hungary.</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 border-t border-slate-900 pt-12 text-center md:text-left">© 2026 Britax Römer Premium Store Hungary.</p>
         </div>
       </footer>
     </div>
