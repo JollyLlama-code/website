@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+  <!-- ========================================== -->
+  <!-- BRITAX RÖMER SMILE 5Z                      -->
+  <!-- ========================================== -->
+  <product>
+    <identifier>smile-5z-alone-galaxy-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z - Galaxy Black</name>
+    <category>Babakocsi</category>
+    <price>272990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-galaxy-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-galaxy-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort set - Galaxy Black</name>
+    <category>Babakocsi</category>
+    <price>476990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-galaxy-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-plus-galaxy-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort Plus set - Galaxy Black</name>
+    <category>Babakocsi</category>
+    <price>596990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-galaxy-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>smile-5z-alone-carbon-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z - Carbon Black</name>
+    <category>Babakocsi</category>
+    <price>272990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-carbon-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-essential-carbon-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Essential set - Carbon Black</name>
+    <category>Babakocsi</category>
+    <price>272990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-essential-carbon-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>smile-5z-alone-mineral-grey</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z - Mineral Grey</name>
+    <category>Babakocsi</category>
+    <price>272990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-mineral-grey-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-essential-mineral-grey</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Essential set - Mineral Grey</name>
+    <category>Babakocsi</category>
+    <price>272990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-essential-mineral-grey-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>smile-5z-alone-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z - Teak</name>
+    <category>Babakocsi</category>
+    <price>272990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-essential-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Essential set - Teak</name>
+    <category>Babakocsi</category>
+    <price>272990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-essential-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>smile-5z-alone-harbor-blue</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z - Harbor Blue</name>
+    <category>Babakocsi</category>
+    <price>272990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-harbor-blue-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-essential-harbor-blue</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Essential set - Harbor Blue</name>
+    <category>Babakocsi</category>
+    <price>272990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-essential-harbor-blue-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>smile-5z-alone-soft-taupe</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z (LUX) - Soft Taupe</name>
+    <category>Babakocsi</category>
+    <price>295990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-soft-taupe-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-soft-taupe</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort set (LUX) - Soft Taupe</name>
+    <category>Babakocsi</category>
+    <price>548990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-soft-taupe-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-plus-soft-taupe</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort Plus set (LUX) - Soft Taupe</name>
+    <category>Babakocsi</category>
+    <price>667690</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-soft-taupe-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>smile-5z-alone-urban-olive</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z (LUX) - Urban Olive</name>
+    <category>Babakocsi</category>
+    <price>295990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-urban-olive-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-urban-olive</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort set (LUX) - Urban Olive</name>
+    <category>Babakocsi</category>
+    <price>548990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-urban-olive-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-plus-urban-olive</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort Plus set (LUX) - Urban Olive</name>
+    <category>Babakocsi</category>
+    <price>667690</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-urban-olive-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>smile-5z-alone-linen-grey</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z (LUX) - Linen Grey</name>
+    <category>Babakocsi</category>
+    <price>295990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-linen-grey-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-linen-grey</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort set (LUX) - Linen Grey</name>
+    <category>Babakocsi</category>
+    <price>548990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-linen-grey-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-plus-linen-grey</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort Plus set (LUX) - Linen Grey</name>
+    <category>Babakocsi</category>
+    <price>667690</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-linen-grey-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>smile-5z-alone-warm-caramel</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z (LUX) - Warm Caramel</name>
+    <category>Babakocsi</category>
+    <price>295990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-warm-caramel-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-warm-caramel</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort set (LUX) - Warm Caramel</name>
+    <category>Babakocsi</category>
+    <price>548990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-warm-caramel-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-plus-warm-caramel</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort Plus set (LUX) - Warm Caramel</name>
+    <category>Babakocsi</category>
+    <price>667690</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-warm-caramel-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <!-- ========================================== -->
+  <!-- BRITAX RÖMER RIO                           -->
+  <!-- ========================================== -->
+  <product>
+    <identifier>rio-alone-carbon-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO - Carbon Black</name>
+    <category>Babakocsi</category>
+    <price>169990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-alone-carbon-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-essential-carbon-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Essential set - Carbon Black</name>
+    <category>Babakocsi</category>
+    <price>268990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-essential-carbon-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-comfort-carbon-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Comfort set - Carbon Black</name>
+    <category>Babakocsi</category>
+    <price>383990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-carbon-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-comfort-plus-carbon-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Comfort Plus set - Carbon Black</name>
+    <category>Babakocsi</category>
+    <price>504990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-plus-carbon-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>rio-alone-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO - Teak</name>
+    <category>Babakocsi</category>
+    <price>169990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-alone-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-essential-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Essential set - Teak</name>
+    <category>Babakocsi</category>
+    <price>268990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-essential-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-comfort-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Comfort set - Teak</name>
+    <category>Babakocsi</category>
+    <price>383990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-comfort-plus-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Comfort Plus set - Teak</name>
+    <category>Babakocsi</category>
+    <price>504990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-plus-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>rio-alone-soft-taupe</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO (LUX) - Soft Taupe</name>
+    <category>Babakocsi</category>
+    <price>184990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-alone-soft-taupe-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-essential-soft-taupe</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Essential set (LUX) - Soft Taupe</name>
+    <category>Babakocsi</category>
+    <price>293990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-essential-soft-taupe-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-comfort-soft-taupe</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Comfort set (LUX) - Soft Taupe</name>
+    <category>Babakocsi</category>
+    <price>421990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-soft-taupe-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-comfort-plus-soft-taupe</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Comfort Plus set (LUX) - Soft Taupe</name>
+    <category>Babakocsi</category>
+    <price>537490</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-plus-soft-taupe-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>rio-alone-urban-olive</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO (LUX) - Urban Olive</name>
+    <category>Babakocsi</category>
+    <price>184990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-alone-urban-olive-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-essential-urban-olive</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Essential set (LUX) - Urban Olive</name>
+    <category>Babakocsi</category>
+    <price>293990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-essential-urban-olive-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-comfort-urban-olive</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Comfort set (LUX) - Urban Olive</name>
+    <category>Babakocsi</category>
+    <price>421990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-urban-olive-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-comfort-plus-urban-olive</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Comfort Plus set (LUX) - Urban Olive</name>
+    <category>Babakocsi</category>
+    <price>537490</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-plus-urban-olive-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <!-- ========================================== -->
+  <!-- BRITAX RÖMER FLYLITE                       -->
+  <!-- ========================================== -->
+  <product>
+    <identifier>flylite-alone-carbon-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer FLYLITE - Carbon Black</name>
+    <category>Babakocsi</category>
+    <price>149990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/flylite-alone-carbon-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>flylite-alone-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer FLYLITE - Teak</name>
+    <category>Babakocsi</category>
+    <price>149990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/flylite-alone-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+  <product>
+    <identifier>flylite-alone-sage-green</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer FLYLITE - Sage Green</name>
+    <category>Babakocsi</category>
+    <price>149990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/flylite-alone-sage-green-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>0</delivery_cost>
+  </product>
+
+  <!-- ========================================== -->
+  <!-- KIEGÉSZÍTŐK                                -->
+  <!-- ========================================== -->
+  <product>
+    <identifier>flylite-bag-alone-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer FLYLITE Utazótáska - Black</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>29990</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/flylite-bag-alone-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>rio-cot-alone-carbon-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Mózeskosár - Carbon Black</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>99000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-cot-alone-carbon-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-cot-alone-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Mózeskosár - Teak</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>99000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-cot-alone-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-cot-alone-soft-taupe</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Mózeskosár (LUX) - Soft Taupe</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>109000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-cot-alone-soft-taupe-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>rio-cot-alone-urban-olive</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer RIO Mózeskosár (LUX) - Urban Olive</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>109000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/rio-cot-alone-urban-olive-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+
+  <product>
+    <identifier>smile-5z-cot-alone-space-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Mózeskosár - Space Black</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>109000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-cot-alone-space-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-cot-alone-carbon-black</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Mózeskosár - Carbon Black</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>109000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-cot-alone-carbon-black-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-cot-alone-harbor-blue</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Mózeskosár - Harbor Blue</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>109000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-cot-alone-harbor-blue-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-cot-alone-mineral-grey</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Mózeskosár - Mineral Grey</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>109000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-cot-alone-mineral-grey-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-cot-alone-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Mózeskosár - Teak</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>109000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-cot-alone-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-cot-alone-linen-grey</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Mózeskosár (LUX) - Linen Grey</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>132000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-cot-alone-linen-grey-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-cot-alone-soft-taupe</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Mózeskosár (LUX) - Soft Taupe</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>132000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-cot-alone-soft-taupe-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-cot-alone-urban-olive</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Mózeskosár (LUX) - Urban Olive</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>132000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-cot-alone-urban-olive-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-cot-alone-warm-caramel</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Mózeskosár (LUX) - Warm Caramel</name>
+    <category>Babakocsi kiegészítő</category>
+    <price>132000</price>
+    <product_url>https://babakocsiszakaruhaz.hu</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-cot-alone-warm-caramel-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>2990</delivery_cost>
+  </product>
+</products>
