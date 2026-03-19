@@ -299,7 +299,19 @@ const App = () => {
     name: '', email: '', phone: '', zipCode: '', city: '', street: '', delivery: 'pickup', payment: 'cash_pickup', message: ''
   });
 
-  // Gyorsított (párhuzamos) intelligens képkereső Effect
+  // URL paraméter figyelő (Árukereső linkekhez)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('product');
+    if (productId) {
+      const foundProduct = [...PRODUCTS, ...ACCESSORIES].find(p => p.id === productId);
+      if (foundProduct) {
+        setSelectedProduct(foundProduct);
+      }
+    }
+  }, []);
+
+  // Képkereső Effect
   useEffect(() => {
     let isMounted = true;
     
