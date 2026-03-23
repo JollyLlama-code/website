@@ -298,6 +298,45 @@ const App = () => {
     name: '', email: '', phone: '', zipCode: '', city: '', street: '', delivery: 'pickup', payment: 'cash_pickup', message: ''
   });
 
+  // --- ÚJ SEO ÉS CANONICAL TAG MOTOR ---
+  useEffect(() => {
+    let title = "Britax Römer Prémium Babakocsik | Babakocsi Szakáruház";
+    let canonicalUrl = "https://babakocsiszakaruhaz.hu/";
+
+    // Ha van kiválasztott termék
+    if (selectedProduct) {
+      title = `${selectedProduct.name} | Babakocsi Szakáruház`;
+      canonicalUrl = `https://babakocsiszakaruhaz.hu/?product=${selectedProduct.id}`;
+    } 
+    // Ha nem a főoldalon vagyunk (hanem pl. Kapcsolat, ÁSZF)
+    else if (view !== 'home') {
+      const viewTitles = {
+        'accessories': 'Kiegészítők',
+        'contact': 'Kapcsolat',
+        'checkout': 'Pénztár',
+        'aszf': 'ÁSZF',
+        'privacy': 'Adatvédelmi Tájékoztató',
+        'impressum': 'Impresszum',
+        'shipping': 'Szállítási információk',
+        'cookies': 'Sütikezelés'
+      };
+      title = `${viewTitles[view] || ''} | Babakocsi Szakáruház`;
+    }
+
+    // Böngésző fül címének átírása
+    document.title = title;
+
+    // Google Canonical (eredeti URL) tag frissítése
+    let canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", canonicalUrl);
+  }, [selectedProduct, view]);
+  // --- ÚJ SEO MOTOR VÉGE ---
+
   // URL paraméter figyelő (Árukereső linkekhez)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
