@@ -283,10 +283,38 @@ const LegalSection = ({ title, children }) => (
 );
 
 const App = () => {
-  const [view, setView] = useState('home');
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [activeColor, setActiveColor] = useState(0);
-  const [activeSetIdx, setActiveSetIdx] = useState(0);
+  // KEZDŐÁLLAPOT BETÖLTÉSE AZ URL-BŐL (Azonnali link-olvasás még kirajzolás előtt!)
+  const [initialState] = useState(() => {
+    const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+    const productId = params.get('product');
+    const viewParam = params.get('view');
+    
+    let initProduct = null;
+    let initSetIdx = 0;
+    let initColorIdx = 0;
+
+    if (productId) {
+      initProduct = [...PRODUCTS, ...ACCESSORIES].find(p => p.id === productId) || null;
+      if (initProduct) {
+        const setId = params.get('set');
+        if (setId && initProduct.sets) {
+          const idx = initProduct.sets.findIndex(s => s.id === setId);
+          if (idx !== -1) initSetIdx = idx;
+        }
+        const colorId = params.get('color');
+        if (colorId && initProduct.colors) {
+          const idx = initProduct.colors.findIndex(c => formatName(c.name) === colorId);
+          if (idx !== -1) initColorIdx = idx;
+        }
+      }
+    }
+    return { initProduct, initSetIdx, initColorIdx, initView: viewParam || 'home' };
+  });
+
+  const [view, setView] = useState(initialState.initView);
+  const [selectedProduct, setSelectedProduct] = useState(initialState.initProduct);
+  const [activeColor, setActiveColor] = useState(initialState.initColorIdx);
+  const [activeSetIdx, setActiveSetIdx] = useState(initialState.initSetIdx);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
   
   const [validUrls, setValidUrls] = useState([]);
@@ -348,44 +376,10 @@ const App = () => {
       window.history.replaceState({}, title, browserUrl);
     } catch (e) {
       // Biztonsági okokból az előnézeti környezetben ez tiltva van
-      console.warn("URL frissítés biztonsági okokból blokkolva az előnézeti nézetben.");
     }
 
   }, [selectedProduct, activeSetIdx, activeColor, view]);
   // --- ÚJ SEO MOTOR VÉGE ---
-
-
-  // URL paraméter figyelő (Amikor az Árukeresőből vagy egy másolt linkről érkezik valaki)
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const productId = params.get('product');
-    const setId = params.get('set');
-    const colorId = params.get('color');
-    const viewParam = params.get('view');
-
-    if (productId) {
-      const foundProduct = [...PRODUCTS, ...ACCESSORIES].find(p => p.id === productId);
-      if (foundProduct) {
-        setSelectedProduct(foundProduct);
-
-        if (setId && foundProduct.sets) {
-          const setIndex = foundProduct.sets.findIndex(s => s.id === setId);
-          if (setIndex !== -1) setActiveSetIdx(setIndex);
-        } else {
-          setActiveSetIdx(0);
-        }
-
-        if (colorId && foundProduct.colors) {
-          const colorIndex = foundProduct.colors.findIndex(c => formatName(c.name) === colorId);
-          if (colorIndex !== -1) setActiveColor(colorIndex);
-        } else {
-          setActiveColor(0);
-        }
-      }
-    } else if (viewParam) {
-      setView(viewParam);
-    }
-  }, []);
 
   // Képkereső Effect
   useEffect(() => {
@@ -472,10 +466,7 @@ const App = () => {
     setCart([...cart, item]);
     setSelectedProduct(null);
     setView('checkout');
-    // URL megtisztítása kosárba rakás után
-    try {
-      window.history.replaceState({}, document.title, window.location.pathname);
-    } catch(e) {}
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const removeFromCart = (id) => setCart(cart.filter(item => item.id !== id));
@@ -486,10 +477,6 @@ const App = () => {
     setSelectedProduct(null);
     setOrderComplete(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // URL megtisztítása navigációkor
-    try {
-      window.history.replaceState({}, document.title, window.location.pathname);
-    } catch(e) {}
   };
 
   const openProduct = (product) => {
