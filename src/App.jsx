@@ -298,17 +298,23 @@ const App = () => {
     name: '', email: '', phone: '', zipCode: '', city: '', street: '', delivery: 'pickup', payment: 'cash_pickup', message: ''
   });
 
-  // --- ÚJ SEO ÉS CANONICAL TAG MOTOR ---
+  // --- ÚJ SEO ÉS CÍMSOR SZINKRONIZÁLÓ MOTOR ---
   useEffect(() => {
     let title = "Britax Römer Prémium Babakocsik | Babakocsi Szakáruház";
     let canonicalUrl = "https://babakocsiszakaruhaz.hu/";
+    let browserUrl = "/";
 
     // Ha van kiválasztott termék
     if (selectedProduct) {
       title = `${selectedProduct.name} | Babakocsi Szakáruház`;
-      canonicalUrl = `https://babakocsiszakaruhaz.hu/?product=${selectedProduct.id}`;
+      const setId = selectedProduct.sets ? (selectedProduct.sets[activeSetIdx]?.id || 'alone') : 'alone';
+      const colorId = formatName(selectedProduct.colors[activeColor]?.name || '');
+      
+      const queryString = `?product=${selectedProduct.id}&set=${setId}&color=${colorId}`;
+      canonicalUrl = `https://babakocsiszakaruhaz.hu/${queryString}`;
+      browserUrl = `/${queryString}`;
     } 
-    // Ha nem a főoldalon vagyunk (hanem pl. Kapcsolat, ÁSZF)
+    // Ha nem a főoldalon vagyunk
     else if (view !== 'home') {
       const viewTitles = {
         'accessories': 'Kiegészítők',
@@ -321,6 +327,8 @@ const App = () => {
         'cookies': 'Sütikezelés'
       };
       title = `${viewTitles[view] || ''} | Babakocsi Szakáruház`;
+      browserUrl = `/?view=${view}`;
+      canonicalUrl = `https://babakocsiszakaruhaz.hu${browserUrl}`;
     }
 
     // Böngésző fül címének átírása
@@ -334,15 +342,26 @@ const App = () => {
       document.head.appendChild(canonicalLink);
     }
     canonicalLink.setAttribute("href", canonicalUrl);
-  }, [selectedProduct, view]);
+
+    // Ezzel írjuk át a böngésző legfelső címsorát újratöltés nélkül!
+    try {
+      window.history.replaceState({}, title, browserUrl);
+    } catch (e) {
+      // Biztonsági okokból az előnézeti környezetben ez tiltva van
+      console.warn("URL frissítés biztonsági okokból blokkolva az előnézeti nézetben.");
+    }
+
+  }, [selectedProduct, activeSetIdx, activeColor, view]);
   // --- ÚJ SEO MOTOR VÉGE ---
 
-  // URL paraméter figyelő (Árukereső linkekhez)
+
+  // URL paraméter figyelő (Amikor az Árukeresőből vagy egy másolt linkről érkezik valaki)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('product');
     const setId = params.get('set');
     const colorId = params.get('color');
+    const viewParam = params.get('view');
 
     if (productId) {
       const foundProduct = [...PRODUCTS, ...ACCESSORIES].find(p => p.id === productId);
@@ -363,6 +382,8 @@ const App = () => {
           setActiveColor(0);
         }
       }
+    } else if (viewParam) {
+      setView(viewParam);
     }
   }, []);
 
@@ -452,7 +473,9 @@ const App = () => {
     setSelectedProduct(null);
     setView('checkout');
     // URL megtisztítása kosárba rakás után
-    window.history.replaceState({}, document.title, window.location.pathname);
+    try {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } catch(e) {}
   };
 
   const removeFromCart = (id) => setCart(cart.filter(item => item.id !== id));
@@ -464,7 +487,9 @@ const App = () => {
     setOrderComplete(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     // URL megtisztítása navigációkor
-    window.history.replaceState({}, document.title, window.location.pathname);
+    try {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } catch(e) {}
   };
 
   const openProduct = (product) => {
