@@ -7,7 +7,6 @@ const COLOR_DESCRIPTIONS = {
   LUX: "Fenntartható luxusszövetek és műbőr részletek"
 };
 
-// Relatív útvonal a Netlify public/images mappájához
 const IMAGE_BASE_URL = "/images";
 
 const formatName = (str) => str.toLowerCase().replace(/\s+/g, '-');
@@ -110,7 +109,7 @@ const PRODUCTS = [
       "Bolygósítható és rögzíthető első kerekek",
       "Könnyen, egy kézzel összecsukható, csukva marad és megáll önmagában",
       "Lapos fekvőpozíció és fokozatmentesen állítható háttámla",
-      "Állítható lábtartó (kb. 19 cm) az optimális fekvőpozícióhoz",
+      "Állítható lábtartó (kb. 19 cm) az optimális fekvőpozíhoz",
       "Extra nagy méretű kupola UV védelemmel és óriási szellőzőablakkal",
       "5 pontos, egyszerűen állítható biztonsági öv kényelmes vállpárnákkal",
       "Teleszkópos, állítható magasságú bőrhatású tolókar",
@@ -215,7 +214,7 @@ const ACCESSORIES = [
 ];
 
 const CONTACT_INFO = {
-  email: 'kid@kid.hu', phone: '+36-30-595-0055', address: '1112 Budapest, Ördögorom út 4.', hours: 'Hétfő - Péntek: 10:00 - 19:00, Szombat: 9:00 - 17:00'
+  email: 'kid@kid.hu', phone: '+36-30-595-0055', address: '1112 Budapest, Ördögorom út 4.', hours: 'Hétfő - Péntek: 10:00 - 19:00, Szombat: 10:00 - 17:00'
 };
 
 const formatPrice = (price) => new Intl.NumberFormat('hu-HU').format(price);
@@ -303,10 +302,27 @@ const App = () => {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('product');
+    const setId = params.get('set');
+    const colorId = params.get('color');
+
     if (productId) {
       const foundProduct = [...PRODUCTS, ...ACCESSORIES].find(p => p.id === productId);
       if (foundProduct) {
         setSelectedProduct(foundProduct);
+
+        if (setId && foundProduct.sets) {
+          const setIndex = foundProduct.sets.findIndex(s => s.id === setId);
+          if (setIndex !== -1) setActiveSetIdx(setIndex);
+        } else {
+          setActiveSetIdx(0);
+        }
+
+        if (colorId && foundProduct.colors) {
+          const colorIndex = foundProduct.colors.findIndex(c => formatName(c.name) === colorId);
+          if (colorIndex !== -1) setActiveColor(colorIndex);
+        } else {
+          setActiveColor(0);
+        }
       }
     }
   }, []);
@@ -396,6 +412,8 @@ const App = () => {
     setCart([...cart, item]);
     setSelectedProduct(null);
     setView('checkout');
+    // URL megtisztítása kosárba rakás után
+    window.history.replaceState({}, document.title, window.location.pathname);
   };
 
   const removeFromCart = (id) => setCart(cart.filter(item => item.id !== id));
@@ -406,6 +424,8 @@ const App = () => {
     setSelectedProduct(null);
     setOrderComplete(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    // URL megtisztítása navigációkor
+    window.history.replaceState({}, document.title, window.location.pathname);
   };
 
   const openProduct = (product) => {
@@ -475,7 +495,7 @@ const App = () => {
       <main className="pt-20 flex-grow">
         {selectedProduct ? (
           <div className="max-w-7xl mx-auto px-6 py-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <button onClick={() => setSelectedProduct(null)} className="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-blue-900 mb-12 transition-colors uppercase tracking-widest">
+            <button onClick={() => navigateTo('home')} className="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-blue-900 mb-12 transition-colors uppercase tracking-widest">
               <ChevronLeft className="w-4 h-4" /> Vissza a kínálathoz
             </button>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
@@ -731,7 +751,7 @@ const App = () => {
                 <div className="absolute top-0 left-0 w-full h-2 bg-blue-900"></div>
                 <div className="font-black text-xl mb-2">Személyes átvétel</div>
                 <div className="text-green-600 font-black uppercase tracking-widest text-sm mb-4">Ingyenes</div>
-                <p className="text-sm text-slate-600 font-medium">1112 Budapest, Ördögorom út 4.<br/>Hétfőtől péntekig 10-től 19h-ig, szombaton 9-17 h-ig</p>
+                <p className="text-sm text-slate-600 font-medium">1112 Budapest, Ördögorom út 4.<br/>Hétfőtől péntekig 10-től 19h-ig, szombaton 10-17 h-ig</p>
               </div>
               <div className="p-8 bg-white rounded-[2rem] border-2 border-slate-100 shadow-sm relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2 bg-green-500"></div>
@@ -902,7 +922,6 @@ const App = () => {
               <div className="absolute inset-0 opacity-50 bg-gradient-to-tr from-blue-950 via-slate-900 to-transparent z-10"></div>
               <div className="relative z-20 max-w-7xl mx-auto px-6 w-full text-white text-center md:text-left">
                 <div className="max-w-3xl">
-                  {/* Itt módosult a méretezés: text-4xl mobilra, sm:text-6xl tabletre, md:text-8xl asztali gépre */}
                   <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 tracking-tight leading-[0.9] break-words">
                     <span className="block text-2xl sm:text-3xl md:text-4xl text-blue-400 mb-4 tracking-widest uppercase font-bold">Britax Römer</span>
                     PRÉMIUM <br /><span className="text-blue-500 italic">BABAKOCSIK</span>
