@@ -43,7 +43,7 @@
   <product>
     <identifier>smile-5z-alone-carbon-black</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z - Carbon Black</name>
+    <name>Britax Römer SMILE 5Z (STYLE) - Carbon Black</name>
     <category>Babakocsi</category>
     <price>272990</price>
     <net_price>214953</net_price>
@@ -55,7 +55,7 @@
   <product>
     <identifier>smile-5z-essential-carbon-black</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z Essential set - Carbon Black</name>
+    <name>Britax Römer SMILE 5Z Essential set (STYLE) - Carbon Black</name>
     <category>Babakocsi</category>
     <price>272990</price>
     <net_price>214953</net_price>
@@ -68,7 +68,7 @@
   <product>
     <identifier>smile-5z-alone-mineral-grey</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z - Mineral Grey</name>
+    <name>Britax Römer SMILE 5Z (STYLE) - Mineral Grey</name>
     <category>Babakocsi</category>
     <price>272990</price>
     <net_price>214953</net_price>
@@ -80,7 +80,7 @@
   <product>
     <identifier>smile-5z-essential-mineral-grey</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z Essential set - Mineral Grey</name>
+    <name>Britax Römer SMILE 5Z Essential set (STYLE) - Mineral Grey</name>
     <category>Babakocsi</category>
     <price>272990</price>
     <net_price>214953</net_price>
@@ -93,7 +93,7 @@
   <product>
     <identifier>smile-5z-alone-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z - Teak</name>
+    <name>Britax Römer SMILE 5Z (STYLE) - Teak</name>
     <category>Babakocsi</category>
     <price>272990</price>
     <net_price>214953</net_price>
@@ -105,7 +105,7 @@
   <product>
     <identifier>smile-5z-essential-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z Essential set - Teak</name>
+    <name>Britax Römer SMILE 5Z Essential set (STYLE) - Teak</name>
     <category>Babakocsi</category>
     <price>272990</price>
     <net_price>214953</net_price>
@@ -118,7 +118,7 @@
   <product>
     <identifier>smile-5z-alone-harbor-blue</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z - Harbor Blue</name>
+    <name>Britax Römer SMILE 5Z (STYLE) - Harbor Blue</name>
     <category>Babakocsi</category>
     <price>272990</price>
     <net_price>214953</net_price>
@@ -130,7 +130,7 @@
   <product>
     <identifier>smile-5z-essential-harbor-blue</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z Essential set - Harbor Blue</name>
+    <name>Britax Römer SMILE 5Z Essential set (STYLE) - Harbor Blue</name>
     <category>Babakocsi</category>
     <price>272990</price>
     <net_price>214953</net_price>
@@ -294,7 +294,7 @@
   <product>
     <identifier>rio-alone-carbon-black</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO - Carbon Black</name>
+    <name>Britax Römer RIO (STYLE) - Carbon Black</name>
     <category>Babakocsi</category>
     <price>169990</price>
     <net_price>133850</net_price>
@@ -306,7 +306,7 @@
   <product>
     <identifier>rio-essential-carbon-black</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO Essential set - Carbon Black</name>
+    <name>Britax Römer RIO Essential set (STYLE) - Carbon Black</name>
     <category>Babakocsi</category>
     <price>268990</price>
     <net_price>211803</net_price>
@@ -318,7 +318,7 @@
   <product>
     <identifier>rio-comfort-carbon-black</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO Comfort set - Carbon Black</name>
+    <name>Britax Römer RIO Comfort set (STYLE) - Carbon Black</name>
     <category>Babakocsi</category>
     <price>383990</price>
     <net_price>302354</net_price>
@@ -330,7 +330,7 @@
   <product>
     <identifier>rio-comfort-plus-carbon-black</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO Comfort Plus set - Carbon Black</name>
+    <name>Britax Römer RIO Comfort Plus set (STYLE) - Carbon Black</name>
     <category>Babakocsi</category>
     <price>504990</price>
     <net_price>397630</net_price>
@@ -343,7 +343,7 @@
   <product>
     <identifier>rio-alone-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO - Teak</name>
+    <name>Britax Römer RIO (STYLE) - Teak</name>
     <category>Babakocsi</category>
     <price>169990</price>
     <net_price>133850</net_price>
@@ -355,7 +355,7 @@
   <product>
     <identifier>rio-essential-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO Essential set - Teak</name>
+    <name>Britax Römer RIO Essential set (STYLE) - Teak</name>
     <category>Babakocsi</category>
     <price>268990</price>
     <net_price>211803</net_price>
@@ -367,7 +367,7 @@
   <product>
     <identifier>rio-comfort-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO Comfort set - Teak</name>
+    <name>Britax Römer RIO Comfort set (STYLE) - Teak</name>
     <category>Babakocsi</category>
     <price>383990</price>
     <net_price>302354</net_price>
@@ -379,7 +379,7 @@
   <product>
     <identifier>rio-comfort-plus-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO Comfort Plus set - Teak</name>
+    <name>Britax Römer RIO Comfort Plus set (STYLE) - Teak</name>
     <category>Babakocsi</category>
     <price>504990</price>
     <net_price>397630</net_price>
@@ -493,7 +493,7 @@
   <product>
     <identifier>flylite-alone-carbon-black</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer FLYLITE - Carbon Black</name>
+    <name>Britax Römer FLYLITE (STYLE) - Carbon Black</name>
     <category>Babakocsi</category>
     <price>149990</price>
     <net_price>118102</net_price>
@@ -505,7 +505,7 @@
   <product>
     <identifier>flylite-alone-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer FLYLITE - Teak</name>
+    <name>Britax Römer FLYLITE (STYLE) - Teak</name>
     <category>Babakocsi</category>
     <price>149990</price>
     <net_price>118102</net_price>
@@ -517,7 +517,7 @@
   <product>
     <identifier>flylite-alone-sage-green</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer FLYLITE - Sage Green</name>
+    <name>Britax Römer FLYLITE (STYLE) - Sage Green</name>
     <category>Babakocsi</category>
     <price>149990</price>
     <net_price>118102</net_price>
@@ -546,7 +546,7 @@
   <product>
     <identifier>rio-cot-alone-carbon-black</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO Mózeskosár - Carbon Black</name>
+    <name>Britax Römer RIO Mózeskosár (STYLE) - Carbon Black</name>
     <category>Babakocsi kiegészítő</category>
     <price>99000</price>
     <net_price>77953</net_price>
@@ -558,7 +558,7 @@
   <product>
     <identifier>rio-cot-alone-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer RIO Mózeskosár - Teak</name>
+    <name>Britax Römer RIO Mózeskosár (STYLE) - Teak</name>
     <category>Babakocsi kiegészítő</category>
     <price>99000</price>
     <net_price>77953</net_price>
@@ -607,7 +607,7 @@
   <product>
     <identifier>smile-5z-cot-alone-carbon-black</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z Mózeskosár - Carbon Black</name>
+    <name>Britax Römer SMILE 5Z Mózeskosár (STYLE) - Carbon Black</name>
     <category>Babakocsi kiegészítő</category>
     <price>109000</price>
     <net_price>85827</net_price>
@@ -619,7 +619,7 @@
   <product>
     <identifier>smile-5z-cot-alone-harbor-blue</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z Mózeskosár - Harbor Blue</name>
+    <name>Britax Römer SMILE 5Z Mózeskosár (STYLE) - Harbor Blue</name>
     <category>Babakocsi kiegészítő</category>
     <price>109000</price>
     <net_price>85827</net_price>
@@ -631,7 +631,7 @@
   <product>
     <identifier>smile-5z-cot-alone-mineral-grey</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z Mózeskosár - Mineral Grey</name>
+    <name>Britax Römer SMILE 5Z Mózeskosár (STYLE) - Mineral Grey</name>
     <category>Babakocsi kiegészítő</category>
     <price>109000</price>
     <net_price>85827</net_price>
@@ -643,7 +643,7 @@
   <product>
     <identifier>smile-5z-cot-alone-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
-    <name>Britax Römer SMILE 5Z Mózeskosár - Teak</name>
+    <name>Britax Römer SMILE 5Z Mózeskosár (STYLE) - Teak</name>
     <category>Babakocsi kiegészítő</category>
     <price>109000</price>
     <net_price>85827</net_price>
