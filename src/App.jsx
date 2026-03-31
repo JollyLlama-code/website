@@ -7,7 +7,6 @@ const COLOR_DESCRIPTIONS = {
   LUX: "Fenntartható luxusszövetek és műbőr részletek"
 };
 
-// Relatív útvonal a Netlify public/images mappájához
 const IMAGE_BASE_URL = "/images";
 
 const formatName = (str) => str.toLowerCase().replace(/\s+/g, '-');
@@ -15,12 +14,12 @@ const formatName = (str) => str.toLowerCase().replace(/\s+/g, '-');
 const PRODUCTS = [
   {
     id: 'smile-5z',
-    name: 'SMILE 5Z',
+    name: 'Britax Römer SMILE 5Z',
     basePrice: 272990,
     rating: 4.9,
     reviews: 156,
     tagline: 'Minden évszakra. Minden terepre. Korlátok nélkül.',
-    description: 'A SMILE 5Z az eddigi legsokoldalúbb babakocsink. Akár a zsúfolt városi utcákon navigál, akár a természetet fedezi fel, a fejlett központi felfüggesztés és a kerekek zökkenőmentes utazást biztosítanak. Travel system: mózeskosárral vagy babahordozóval (Römer Baby-Safe Pro, 3 i-Size, 5Z2) már születéstől használható (a hordozó és mózes külön vásárolható). 2023-ban RedDot Design győztes modell.',
+    description: 'A Britax Römer SMILE 5Z az eddigi legsokoldalúbb babakocsink. Akár a zsúfolt városi utcákon navigál, akár a természetet fedezi fel, a fejlett központi felfüggesztés és a kerekek zökkenőmentes utazást biztosítanak. Travel system: mózeskosárral vagy babahordozóval (Römer Baby-Safe Pro, 3 i-Size, 5Z2) már születéstől használható (a hordozó és mózes külön vásárolható). 2023-ban RedDot Design győztes modell.',
     specs: {
       'Életkor': 'Születéstől 4 éves korig',
       'Max. teherbírás': '29 kg (Ülés: 22 kg, Kosár: 7 kg)',
@@ -46,7 +45,7 @@ const PRODUCTS = [
       { name: 'Warm Caramel', hex: '#a0522d', collection: 'LUX', extraPrice: { alone: 23000, essential: 23000, comfort: 72000, 'comfort-plus': 70700 }, availableSets: ['alone', 'comfort', 'comfort-plus'] }
     ],
     sets: [
-      { id: 'alone', name: 'SMILE 5Z', price: 272990, contents: 'Babakocsi önmagában', imageIndex: 0 },
+      { id: 'alone', name: 'Britax Römer SMILE 5Z', price: 272990, contents: 'Babakocsi önmagában', imageIndex: 0 },
       { id: 'essential', name: 'Essential set', price: 272990, originalPrice: 381990, contents: 'Babakocsi + SMILE 5Z Mózeskosár', imageIndex: 1 },
       { id: 'comfort', name: 'Comfort set', price: 476990, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó', imageIndex: 2 },
       { id: 'comfort-plus', name: 'Comfort Plus set', price: 596990, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó + Bázistalp', imageIndex: 3 }
@@ -71,12 +70,12 @@ const PRODUCTS = [
   },
   {
     id: 'rio',
-    name: 'RIO',
+    name: 'Britax Römer RIO',
     basePrice: 169990,
     rating: 4.7,
     reviews: 92,
     tagline: 'Stílus és kényelem a városi kalandokhoz.',
-    description: 'A RIO a modern szülők igényeire lett tervezve: rendkívül könnyű váz, agilis manőverezhetőség és prémium anyaghasználat jellemzi. Travel system: mózeskosárral vagy babahordozóval (Römer Baby-Safe Pro) már születéstől használható (a termékeket külön kell megvásárolni!).',
+    description: 'A Britax Römer RIO a modern szülők igényeire lett tervezve: rendkívül könnyű váz, agilis manőverezhetőség és prémium anyaghasználat jellemzi. Travel system: mózeskosárral vagy babahordozóval (Römer Baby-Safe Pro) már születéstől használható (a termékeket külön kell megvásárolni!).',
     specs: {
       'Életkor': 'Születéstől 4 éves korig',
       'Max. teherbírás': '27 kg (Ülés: 22 kg, Kosár: 5 kg)',
@@ -96,7 +95,7 @@ const PRODUCTS = [
       { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: { alone: 15000, essential: 25000, comfort: 38000, 'comfort-plus': 32500 } }
     ],
     sets: [
-      { id: 'alone', name: 'RIO', price: 169990, contents: 'Babakocsi önmagában', imageIndex: 0 },
+      { id: 'alone', name: 'Britax Römer RIO', price: 169990, contents: 'Babakocsi önmagában', imageIndex: 0 },
       { id: 'essential', name: 'Essential set', price: 268990, originalPrice: 388970, contents: 'Babakocsi + RIO Mózeskosár + Baby-Safe Core Hordozó + Bázistalp', imageIndex: 1 },
       { id: 'comfort', name: 'Comfort set', price: 383990, contents: 'Babakocsi + RIO Mózeskosár + BABY-SAFE Pro Hordozó', imageIndex: 2 },
       { id: 'comfort-plus', name: 'Comfort Plus set', price: 504990, contents: 'Babakocsi + RIO Mózeskosár + BABY-SAFE Pro hordozó + Bázistalp', imageIndex: 3 }
@@ -110,7 +109,7 @@ const PRODUCTS = [
       "Bolygósítható és rögzíthető első kerekek",
       "Könnyen, egy kézzel összecsukható, csukva marad és megáll önmagában",
       "Lapos fekvőpozíció és fokozatmentesen állítható háttámla",
-      "Állítható lábtartó (kb. 19 cm) az optimális fekvőpozícióhoz",
+      "Állítható lábtartó (kb. 19 cm) az optimális fekvőpozíhoz",
       "Extra nagy méretű kupola UV védelemmel és óriási szellőzőablakkal",
       "5 pontos, egyszerűen állítható biztonsági öv kényelmes vállpárnákkal",
       "Teleszkópos, állítható magasságú bőrhatású tolókar",
@@ -122,12 +121,12 @@ const PRODUCTS = [
   },
   {
     id: 'flylite',
-    name: 'FLYLITE',
+    name: 'Britax Römer FLYLITE',
     basePrice: 149990,
     rating: 4.8,
     reviews: 74,
     tagline: 'Az utazás szabadsága, súlytalanul.',
-    description: 'A FLYLITE a legkönnyebb utazó babakocsink, amely akár a repülőgépek fedélzetére is felvihető.',
+    description: 'A Britax Römer FLYLITE a legkönnyebb utazó babakocsink, amely akár a repülőgépek fedélzetére is felvihető.',
     specs: {
       'Életkor': '6 hónapos kortól kb. 4 éves korig',
       'Max. teherbírás': '28 kg (Ülés: 22 kg, Kosár: 6 kg)',
@@ -170,22 +169,22 @@ const PRODUCTS = [
 const ACCESSORIES = [
   {
     id: 'flylite-bag', 
-    name: 'Utazótáska – FLYLITE', 
+    name: 'Britax Römer FLYLITE Utazótáska', 
     price: 29990, 
     category: 'Táska', 
     compatible: 'FLYLITE', 
-    description: 'Kifejezetten utazáshoz tervezve, a FLYLITE utazótáska minden utazást még könnyedebbé tesz. Puha, párnázott és állítható pántjaival kényelmesen viselhető a háton, így a kezek szabadon maradnak, hogy a legfontosabb dolgokra koncentrálhasson. Könnyű és mosható, védi a babakocsit útközben, és minden utazást rugalmasabbá tesz.',
+    description: 'Kifejezetten utazáshoz tervezve, a Britax Römer FLYLITE utazótáska minden utazást még könnyedebbé tesz. Puha, párnázott és állítható pántjaival kényelmesen viselhető a háton, így a kezek szabadon maradnak, hogy a legfontosabb dolgokra koncentrálhasson. Könnyű és mosható, védi a babakocsit útközben, és minden utazást rugalmasabbá tesz.',
     colors: [
       { name: 'Black', hex: '#000000', extraPrice: 0 }
     ]
   },
   {
     id: 'rio-cot', 
-    name: 'Mózeskosár – RIO', 
+    name: 'Britax Römer RIO Mózeskosár', 
     price: 99000, 
     category: 'Mózeskosár', 
     compatible: 'RIO', 
-    description: 'Tartsa gyermekét közel magához, és válassza a gerincének legmegfelelőbb megoldást – a RIO magasra szerelt, puha párnázottságú mózeskosarában a baba vízszintesen fekhet, miközben a napernyő alatt hűvösben marad. Kánikulában nyissa ki a panoráma szellőző ablakokat, hogy még hűvösebb utazást biztosítson. Ha gyermekét kényelmesen elhelyezte, könnyedén eltávolíthatja a kosarat az vázról, és egy kézzel viheti, hogy ő tovább pihenhessen, Ön pedig szabadon végezheti el a többi szülői teendőt.',
+    description: 'Tartsa gyermekét közel magához, és válassza a gerincének legmegfelelőbb megoldást – a Britax Römer RIO magasra szerelt, puha párnázottságú mózeskosarában a baba vízszintesen fekhet, miközben a napernyő alatt hűvösben marad. Kánikulában nyissa ki a panoráma szellőző ablakokat, hogy még hűvösebb utazást biztosítson. Ha gyermekét kényelmesen elhelyezte, könnyedén eltávolíthatja a kosarat az vázról, és egy kézzel viheti, hogy ő tovább pihenhessen, Ön pedig szabadon végezheti el a többi szülői teendőt.',
     colors: [
       { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
       { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: 0 },
@@ -195,11 +194,11 @@ const ACCESSORIES = [
   },
   {
     id: 'smile-5z-cot', 
-    name: 'Mózeskosár – SMILE 5Z', 
+    name: 'Britax Römer SMILE 5Z Mózeskosár', 
     price: 109000, 
     category: 'Mózeskosár', 
     compatible: 'SMILE 5Z', 
-    description: 'Nemcsak az újszülötteknek van szükségük sok alvásra – ezért a tágas, lapos fekvőhelyzetet biztosító mózeskosár minden évszakban gondoskodik gyermeke kényelméről és biztonságáról, egészen addig, amíg el nem éri a 9 kg-os testsúlyt, vagy el nem kezd átfordulni. Puha és ölelő, ez a leghatékonyabb és legegészségesebb megoldás a hosszú közös sétákhoz. A cipzáras lábzsák hidegebb időben is melegen tartja a babát, és megkönnyíti a ki- és beemelést, míg a panoráma szellőzőablak lehetővé teszi, hogy a kicsi szemlélődjön, és élvezze a tavaszi és nyári lágy szellőket.',
+    description: 'Nemcsak az újszülötteknek van szükségük sok alvásra – ezért a tágas, lapos fekvőhelyzetet biztosító Britax Römer SMILE 5Z mózeskosár minden évszakban gondoskodik gyermeke kényelméről és biztonságáról, egészen addig, amíg el nem éri a 9 kg-os testsúlyt, vagy el nem kezd átfordulni. Puha és ölelő, ez a leghatékonyabb és legegészségesebb megoldás a hosszú közös sétákhoz. A cipzáras lábzsák hidegebb időben is melegen tartja a babát, és megkönnyíti a ki- és beemelést, míg a panoráma szellőzőablak lehetővé teszi, hogy a kicsi szemlélődjön, és élvezze a tavaszi és nyári lágy szellőket.',
     colors: [
       { name: 'Space Black', hex: '#0a0a0a', collection: 'CLASSIC', extraPrice: 0 },
       { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: 0 },
@@ -215,7 +214,7 @@ const ACCESSORIES = [
 ];
 
 const CONTACT_INFO = {
-  email: 'kid@kid.hu', phone: '+36-30-595-0055', address: '1112 Budapest, Ördögorom út 4.', hours: 'Hétfő - Péntek: 10:00 - 19:00, Szombat: 9:00 - 17:00'
+  email: 'kid@kid.hu', phone: '+36-30-595-0055', address: '1112 Budapest, Ördögorom út 4.', hours: 'Hétfő - Péntek: 10:00 - 19:00, Szombat: 10:00 - 17:00'
 };
 
 const formatPrice = (price) => new Intl.NumberFormat('hu-HU').format(price);
@@ -248,7 +247,7 @@ const CatalogImage = ({ product }) => {
   const firstSet = product.sets ? 'alone' : 'alone';
   const src = `${IMAGE_BASE_URL}/${product.id}-${firstSet}-${firstColor}-01.jpg`;
 
-  if (product.category || imgError) {
+  if (imgError) {
     return product.category ? <BagIcon color={product.colors[0]?.hex} /> : <StrollerIcon color={product.colors[0]?.hex} />;
   }
   return <img src={src} onError={() => setImgError(true)} className="w-full h-full object-contain p-4 mix-blend-multiply" alt={product.name} />;
@@ -284,10 +283,38 @@ const LegalSection = ({ title, children }) => (
 );
 
 const App = () => {
-  const [view, setView] = useState('home');
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [activeColor, setActiveColor] = useState(0);
-  const [activeSetIdx, setActiveSetIdx] = useState(0);
+  // KEZDŐÁLLAPOT BETÖLTÉSE AZ URL-BŐL (Azonnali link-olvasás még kirajzolás előtt!)
+  const [initialState] = useState(() => {
+    const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+    const productId = params.get('product');
+    const viewParam = params.get('view');
+    
+    let initProduct = null;
+    let initSetIdx = 0;
+    let initColorIdx = 0;
+
+    if (productId) {
+      initProduct = [...PRODUCTS, ...ACCESSORIES].find(p => p.id === productId) || null;
+      if (initProduct) {
+        const setId = params.get('set');
+        if (setId && initProduct.sets) {
+          const idx = initProduct.sets.findIndex(s => s.id === setId);
+          if (idx !== -1) initSetIdx = idx;
+        }
+        const colorId = params.get('color');
+        if (colorId && initProduct.colors) {
+          const idx = initProduct.colors.findIndex(c => formatName(c.name) === colorId);
+          if (idx !== -1) initColorIdx = idx;
+        }
+      }
+    }
+    return { initProduct, initSetIdx, initColorIdx, initView: viewParam || 'home' };
+  });
+
+  const [view, setView] = useState(initialState.initView);
+  const [selectedProduct, setSelectedProduct] = useState(initialState.initProduct);
+  const [activeColor, setActiveColor] = useState(initialState.initColorIdx);
+  const [activeSetIdx, setActiveSetIdx] = useState(initialState.initSetIdx);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
   
   const [validUrls, setValidUrls] = useState([]);
@@ -299,12 +326,67 @@ const App = () => {
     name: '', email: '', phone: '', zipCode: '', city: '', street: '', delivery: 'pickup', payment: 'cash_pickup', message: ''
   });
 
-  // Gyorsított (párhuzamos) intelligens képkereső Effect
+  // --- ÚJ SEO ÉS CÍMSOR SZINKRONIZÁLÓ MOTOR ---
+  useEffect(() => {
+    let title = "Britax Römer Prémium Babakocsik | Babakocsi Szakáruház";
+    let canonicalUrl = "https://babakocsiszakaruhaz.hu/";
+    let browserUrl = "/";
+
+    // Ha van kiválasztott termék
+    if (selectedProduct) {
+      title = `${selectedProduct.name} | Babakocsi Szakáruház`;
+      const setId = selectedProduct.sets ? (selectedProduct.sets[activeSetIdx]?.id || 'alone') : 'alone';
+      const colorId = formatName(selectedProduct.colors[activeColor]?.name || '');
+      
+      const queryString = `?product=${selectedProduct.id}&set=${setId}&color=${colorId}`;
+      canonicalUrl = `https://babakocsiszakaruhaz.hu/${queryString}`;
+      browserUrl = `/${queryString}`;
+    } 
+    // Ha nem a főoldalon vagyunk
+    else if (view !== 'home') {
+      const viewTitles = {
+        'accessories': 'Kiegészítők',
+        'contact': 'Kapcsolat',
+        'checkout': 'Pénztár',
+        'aszf': 'ÁSZF',
+        'privacy': 'Adatvédelmi Tájékoztató',
+        'impressum': 'Impresszum',
+        'shipping': 'Szállítási információk',
+        'cookies': 'Sütikezelés'
+      };
+      title = `${viewTitles[view] || ''} | Babakocsi Szakáruház`;
+      browserUrl = `/?view=${view}`;
+      canonicalUrl = `https://babakocsiszakaruhaz.hu${browserUrl}`;
+    }
+
+    // Böngésző fül címének átírása
+    document.title = title;
+
+    // Google Canonical (eredeti URL) tag frissítése
+    let canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", canonicalUrl);
+
+    // Ezzel írjuk át a böngésző legfelső címsorát újratöltés nélkül!
+    try {
+      window.history.replaceState({}, title, browserUrl);
+    } catch (e) {
+      // Biztonsági okokból az előnézeti környezetben ez tiltva van
+    }
+
+  }, [selectedProduct, activeSetIdx, activeColor, view]);
+  // --- ÚJ SEO MOTOR VÉGE ---
+
+  // Képkereső Effect
   useEffect(() => {
     let isMounted = true;
     
     const loadImages = async () => {
-      if (!selectedProduct || selectedProduct.category) {
+      if (!selectedProduct) {
         setValidUrls([]);
         return;
       }
@@ -384,6 +466,7 @@ const App = () => {
     setCart([...cart, item]);
     setSelectedProduct(null);
     setView('checkout');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const removeFromCart = (id) => setCart(cart.filter(item => item.id !== id));
@@ -463,7 +546,7 @@ const App = () => {
       <main className="pt-20 flex-grow">
         {selectedProduct ? (
           <div className="max-w-7xl mx-auto px-6 py-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <button onClick={() => setSelectedProduct(null)} className="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-blue-900 mb-12 transition-colors uppercase tracking-widest">
+            <button onClick={() => navigateTo('home')} className="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-blue-900 mb-12 transition-colors uppercase tracking-widest">
               <ChevronLeft className="w-4 h-4" /> Vissza a kínálathoz
             </button>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
@@ -719,7 +802,7 @@ const App = () => {
                 <div className="absolute top-0 left-0 w-full h-2 bg-blue-900"></div>
                 <div className="font-black text-xl mb-2">Személyes átvétel</div>
                 <div className="text-green-600 font-black uppercase tracking-widest text-sm mb-4">Ingyenes</div>
-                <p className="text-sm text-slate-600 font-medium">1112 Budapest, Ördögorom út 4.<br/>Hétfőtől péntekig 10-től 19h-ig, szombaton 9-17 h-ig</p>
+                <p className="text-sm text-slate-600 font-medium">1112 Budapest, Ördögorom út 4.<br/>Hétfőtől péntekig 10-től 19h-ig, szombaton 10-17 h-ig</p>
               </div>
               <div className="p-8 bg-white rounded-[2rem] border-2 border-slate-100 shadow-sm relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2 bg-green-500"></div>
@@ -890,8 +973,10 @@ const App = () => {
               <div className="absolute inset-0 opacity-50 bg-gradient-to-tr from-blue-950 via-slate-900 to-transparent z-10"></div>
               <div className="relative z-20 max-w-7xl mx-auto px-6 w-full text-white text-center md:text-left">
                 <div className="max-w-3xl">
-                  {/* Itt módosult a méretezés: text-4xl mobilra, sm:text-6xl tabletre, md:text-8xl asztali gépre */}
-                  <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 tracking-tight leading-[0.9] break-words">PRÉMIUM <br /><span className="text-blue-500 italic">BABAKOCSIK</span></h1>
+                  <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 tracking-tight leading-[0.9] break-words">
+                    <span className="block text-2xl sm:text-3xl md:text-4xl text-blue-400 mb-4 tracking-widest uppercase font-bold">Britax Römer</span>
+                    PRÉMIUM <br /><span className="text-blue-500 italic">BABAKOCSIK</span>
+                  </h1>
                   <p className="text-xl md:text-2xl mb-10 text-slate-300 max-w-xl font-light leading-relaxed mx-auto md:mx-0">Német minőség, amely generációk óta szolgálja és kényezteti a legdrágább kincsünket.</p>
                   <button onClick={() => document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })} className="bg-blue-600 text-white px-10 py-5 rounded-full font-bold hover:bg-blue-500 transition-all flex items-center gap-3 shadow-xl shadow-blue-600/20 mx-auto md:mx-0">Kollekció megtekintése <ChevronRight className="w-5 h-5" /></button>
                   
