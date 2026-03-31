@@ -89,6 +89,18 @@
     <delivery_time>2-3 nap</delivery_time>
     <delivery_cost>FREE</delivery_cost>
   </product>
+  <product>
+    <identifier>smile-5z-comfort-mineral-grey</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort set (STYLE) - Mineral Grey</name>
+    <category>Babakocsi</category>
+    <price>381990</price>
+    <net_price>300780</net_price>
+    <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort&amp;color=mineral-grey</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-mineral-grey-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>FREE</delivery_cost>
+  </product>
 
   <product>
     <identifier>smile-5z-alone-teak</identifier>
@@ -111,6 +123,18 @@
     <net_price>214953</net_price>
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=essential&amp;color=teak</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-essential-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>FREE</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort set (STYLE) - Teak</name>
+    <category>Babakocsi</category>
+    <price>381990</price>
+    <net_price>300780</net_price>
+    <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort&amp;color=teak</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-teak-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
     <delivery_cost>FREE</delivery_cost>
   </product>
@@ -495,8 +519,8 @@
     <manufacturer>Britax Römer</manufacturer>
     <name>Britax Römer FLYLITE (STYLE) - Carbon Black</name>
     <category>Babakocsi</category>
-    <price>149990</price>
-    <net_price>118102</net_price>
+    <price>127990</price>
+    <net_price>100780</net_price>
     <product_url>https://babakocsiszakaruhaz.hu/?product=flylite&amp;color=carbon-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/flylite-alone-carbon-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
@@ -507,8 +531,8 @@
     <manufacturer>Britax Römer</manufacturer>
     <name>Britax Römer FLYLITE (STYLE) - Teak</name>
     <category>Babakocsi</category>
-    <price>149990</price>
-    <net_price>118102</net_price>
+    <price>127990</price>
+    <net_price>100780</net_price>
     <product_url>https://babakocsiszakaruhaz.hu/?product=flylite&amp;color=teak</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/flylite-alone-teak-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
@@ -519,8 +543,8 @@
     <manufacturer>Britax Römer</manufacturer>
     <name>Britax Römer FLYLITE (STYLE) - Sage Green</name>
     <category>Babakocsi</category>
-    <price>149990</price>
-    <net_price>118102</net_price>
+    <price>127990</price>
+    <net_price>100780</net_price>
     <product_url>https://babakocsiszakaruhaz.hu/?product=flylite&amp;color=sage-green</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/flylite-alone-sage-green-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
