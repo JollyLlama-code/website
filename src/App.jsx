@@ -36,8 +36,8 @@ const PRODUCTS = [
     colors: [
       { name: 'Galaxy Black', hex: '#0a0a0a', collection: 'CLASSIC', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'comfort', 'comfort-plus'] },
       { name: 'Carbon Black', hex: '#1a1a1a', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'essential'] },
-      { name: 'Mineral Grey', hex: '#71717a', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'essential'] },
-      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'essential'] },
+      { name: 'Mineral Grey', hex: '#71717a', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: -95000, 'comfort-plus': 0 }, availableSets: ['alone', 'essential', 'comfort'] },
+      { name: 'Teak', hex: '#4d3a2b', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: -95000, 'comfort-plus': 0 }, availableSets: ['alone', 'essential', 'comfort'] },
       { name: 'Harbor Blue', hex: '#1e3a8a', collection: 'STYLE', extraPrice: { alone: 0, essential: 0, comfort: 0, 'comfort-plus': 0 }, availableSets: ['alone', 'essential'] },
       { name: 'Soft Taupe', hex: '#b5a695', collection: 'LUX', extraPrice: { alone: 23000, essential: 23000, comfort: 72000, 'comfort-plus': 70700 }, availableSets: ['alone', 'comfort', 'comfort-plus'] },
       { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: { alone: 23000, essential: 23000, comfort: 72000, 'comfort-plus': 70700 }, availableSets: ['alone', 'comfort', 'comfort-plus'] },
@@ -47,7 +47,7 @@ const PRODUCTS = [
     sets: [
       { id: 'alone', name: 'Britax Römer SMILE 5Z', price: 272990, contents: 'Babakocsi önmagában', imageIndex: 0 },
       { id: 'essential', name: 'Essential set', price: 272990, originalPrice: 381990, contents: 'Babakocsi + SMILE 5Z Mózeskosár', imageIndex: 1 },
-      { id: 'comfort', name: 'Comfort set', price: 476990, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó', imageIndex: 2 },
+      { id: 'comfort', name: 'Comfort set', price: 476990, originalPrice: 516980, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó', imageIndex: 2 },
       { id: 'comfort-plus', name: 'Comfort Plus set', price: 596990, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó + Bázistalp', imageIndex: 3 }
     ],
     generalData: [
@@ -122,7 +122,9 @@ const PRODUCTS = [
   {
     id: 'flylite',
     name: 'Britax Römer FLYLITE',
-    basePrice: 149990,
+    basePrice: 127990,
+    originalPrice: 149990,
+    badge: 'AKCIÓ',
     rating: 4.8,
     reviews: 74,
     tagline: 'Az utazás szabadsága, súlytalanul.',
@@ -584,14 +586,19 @@ const App = () => {
               {/* ÚJRATERVEZETT JOBB OLDALI SÁV */}
               <div className="flex flex-col gap-8">
                 <div>
+                  {selectedProduct.badge && (
+                    <span className="inline-block bg-red-600 text-white text-[10px] font-black uppercase tracking-widest py-1.5 px-3 rounded-full shadow-sm mb-4">{selectedProduct.badge}</span>
+                  )}
                   <h1 className="text-5xl font-black mb-2 tracking-tight">{selectedProduct.name}</h1>
                   <p className="text-3xl font-black text-blue-900 flex items-center">
                     {(() => {
-                      const origPrice = selectedProduct.sets?.[activeSetIdx]?.originalPrice;
+                      const origPrice = selectedProduct.sets ? selectedProduct.sets[activeSetIdx]?.originalPrice : selectedProduct.originalPrice;
                       if (origPrice) {
                         const ep = selectedProduct.colors[activeColor]?.extraPrice;
                         const extra = typeof ep === 'object' ? (ep[activeSetId] || 0) : (ep || 0);
-                        return <span className="text-xl text-slate-400 line-through mr-3">{formatPrice(origPrice + extra)} Ft</span>;
+                        // Csak a felárat (LUX) adjuk hozzá az áthúzott árhoz, a kedvezményeket (negatív érték) ne!
+                        const displayOrig = extra > 0 ? origPrice + extra : origPrice;
+                        return <span className="text-xl text-slate-400 line-through mr-3">{formatPrice(displayOrig)} Ft</span>;
                       }
                       return null;
                     })()}
@@ -625,7 +632,10 @@ const App = () => {
                             <div className="flex justify-between items-center w-full mb-1">
                               <span className={`font-bold text-sm ${activeSetIdx === idx ? 'text-blue-900' : 'text-slate-700'}`}>{set.name}</span>
                               <div className="text-right">
-                                {set.originalPrice && <span className="text-xs text-slate-400 line-through block">{formatPrice(set.originalPrice + btnExtraPrice)} Ft</span>}
+                                {set.originalPrice && (() => {
+                                  const displayOrig = btnExtraPrice > 0 ? set.originalPrice + btnExtraPrice : set.originalPrice;
+                                  return <span className="text-xs text-slate-400 line-through block">{formatPrice(displayOrig)} Ft</span>;
+                                })()}
                                 <span className="font-black text-sm">{formatPrice(set.price + btnExtraPrice)} Ft</span>
                               </div>
                             </div>
@@ -1004,10 +1014,23 @@ const App = () => {
                 {PRODUCTS.map((product) => (
                   <div key={product.id} className="group flex flex-col cursor-pointer" onClick={() => openProduct(product)}>
                     <div className="relative aspect-[3/4] bg-slate-50 rounded-[2rem] flex items-center justify-center overflow-hidden mb-6 group-hover:shadow-2xl transition-all duration-500">
+                       {product.badge && (
+                         <div className="absolute top-6 left-6 bg-red-600 text-white text-xs font-black uppercase tracking-widest py-2 px-4 rounded-full z-10 shadow-lg">
+                           {product.badge}
+                         </div>
+                       )}
                        <CatalogImage product={product} />
                     </div>
                     <div className="px-2">
-                      <div className="flex justify-between items-center mb-2"><h3 className="text-2xl font-extrabold">{product.name}</h3><span className="font-black text-blue-900">{formatPrice(product.basePrice)} Ft-tól</span></div>
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-2xl font-extrabold pr-2">{product.name}</h3>
+                        <div className="text-right flex-shrink-0">
+                          {product.originalPrice && (
+                            <span className="block text-sm text-slate-400 line-through mb-1">{formatPrice(product.originalPrice)} Ft</span>
+                          )}
+                          <span className="font-black text-blue-900 block">{formatPrice(product.basePrice)} {product.sets ? 'Ft-tól' : 'Ft'}</span>
+                        </div>
+                      </div>
                       <p className="text-slate-500 font-medium">{product.tagline}</p>
                     </div>
                   </div>
@@ -1054,7 +1077,7 @@ const App = () => {
               <p className="text-slate-400 font-medium flex items-center gap-3"><Clock className="w-4 h-4" /> {CONTACT_INFO.hours}</p>
             </div>
           </div>
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 border-t border-slate-900 pt-12 text-center md:text-left">© 2026 Britax Römer Premium Store Hungary.</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 border-t border-slate-900 pt-12 text-center md:text-left">© 2026 Babakocsiszakaruhaz minden jog fenntartva</p>
         </div>
       </footer>
     </div>
