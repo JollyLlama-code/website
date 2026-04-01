@@ -13,7 +13,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=alone&amp;color=galaxy-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-galaxy-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-galaxy-black</identifier>
@@ -25,7 +25,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort&amp;color=galaxy-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-galaxy-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-plus-galaxy-black</identifier>
@@ -37,7 +37,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort-plus&amp;color=galaxy-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-galaxy-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -50,7 +50,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=alone&amp;color=carbon-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-carbon-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-essential-carbon-black</identifier>
@@ -62,7 +62,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=essential&amp;color=carbon-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-essential-carbon-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -75,7 +75,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=alone&amp;color=mineral-grey</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-mineral-grey-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-essential-mineral-grey</identifier>
@@ -87,7 +87,19 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=essential&amp;color=mineral-grey</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-essential-mineral-grey-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-mineral-grey</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort set (STYLE) - Mineral Grey</name>
+    <category>Babakocsi</category>
+    <price>381990</price>
+    <net_price>300780</net_price>
+    <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort&amp;color=mineral-grey</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-mineral-grey-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -100,7 +112,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=alone&amp;color=teak</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-teak-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-essential-teak</identifier>
@@ -112,7 +124,19 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=essential&amp;color=teak</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-essential-teak-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
+  </product>
+  <product>
+    <identifier>smile-5z-comfort-teak</identifier>
+    <manufacturer>Britax Römer</manufacturer>
+    <name>Britax Römer SMILE 5Z Comfort set (STYLE) - Teak</name>
+    <category>Babakocsi</category>
+    <price>381990</price>
+    <net_price>300780</net_price>
+    <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort&amp;color=teak</product_url>
+    <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-teak-01.jpg</image_url>
+    <delivery_time>2-3 nap</delivery_time>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -125,7 +149,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=alone&amp;color=harbor-blue</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-harbor-blue-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-essential-harbor-blue</identifier>
@@ -137,7 +161,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=essential&amp;color=harbor-blue</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-essential-harbor-blue-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -150,7 +174,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=alone&amp;color=soft-taupe</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-soft-taupe-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-soft-taupe</identifier>
@@ -162,7 +186,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort&amp;color=soft-taupe</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-soft-taupe-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-plus-soft-taupe</identifier>
@@ -174,7 +198,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort-plus&amp;color=soft-taupe</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-soft-taupe-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -187,7 +211,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=alone&amp;color=urban-olive</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-urban-olive-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-urban-olive</identifier>
@@ -199,7 +223,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort&amp;color=urban-olive</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-urban-olive-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-plus-urban-olive</identifier>
@@ -211,7 +235,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort-plus&amp;color=urban-olive</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-urban-olive-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -224,7 +248,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=alone&amp;color=linen-grey</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-linen-grey-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-linen-grey</identifier>
@@ -236,7 +260,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort&amp;color=linen-grey</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-linen-grey-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-plus-linen-grey</identifier>
@@ -248,7 +272,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort-plus&amp;color=linen-grey</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-linen-grey-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -261,7 +285,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=alone&amp;color=warm-caramel</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-alone-warm-caramel-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-warm-caramel</identifier>
@@ -273,7 +297,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort&amp;color=warm-caramel</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-warm-caramel-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>smile-5z-comfort-plus-warm-caramel</identifier>
@@ -285,7 +309,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=smile-5z&amp;set=comfort-plus&amp;color=warm-caramel</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/smile-5z-comfort-plus-warm-caramel-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <!-- ========================================== -->
@@ -301,7 +325,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=alone&amp;color=carbon-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-alone-carbon-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-essential-carbon-black</identifier>
@@ -313,7 +337,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=essential&amp;color=carbon-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-essential-carbon-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-comfort-carbon-black</identifier>
@@ -325,7 +349,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=comfort&amp;color=carbon-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-carbon-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-comfort-plus-carbon-black</identifier>
@@ -337,7 +361,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=comfort-plus&amp;color=carbon-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-plus-carbon-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -350,7 +374,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=alone&amp;color=teak</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-alone-teak-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-essential-teak</identifier>
@@ -362,7 +386,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=essential&amp;color=teak</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-essential-teak-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-comfort-teak</identifier>
@@ -374,7 +398,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=comfort&amp;color=teak</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-teak-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-comfort-plus-teak</identifier>
@@ -386,7 +410,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=comfort-plus&amp;color=teak</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-plus-teak-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -399,7 +423,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=alone&amp;color=soft-taupe</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-alone-soft-taupe-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-essential-soft-taupe</identifier>
@@ -411,7 +435,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=essential&amp;color=soft-taupe</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-essential-soft-taupe-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-comfort-soft-taupe</identifier>
@@ -423,7 +447,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=comfort&amp;color=soft-taupe</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-soft-taupe-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-comfort-plus-soft-taupe</identifier>
@@ -435,7 +459,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=comfort-plus&amp;color=soft-taupe</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-plus-soft-taupe-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <product>
@@ -448,7 +472,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=alone&amp;color=urban-olive</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-alone-urban-olive-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-essential-urban-olive</identifier>
@@ -460,7 +484,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=essential&amp;color=urban-olive</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-essential-urban-olive-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-comfort-urban-olive</identifier>
@@ -472,7 +496,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=comfort&amp;color=urban-olive</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-urban-olive-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>rio-comfort-plus-urban-olive</identifier>
@@ -484,7 +508,7 @@
     <product_url>https://babakocsiszakaruhaz.hu/?product=rio&amp;set=comfort-plus&amp;color=urban-olive</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/rio-comfort-plus-urban-olive-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <!-- ========================================== -->
@@ -495,36 +519,36 @@
     <manufacturer>Britax Römer</manufacturer>
     <name>Britax Römer FLYLITE (STYLE) - Carbon Black</name>
     <category>Babakocsi</category>
-    <price>149990</price>
-    <net_price>118102</net_price>
+    <price>127990</price>
+    <net_price>100780</net_price>
     <product_url>https://babakocsiszakaruhaz.hu/?product=flylite&amp;color=carbon-black</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/flylite-alone-carbon-black-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>flylite-alone-teak</identifier>
     <manufacturer>Britax Römer</manufacturer>
     <name>Britax Römer FLYLITE (STYLE) - Teak</name>
     <category>Babakocsi</category>
-    <price>149990</price>
-    <net_price>118102</net_price>
+    <price>127990</price>
+    <net_price>100780</net_price>
     <product_url>https://babakocsiszakaruhaz.hu/?product=flylite&amp;color=teak</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/flylite-alone-teak-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
   <product>
     <identifier>flylite-alone-sage-green</identifier>
     <manufacturer>Britax Römer</manufacturer>
     <name>Britax Römer FLYLITE (STYLE) - Sage Green</name>
     <category>Babakocsi</category>
-    <price>149990</price>
-    <net_price>118102</net_price>
+    <price>127990</price>
+    <net_price>100780</net_price>
     <product_url>https://babakocsiszakaruhaz.hu/?product=flylite&amp;color=sage-green</product_url>
     <image_url>https://babakocsiszakaruhaz.hu/images/flylite-alone-sage-green-01.jpg</image_url>
     <delivery_time>2-3 nap</delivery_time>
-    <delivery_cost>0</delivery_cost>
+    <delivery_cost>FREE</delivery_cost>
   </product>
 
   <!-- ========================================== -->
