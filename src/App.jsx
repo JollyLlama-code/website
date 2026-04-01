@@ -7,6 +7,14 @@ const COLOR_DESCRIPTIONS = {
   LUX: "Fenntartható luxusszövetek és műbőr részletek"
 };
 
+const BABY_SAFE_CORE_COLORS = [
+  { name: 'Space Black', hex: '#111111' },
+  { name: 'Ocean', hex: '#164e63' },
+  { name: 'Chai', hex: '#d6d3d1' },
+  { name: 'Midnight Grey', hex: '#374151' },
+  { name: 'Frost Grey', hex: '#9ca3af' }
+];
+
 const IMAGE_BASE_URL = "/images";
 
 const formatName = (str) => str.toLowerCase().replace(/\s+/g, '-');
@@ -20,6 +28,26 @@ const PRODUCTS = [
     reviews: 156,
     tagline: 'Minden évszakra. Minden terepre. Korlátok nélkül.',
     description: 'A Britax Römer SMILE 5Z az eddigi legsokoldalúbb babakocsink. Akár a zsúfolt városi utcákon navigál, akár a természetet fedezi fel, a fejlett központi felfüggesztés és a kerekek zökkenőmentes utazást biztosítanak. Travel system: mózeskosárral vagy babahordozóval (Römer Baby-Safe Pro, 3 i-Size, 5Z2) már születéstől használható (a hordozó és mózes külön vásárolható). 2023-ban RedDot Design győztes modell.',
+    features: [
+      {
+        title: 'KALAND MINDEN ÉVSZAKBAN',
+        description: 'Egyik percben meleg és napos, a másikban hideg és esős idő? A SMILE 5Z-vel minden időjárási körülményre felkészülhet. Az UPF 50+ napellenző megbízható védelmet nyújt a napsütés ellen, míg a szellőzőablakok segítségével szabályozhatja a hőmérsékletet, friss levegőt biztosítva gyermekének. Ugyanakkor az extra nagy kupola és a szuperpuha, meleg bélés megvédi a babát a hidegtől, a széltől és az esőtől. Ráadásul a SMILE 5Z rendkívül stílusos is – így Ön mindig ízlésesen jelenhet meg.',
+        mediaType: 'image',
+        mediaSrc: '/images/smile-5z-feature-01.jpg'
+      },
+      {
+        title: 'UTAZÁS MINDEN TEREPEN',
+        description: 'Macskaköves utcákon haladna, vagy erdei ösvényen zötykölődne végig? Ne aggódjon – a SMILE 5Z fejlett központi felfüggesztése és kiegyensúlyozott első kerekei sima utazást biztosítanak gyermekének. Városi környezetben közlekedik? A keskeny kialakítás és a rendkívül rugalmas, forgatható első kerekek révén könnyedén manőverezhet a szűk helyeken is. Ráadásul a defektmentes, strapabíró kerekeknek köszönhetően a leeresztett gumiabroncsokkal sem kell többé bajlódnia.',
+        mediaType: 'video',
+        mediaSrc: 'https://www.youtube.com/embed/iNvOWxw2yG0'
+      },
+      {
+        title: 'EGYÜTT NŐ GYERMEKÉVEL',
+        description: 'A gyermekek gyorsan nőnek, ezért a SMILE 5Z is együtt nő velük – születéstől egészen 22 kg-ig (körülbelül 4 éves korig). A mózeskosár, a babahordozó és a sportülés között könnyedén válthat, így gyermeke mindig a lehető legnagyobb kényelemben utazhat, és az utazórendszer hosszú távon is kiszolgálja Önöket. Ráadásul a BABY-SAFE PRO* babahordozó rögzítéséhez szükséges adapterek már a csomag részét képezik. Egyszerű, ugye?\n\n*Az adapterek a BABY-SAFE 3 i-SIZE babahordozóval is kompatibilisek.',
+        mediaType: 'image',
+        mediaSrc: '/images/smile-5z-feature-02.gif'
+      }
+    ],
     specs: {
       'Életkor': 'Születéstől 4 éves korig',
       'Max. teherbírás': '29 kg (Ülés: 22 kg, Kosár: 7 kg)',
@@ -76,6 +104,26 @@ const PRODUCTS = [
     reviews: 92,
     tagline: 'Stílus és kényelem a városi kalandokhoz.',
     description: 'A Britax Römer RIO a modern szülők igényeire lett tervezve: rendkívül könnyű váz, agilis manőverezhetőség és prémium anyaghasználat jellemzi. Travel system: mózeskosárral vagy babahordozóval (Römer Baby-Safe Pro) már születéstől használható (a termékeket külön kell megvásárolni!).',
+    features: [
+      {
+        title: 'ÉLVEZZE A VÁROSI ÉLETSTÍLUST',
+        description: 'Sétáljon végig a szűk utcákon a legkompaktabb utazó rendszerünkkel: mindössze 55 cm széles és szuperkönnyű, csupán 7 kg (10 kg a sportüléssel együtt), az egyszerűen kezelhető RIO tökéletesen illeszkedik dinamikus városi életstílusához. Induljon a helyi bisztróba, vagy látogasson meg barátokat a város másik felén! Helyet kell spórolnia? Csak egy kézzel összecsukhatja a RIO-t, majd könnyedén felemelheti a hordozófogantyúval, hogy könnyedén boldoguljon a lépcsőkkel vagy a metróval.',
+        mediaType: 'image',
+        mediaSrc: '/images/rio-feature-01.jpg'
+      },
+      {
+        title: 'KÖNNYED MEGOLDÁS A VÁROSI MINDENNAPOKRA',
+        description: 'Szeresse a város minden utcáját: a bolygókerekek és a könnyű, kompakt kialakítás lehetővé teszik, hogy a RIO-t olyan könnyedén tolhassa, hogy még egy csokor virágot is vihet a kezében. Ha vásárolni megy, akár 5 kg élelmiszert és babaápolási kelléket is tárolhat az egyszerűen hozzáférhető kosárban. Amikor a kicsi készen áll, hogy felfedezze a város zsongását, a RIO szuper rugalmas, így könnyedén válthat a mózeskosár, a babahordozó és a sportülés között (az adaptereket mellékeltük).',
+        mediaType: 'video',
+        mediaSrc: 'https://www.youtube.com/embed/QkjnzHTWrYo'
+      },
+      {
+        title: 'KOMPAKT KIALAKÍTÁS, MAXIMÁLIS KÉNYELEM',
+        description: 'Válassza az opcionálisan elérhető mózeskosarat a maximális kényelemért, vagy döntsön az ergonomikus kialakítású babahordozó mellett – mindkét megoldás teljes körű alátámasztást nyújt gyermekének. A szellőzőablakok révén biztosíthatja a megfelelő légáramlást, a nagy méretű kupola pedig hatékonyan óvja a napfénytől. Elérkezett az alvás ideje? Döntse hátra a hordozót teljesen vízszintes helyzetbe, és válassza a LUX változatot, amely még puhább, párnázott betéttel teszi még komfortosabbá az utazást. És ami még ennél is több: a RIO minden kerékre kiterjedő felfüggesztése és defektmentes kerekei sima, zökkenőmentes haladást biztosítanak, akár macskaköves utcákon is.',
+        mediaType: 'image',
+        mediaSrc: '/images/rio-feature-02.jpg'
+      }
+    ],
     specs: {
       'Életkor': 'Születéstől 4 éves korig',
       'Max. teherbírás': '27 kg (Ülés: 22 kg, Kosár: 5 kg)',
@@ -129,6 +177,32 @@ const PRODUCTS = [
     reviews: 74,
     tagline: 'Az utazás szabadsága, súlytalanul.',
     description: 'A Britax Römer FLYLITE a legkönnyebb utazó babakocsink, amely akár a repülőgépek fedélzetére is felvihető.',
+    features: [
+      {
+        title: 'MINDIG KÉSZEN MINDEN ÚTRA',
+        description: 'Mindig indulásra kész: az egykezes automata összecsukással a FLYLITE kompakt, összecsukva önállóan megáll, és IATA-kézipoggyász kompatibilis. Legyen szó hétvégi kiruccanásról, városnézésről vagy családlátogatásról – a FLYLITE stresszmentes útitárs. A tágas, 6 kg-ig terhelhető kosárban minden kéznél van, a gyors összecsukás pedig megkönnyíti az utazást a check-in-től a leszállásig. (Utazás előtt mindig ellenőrizze a légitársaságnál, mert a felső poggyásztartó mérete eltérő lehet.)',
+        mediaType: 'image',
+        mediaSrc: '/images/flylite-feature-01.jpg'
+      },
+      {
+        title: 'EXTRA KÉNYELEM ÚTKÖZBEN',
+        description: 'Bárhová is vezeti útja, a FLYLITE biztosítja a kényelmet. Az extra nagy, kihúzható napellenző szellőzőablakkal védi gyermekét a naptól és az enyhe esőtől, miközben friss levegőt enged be. A háttámla szellőzése hűsítő, légies komfortot nyújt a melegebb napokon, a mellékelt puha ülőbetét pedig minden utat különösen kényelmessé tesz. A rugózás és a forgatható kerekek révén minden séta könnyed és elegáns élménnyé válik – legyen szó parkról, városi utcákról vagy távoli úti célokról.',
+        mediaType: 'image',
+        mediaSrc: '/images/flylite-feature-02.jpg'
+      },
+      {
+        title: 'ALKALMAZKODIK MINDEN KALANDHOZ',
+        description: 'Nincs két egyforma út – a FLYLITE minden pillanathoz alkalmazkodik. Akár aludni szeretne a gyermek, akár ülve szeretné nézni a világot, a fokozatmentes háttámla-állítás és az állítható lábtartó megkönnyíti a megfelelő pozíció megtalálását. Az egykezes háttámla-állítás lehetővé teszi a gyors beállítást útközben, a levehető karfa pedig egyszerű ki- és beszállást biztosít. Az 5 pontos biztonsági övnek köszönhetően a gyermek mindig biztonságosan és kényelmesen utazik.',
+        mediaType: 'image',
+        mediaSrc: '/images/flylite-feature-03.jpg'
+      },
+      {
+        title: 'MINDEN, AMIRE SZÜKSÉGE VAN, AZ ELSŐ PILLANATTÓL',
+        description: 'Az újszülöttel való utazás gyakran kihívásokkal jár, ezért könnyítse meg magának az indulást: legyen minden kéznél már az első pillanattól. A FLYLITE teljes felszereltséggel érkezik, puha betéttel, karfával és pohártartóval. Minden, amire a gondtalan és kényelmes utazáshoz szüksége van, már a dobozból kivéve rendelkezésére áll.',
+        mediaType: 'image',
+        mediaSrc: '/images/flylite-feature-04.jpg'
+      }
+    ],
     specs: {
       'Életkor': '6 hónapos kortól kb. 4 éves korig',
       'Max. teherbírás': '28 kg (Ülés: 22 kg, Kosár: 6 kg)',
@@ -285,7 +359,7 @@ const LegalSection = ({ title, children }) => (
 );
 
 const App = () => {
-  // KEZDŐÁLLAPOT BETÖLTÉSE AZ URL-BŐL (Azonnali link-olvasás még kirajzolás előtt!)
+  // KEZDŐÁLLAPOT BETÖLTÉSE AZ URL-BŐL
   const [initialState] = useState(() => {
     const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
     const productId = params.get('product');
@@ -318,6 +392,7 @@ const App = () => {
   const [activeColor, setActiveColor] = useState(initialState.initColorIdx);
   const [activeSetIdx, setActiveSetIdx] = useState(initialState.initSetIdx);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
+  const [activeCarSeatColor, setActiveCarSeatColor] = useState(0);
   
   const [validUrls, setValidUrls] = useState([]);
   const [cart, setCart] = useState([]);
@@ -328,13 +403,12 @@ const App = () => {
     name: '', email: '', phone: '', zipCode: '', city: '', street: '', delivery: 'pickup', payment: 'cash_pickup', message: ''
   });
 
-  // --- ÚJ SEO ÉS CÍMSOR SZINKRONIZÁLÓ MOTOR ---
+  // SEO ÉS CÍMSOR SZINKRONIZÁLÓ MOTOR
   useEffect(() => {
     let title = "Britax Römer Prémium Babakocsik | Babakocsi Szakáruház";
     let canonicalUrl = "https://babakocsiszakaruhaz.hu/";
     let browserUrl = "/";
 
-    // Ha van kiválasztott termék
     if (selectedProduct) {
       title = `${selectedProduct.name} | Babakocsi Szakáruház`;
       const setId = selectedProduct.sets ? (selectedProduct.sets[activeSetIdx]?.id || 'alone') : 'alone';
@@ -343,9 +417,7 @@ const App = () => {
       const queryString = `?product=${selectedProduct.id}&set=${setId}&color=${colorId}`;
       canonicalUrl = `https://babakocsiszakaruhaz.hu/${queryString}`;
       browserUrl = `/${queryString}`;
-    } 
-    // Ha nem a főoldalon vagyunk
-    else if (view !== 'home') {
+    } else if (view !== 'home') {
       const viewTitles = {
         'accessories': 'Kiegészítők',
         'contact': 'Kapcsolat',
@@ -361,10 +433,8 @@ const App = () => {
       canonicalUrl = `https://babakocsiszakaruhaz.hu${browserUrl}`;
     }
 
-    // Böngésző fül címének átírása
     document.title = title;
 
-    // Google Canonical (eredeti URL) tag frissítése
     let canonicalLink = document.querySelector("link[rel='canonical']");
     if (!canonicalLink) {
       canonicalLink = document.createElement("link");
@@ -373,15 +443,11 @@ const App = () => {
     }
     canonicalLink.setAttribute("href", canonicalUrl);
 
-    // Ezzel írjuk át a böngésző legfelső címsorát újratöltés nélkül!
     try {
       window.history.replaceState({}, title, browserUrl);
-    } catch (e) {
-      // Biztonsági okokból az előnézeti környezetben ez tiltva van
-    }
+    } catch (e) {}
 
   }, [selectedProduct, activeSetIdx, activeColor, view]);
-  // --- ÚJ SEO MOTOR VÉGE ---
 
   // Képkereső Effect
   useEffect(() => {
@@ -455,12 +521,15 @@ const App = () => {
   const activeSetId = selectedProduct?.sets?.[activeSetIdx]?.id || 'alone';
 
   const addToCart = () => {
+    const isRioEssential = selectedProduct.id === 'rio' && activeSetId === 'essential';
+    
     const item = {
       id: Math.random().toString(36).substr(2, 9),
       productId: selectedProduct.id,
       name: selectedProduct.name,
       setName: selectedProduct.sets ? selectedProduct.sets[activeSetIdx].name : null,
       color: selectedProduct.colors[activeColor].name,
+      carSeatColor: isRioEssential ? BABY_SAFE_CORE_COLORS[activeCarSeatColor].name : null,
       price: currentTotalPrice,
       quantity: 1,
       image: validUrls[0] || null
@@ -486,6 +555,7 @@ const App = () => {
     setActiveColor(0);
     setActiveSetIdx(0);
     setActiveImageIdx(0);
+    setActiveCarSeatColor(0);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -493,7 +563,11 @@ const App = () => {
     e.preventDefault();
     if (cart.length === 0) return;
     setIsSubmitting(true);
-    const orderSummary = cart.map(item => `${item.name} (${item.setName || 'Alap'}), Szín: ${item.color}, Ár: ${formatPrice(item.price)} Ft`).join('\n');
+    
+    const orderSummary = cart.map(item => 
+      `${item.name} (${item.setName || 'Alap'}), Szín: ${item.color}${item.carSeatColor ? `, Hordozó szín: ${item.carSeatColor}` : ''}, Ár: ${formatPrice(item.price)} Ft`
+    ).join('\n');
+    
     const payload = {
       ...formData,
       teljes_cim: `${formData.zipCode} ${formData.city}, ${formData.street}`,
@@ -502,6 +576,7 @@ const App = () => {
       szallitasi_mod: formData.delivery === 'pickup' ? 'Személyes átvétel (Budapest)' : 'Ingyenes kiszállítás',
       fizetesi_mod: formData.payment === 'cash_pickup' ? 'Készpénz átvételkor' : 'Utánvét (Készpénz/Kártya)'
     };
+    
     try {
       const response = await fetch("https://formspree.io/f/mlgwolay", {
         method: "POST",
@@ -596,7 +671,6 @@ const App = () => {
                       if (origPrice) {
                         const ep = selectedProduct.colors[activeColor]?.extraPrice;
                         const extra = typeof ep === 'object' ? (ep[activeSetId] || 0) : (ep || 0);
-                        // Csak a felárat (LUX) adjuk hozzá az áthúzott árhoz, a kedvezményeket (negatív érték) ne!
                         const displayOrig = extra > 0 ? origPrice + extra : origPrice;
                         return <span className="text-xl text-slate-400 line-through mr-3">{formatPrice(displayOrig)} Ft</span>;
                       }
@@ -683,6 +757,36 @@ const App = () => {
                   )}
                 </div>
 
+                {/* Új funkció: Hordozó színválasztó, ha a RIO Essential szett van kiválasztva */}
+                {selectedProduct.id === 'rio' && activeSetId === 'essential' && (
+                  <div className="pt-4 border-t border-slate-100">
+                    <h4 className="font-black uppercase tracking-widest text-[10px] text-slate-400 mb-3">
+                      A Baby-Safe Core színe az alábbiak közül választható ki: <span className="text-slate-900 ml-1">{BABY_SAFE_CORE_COLORS[activeCarSeatColor].name}</span>
+                    </h4>
+                    
+                    <div className="flex gap-5 items-center bg-slate-50 p-4 rounded-3xl border border-slate-100">
+                      <div className="w-20 h-20 bg-white rounded-xl border border-slate-200 flex items-center justify-center p-2 shrink-0 shadow-sm">
+                        <img 
+                          src={`${IMAGE_BASE_URL}/baby-safe-core-${formatName(BABY_SAFE_CORE_COLORS[activeCarSeatColor].name)}-01.jpg`} 
+                          alt="Baby-Safe Core" 
+                          className="w-full h-full object-contain mix-blend-multiply" 
+                        />
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {BABY_SAFE_CORE_COLORS.map((color, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => setActiveCarSeatColor(idx)}
+                            className={`w-10 h-10 p-1 transition-all rounded-md ${activeCarSeatColor === idx ? 'ring-2 ring-slate-900 ring-offset-1 border-slate-900' : 'border border-slate-200 hover:border-slate-400'}`}
+                          >
+                            <div className="w-full h-full rounded-sm shadow-inner" style={{ backgroundColor: color.hex }} />
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <button onClick={addToCart} className="w-full bg-blue-900 text-white py-5 rounded-[1.5rem] font-black text-lg hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-3 uppercase tracking-widest active:scale-95 mt-2">
                   <ShoppingCart className="w-5 h-5" /> Kosárba teszem
                 </button>
@@ -721,6 +825,46 @@ const App = () => {
                 </div>
               </div>
             </div>
+
+            {/* Főbb Jellemzők (Landing Page Szekció) */}
+            {selectedProduct.features && selectedProduct.features.length > 0 && (
+              <div className="mt-32 pt-16 border-t border-slate-100 animate-in fade-in duration-700">
+                <div className="text-center mb-20">
+                  <h2 className="text-4xl font-black uppercase tracking-tight">Főbb jellemzők</h2>
+                </div>
+                <div className="space-y-32">
+                  {selectedProduct.features.map((feature, idx) => (
+                    <div key={idx} className={`flex flex-col ${idx % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 md:gap-20 items-center`}>
+                      <div className="flex-1 space-y-6">
+                        <h3 className="text-3xl font-black uppercase tracking-tight text-slate-900 leading-tight">{feature.title}</h3>
+                        <p className="text-slate-600 leading-relaxed text-lg whitespace-pre-line">{feature.description}</p>
+                      </div>
+                      <div className="flex-1 w-full">
+                        {feature.mediaType === 'video' ? (
+                          <div className="aspect-video w-full rounded-[2rem] overflow-hidden shadow-2xl bg-slate-100">
+                            <iframe 
+                              width="100%" 
+                              height="100%" 
+                              src={feature.mediaSrc} 
+                              title={feature.title} 
+                              frameBorder="0" 
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                              allowFullScreen
+                            ></iframe>
+                          </div>
+                        ) : (
+                          <img 
+                            src={feature.mediaSrc} 
+                            alt={feature.title} 
+                            className="w-full h-auto rounded-[2rem] shadow-2xl object-cover"
+                          />
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         ) : view === 'aszf' ? (
           <div className="max-w-4xl mx-auto px-6 py-20 animate-in fade-in slide-in-from-bottom-8">
@@ -792,11 +936,9 @@ const App = () => {
               <div className="bg-slate-50 p-8 rounded-[2rem] h-fit">
                 <h3 className="font-black uppercase tracking-widest mb-6 text-slate-800">Tárhelyszolgáltató</h3>
                 <ul className="space-y-3 text-slate-600 text-sm">
-                  <li><span className="font-bold text-slate-900 block">Cégnév:</span> Netlify, Inc.</li>
-                  <li><span className="font-bold text-slate-900 block">Székhely:</span> 2325 3rd Street, Suite 296, San Francisco, CA 94107, USA</li>
-                  <li><span className="font-bold text-slate-900 block">Cégbíróság:</span> Fővárosi Bíróság</li>
-                  <li><span className="font-bold text-slate-900 block">Honlap:</span> <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.netlify.com</a></li>
-                  <li><span className="font-bold text-slate-900 block">E-mail:</span> support@netlify.com</li>
+                  <li><span className="font-bold text-slate-900 block">Cégnév:</span> Cloudflare, Inc.</li>
+                  <li><span className="font-bold text-slate-900 block">Székhely:</span> 101 Townsend St, San Francisco, CA 94107, USA</li>
+                  <li><span className="font-bold text-slate-900 block">Honlap:</span> <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.cloudflare.com</a></li>
                 </ul>
               </div>
             </div>
@@ -929,7 +1071,10 @@ const App = () => {
                             <div className="flex-1">
                               <h4 className="font-black text-sm uppercase leading-tight">{item.name}</h4>
                               <p className="text-xs text-slate-500">{item.setName || 'Alap'}</p>
-                              <p className="text-xs text-blue-900 font-bold">Szín: {item.color}</p>
+                              <p className="text-xs text-blue-900 font-bold mt-1">Babakocsi: {item.color}</p>
+                              {item.carSeatColor && (
+                                <p className="text-xs text-slate-700 font-bold mt-0.5">Hordozó: {item.carSeatColor}</p>
+                              )}
                             </div>
                             <div className="text-right"><p className="font-black text-sm">{formatPrice(item.price)} Ft</p><button onClick={() => removeFromCart(item.id)} className="text-red-500 p-1 hover:bg-red-50 rounded-lg transition-colors mt-1"><Trash2 className="w-4 h-4" /></button></div>
                           </div>
@@ -1077,7 +1222,7 @@ const App = () => {
               <p className="text-slate-400 font-medium flex items-center gap-3"><Clock className="w-4 h-4" /> {CONTACT_INFO.hours}</p>
             </div>
           </div>
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 border-t border-slate-900 pt-12 text-center md:text-left">© 2026 Babakocsiszakaruhaz minden jog fenntartva</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 border-t border-slate-900 pt-12 text-center md:text-left">© 2026 Britax Römer Premium Store Hungary.</p>
         </div>
       </footer>
     </div>
