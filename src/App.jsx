@@ -49,10 +49,10 @@ const PRODUCTS = [
       }
     ],
     awards: [
-      '/images/smile-5z-award-01.jpg',
-      '/images/smile-5z-award-02.jpg',
-      '/images/smile-5z-award-03.jpg',
-      '/images/smile-5z-award-04.jpg'
+      '/images/smile-5z-award-01.png',
+      '/images/smile-5z-award-02.png',
+      '/images/smile-5z-award-03.png',
+      '/images/smile-5z-award-04.png'
     ],
     specs: {
       'Életkor': 'Születéstől 4 éves korig',
@@ -131,7 +131,7 @@ const PRODUCTS = [
       }
     ],
     awards: [
-      '/images/rio-award-01.jpg'
+      '/images/rio-award-01.png'
     ],
     specs: {
       'Életkor': 'Születéstől 4 éves korig',
