@@ -295,6 +295,106 @@ const ACCESSORIES = [
       { name: 'Urban Olive', hex: '#4b5320', collection: 'LUX', extraPrice: 23000 },
       { name: 'Warm Caramel', hex: '#a0522d', collection: 'LUX', extraPrice: 23000 }
     ]
+  },
+  {
+    id: 'raincover-smile', 
+    name: 'Babakocsi esővédő SMILE 5Z', 
+    price: 16990, 
+    category: 'Esővédő', 
+    compatible: 'SMILE 5Z', 
+    description: 'Az esővédő megóvja gyermekét a széltől és az esőtől, miközben a babakocsiban utazik. Könnyen felhelyezhető, szellőzőnyílásokkal rendelkezik a jobb légkeringés érdekében, és egy ablakkal, hogy gyorsan és könnyen hozzáférhessen gyermekéhez.',
+    colors: [{ name: 'Black', hex: '#000000', extraPrice: 0 }]
+  },
+  {
+    id: 'raincover-smile-cot', 
+    name: 'Babakocsi esővédő SMILE 5Z Mózeskosár', 
+    price: 16990, 
+    category: 'Esővédő', 
+    compatible: 'SMILE 5Z Mózeskosár', 
+    description: 'Az esővédő megóvja gyermekét a széltől és az esőtől, miközben a babakocsiban utazik. Könnyen felhelyezhető, szellőzőnyílásokkal rendelkezik a jobb légkeringés érdekében, és egy ablakkal, hogy gyorsan és könnyen hozzáférhessen gyermekéhez.',
+    colors: [{ name: 'Black', hex: '#000000', extraPrice: 0 }]
+  },
+  {
+    id: 'footmuff-smile', 
+    name: 'Babakocsi lábzsák SMILE 5Z', 
+    price: 22990, 
+    category: 'Lábzsák', 
+    compatible: 'SMILE 5Z', 
+    description: 'A SMILE lábzsák melegen és kényelmesen tartja kisgyermekét, miközben védi a széltől és a hidegtől a babakocsiban utazva. Könnyen rögzíthető, fényvisszaverő biztonsági csíkjai pedig gyenge fényviszonyok között is jól láthatóvá teszik.',
+    colors: [
+      { name: 'Space Black', hex: '#0a0a0a', extraPrice: 0 },
+      { name: 'Midnight Grey', hex: '#374151', extraPrice: 0 },
+      { name: 'Jade Green', hex: '#00a86b', extraPrice: 0 },
+      { name: 'Night Blue', hex: '#191970', extraPrice: 0 }
+    ]
+  },
+  {
+    id: 'stay-cool-insert-smile', 
+    name: 'Babakocsi betét Stay Cool SMILE 5Z', 
+    price: 18990, 
+    category: 'Ülésbetét', 
+    compatible: 'SMILE 5Z', 
+    description: 'A Stay Cool ülésbéléssel Ön és kisgyermeke is készen állhatnak a nyári sétákra, még a legnagyobb hőségben is. A hálós anyag gyorsan behelyezhető a SMILE ülésegységbe, frissítő légáramlást biztosít, és segít a kellemes hőmérséklet fenntartásában, hogy gyermeke mindig komfortosan érezze magát. A bélés gyorsan felszívja a nedvességet és hamar meg is szárad – a maximális kényelem érdekében. A Stay Cool ülésbélés kompatibilis a SMILE ülésegységgel.',
+    colors: [{ name: 'White', hex: '#ffffff', extraPrice: 0 }]
+  },
+  {
+    id: 'stay-cool-canopy-smile', 
+    name: 'Babakocsi előtető Stay Cool SMILE 5Z', 
+    price: 38990, 
+    category: 'Kupola / Napellenző', 
+    compatible: 'SMILE 5Z', 
+    description: 'Kifejezetten nyári használatra tervezett, extra szellőzést és árnyékolást biztosító légáteresztő kupola.',
+    colors: [{ name: 'White', hex: '#ffffff', extraPrice: 0 }]
+  },
+  {
+    id: 'weather-kit-smile-5z', 
+    name: 'Időjárás Csomag Weather Kit SMILE 5Z', 
+    price: 43990, 
+    category: 'Szett', 
+    compatible: 'SMILE 5Z', 
+    description: 'Az időjáráskészlet tökéletes kombinációt kínál ahhoz, hogy gyermeke minden időben védve legyen. A szett tartalmaz egy esővédőt a SMILE babakocsihoz, valamint egyet a SMILE mózeskosárhoz, így kisgyermeke mindig biztonságban utazhat – akár a mózeskosárban, akár az ülésegységben. Emellett egy univerzális szúnyogháló is a készlet része, amely mindkettőhöz illeszkedik, és hatékonyan távol tartja a repülő rovarokat.',
+    colors: [{ name: 'Black', hex: '#000000', extraPrice: 0 }]
+  },
+  {
+    id: 'stay-safe-cover-smile', 
+    name: 'Stay Safe huzat - SMILE 5Z', 
+    price: 18990, 
+    category: 'Huzat', 
+    compatible: 'SMILE 5Z', 
+    description: 'Amikor újra rövidülnek a nappalok, a SMILE-hoz készült Stay Safe huzat tökéletes társ lesz a ködös vagy sötétben tett sétákhoz. A fényvisszaverő elemek gyenge látási viszonyok között is kiváló láthatóságot biztosítanak. A huzat könnyen és gyorsan felhelyezhető, és illeszkedik mind a mózeskosárra, mind az ülésegységre. Így a kényelmes SMILE babakocsival tett séták még biztonságosabbá válnak – Ön és gyermeke számára egyaránt.',
+    colors: [{ name: 'Black', hex: '#000000', extraPrice: 0 }]
+  },
+  {
+    id: 'changing-bag', 
+    name: 'Pelenkázótáska', 
+    price: 41990, 
+    category: 'Táska', 
+    compatible: 'Univerzális', 
+    description: 'Adjon még több stílust babakocsijához... barátaink a Done by Deer-nél exkluzív Britax Römer színeket hoztak létre a nélkülözhetetlen pelenkázótáskájukhoz. Válasszon egyet, amely illik Teak vagy Carbon Black babakocsijához, vagy válasszon kontrasztos színt, hogy kiemelkedjen a tömegből!\nMindig jól fog kinézni: a legújabb steppelt kialakítás könnyű és vízlepergető. Tágas is, így minden szükséges dolog a praktikus zsebekben elfér – még hűtött rész is van a hideg italok vagy a meleg palackok számára. Ha pihenőre van szükség, a mellékelt, összecsukható pelenkázó alátéttel kényelmesen elhelyezheti kisgyermekét.',
+    features: [
+      {
+        title: 'RENDEZZE EL A BABA ÉS A SAJÁT HOLMIJAIT!',
+        description: 'Nyissa ki a pelenkázótáska széles nyílását, és könnyedén megtalálja a törlőkendőket, pelenkákat és a kis kedvenceknek szánt kényelmi cikkeket – vagy akár a saját napszemüvegét vagy egy finom csokoládét. Nincs több turkálás, mindennek megvan a helye a három külső és öt belső zsebben, köztük egy hőszigetelt belső zseb, amely tökéletes a palackok tárolására. Minden a helyén van? Zárja le biztonságosan a táskát a kétirányú cipzárral, hogy minden apróság biztonságban legyen a kalandjai során.',
+        mediaType: 'image',
+        mediaSrc: '/images/changing-bag-feature-01.jpg'
+      },
+      {
+        title: 'RUGALMAS, HOGY AZ ÖN NAPJÁHOZ IGAZODJON',
+        description: 'Pihenjen és tegye könnyebbé az életét kedves kis csöppségével. Ha a kicsinek útközben friss levegőre van szüksége, bontsa ki az öltözőszőnyeget, és amikor indulni szeretne, a babakocsi kampóival rögzítse az öltözőszatyrot a babakocsihoz. Ideje a babacsoporthoz? Ha a babakocsit az óvodában, úszásoktatáson vagy érzékszervi játékoknál az előtérben kell hagyni, csúsztassa a karját a vállpántba.',
+        mediaType: 'image',
+        mediaSrc: '/images/changing-bag-feature-02.jpg'
+      },
+      {
+        title: 'EGYSZER VOLT, HOL NEM VOLT, ÉN EGY MŰANYAG PALACK VOLTAM',
+        description: 'Valójában 48 újrahasznosított PET-palackról van szó! Gondoskodj babádról ÉS a környezetről: válassz 100%-ban újrahasznosított poliészterből készült pelenkázótáskát és pelenkázó alátétet – puha, tartós és időjárásálló, így kisbabád növekedésével együtt is sokáig használhatod. Minden műanyag palackot gondosan megmosnak, aprítanak, megolvasztanak, majd fonallá alakítanak, és abból szőnek egy kényelmes anyagot, amelyből praktikus, divatos és megbízható pelenkázótáska készül.',
+        mediaType: 'image',
+        mediaSrc: '/images/changing-bag-feature-03.jpg'
+      }
+    ],
+    colors: [
+      { name: 'Carbon Black', hex: '#1a1a1a', extraPrice: 0 },
+      { name: 'Teak', hex: '#4d3a2b', extraPrice: 0 }
+    ]
   }
 ];
 
@@ -1117,18 +1217,56 @@ const App = () => {
           </div>
         ) : view === 'accessories' ? (
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <h2 className="text-5xl font-black tracking-tight mb-4 uppercase">Kiegészítők</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-              {ACCESSORIES.map((acc) => (
-                <div key={acc.id} className="group bg-white rounded-[2.5rem] border border-slate-100 p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer" onClick={() => openProduct(acc)}>
-                  <div className="aspect-square bg-slate-50 rounded-[2rem] flex items-center justify-center mb-8 relative overflow-hidden">
-                    <CatalogImage product={acc} />
-                  </div>
-                  <h3 className="text-xl font-bold group-hover:text-blue-900 transition-colors leading-tight">{acc.name}</h3>
-                  <span className="font-black text-blue-900 block mt-2">{formatPrice(acc.price)} Ft</span>
-                </div>
-              ))}
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-black tracking-tight mb-4 uppercase">Kiegészítők</h2>
+              <p className="text-slate-500 text-xl">Válogasson prémium kiegészítőink közül, babakocsi típus szerint.</p>
             </div>
+            
+            {[
+              {
+                id: 'universal',
+                title: "Univerzális Kiegészítők",
+                items: ACCESSORIES.filter(a => a.compatible.includes('Univerzális') || a.compatible.includes(','))
+              },
+              {
+                id: 'smile',
+                title: "SMILE 5Z Kiegészítők",
+                items: ACCESSORIES.filter(a => a.compatible.includes('SMILE') && !a.compatible.includes(','))
+              },
+              {
+                id: 'rio',
+                title: "RIO Kiegészítők",
+                items: ACCESSORIES.filter(a => a.compatible === 'RIO')
+              },
+              {
+                id: 'flylite',
+                title: "FLYLITE Kiegészítők",
+                items: ACCESSORIES.filter(a => a.compatible.includes('FLYLITE'))
+              }
+            ].map(category => category.items.length > 0 && (
+              <div key={category.id} className="mb-24 last:mb-0 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <div className="flex items-center gap-6 mb-12">
+                  <h3 className="text-3xl font-black uppercase tracking-tight text-slate-800">{category.title}</h3>
+                  <div className="h-1 flex-1 bg-slate-100 rounded-full"></div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {category.items.map((acc) => (
+                    <div key={acc.id} className="group bg-white rounded-[2.5rem] border border-slate-100 p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer flex flex-col h-full" onClick={() => openProduct(acc)}>
+                      <div className="aspect-square bg-slate-50 rounded-[2rem] flex items-center justify-center mb-8 relative overflow-hidden">
+                        <CatalogImage product={acc} />
+                      </div>
+                      <div className="flex flex-col flex-1 justify-between">
+                        <div>
+                          <h3 className="text-xl font-bold group-hover:text-blue-900 transition-colors leading-tight mb-2">{acc.name}</h3>
+                          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-4">{acc.category}</span>
+                        </div>
+                        <span className="font-black text-2xl text-blue-900 block mt-auto">{formatPrice(acc.price)} Ft</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         ) : view === 'contact' ? (
           <div className="max-w-7xl mx-auto px-6 py-20 animate-in fade-in slide-in-from-bottom-8 duration-700">
