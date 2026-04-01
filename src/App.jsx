@@ -511,6 +511,7 @@ const App = () => {
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', zipCode: '', city: '', street: '', delivery: 'pickup', payment: 'cash_pickup', message: ''
   });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // SEO ÉS CÍMSOR SZINKRONIZÁLÓ MOTOR
   useEffect(() => {
@@ -656,6 +657,7 @@ const App = () => {
     setView(newView);
     setSelectedProduct(null);
     setOrderComplete(false);
+    setIsMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -724,9 +726,22 @@ const App = () => {
                 <ShoppingCart className="w-6 h-6 text-slate-700 group-hover:text-blue-900 transition-colors" />
                 {cart.length > 0 && <span className="absolute top-0 right-0 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold animate-pulse">{cart.length}</span>}
               </button>
+              {/* Mobil Menü Gomb */}
+              <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden relative p-2 text-slate-700 hover:text-blue-900 transition-colors">
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Mobil Menü Lenyíló Ablak */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xl z-40 py-4 px-6 flex flex-col gap-2 font-bold text-sm uppercase tracking-widest text-slate-600 animate-in slide-in-from-top-4">
+            <button onClick={() => navigateTo('home')} className={`text-left py-4 border-b border-slate-100 transition-colors ${view === 'home' && !selectedProduct ? 'text-blue-900' : 'hover:text-blue-900'}`}>Babakocsik</button>
+            <button onClick={() => navigateTo('accessories')} className={`text-left py-4 border-b border-slate-100 transition-colors ${view === 'accessories' && !selectedProduct ? 'text-blue-900' : 'hover:text-blue-900'}`}>Kiegészítők</button>
+            <button onClick={() => navigateTo('contact')} className={`text-left py-4 transition-colors ${view === 'contact' ? 'text-blue-900' : 'hover:text-blue-900'}`}>Kapcsolat</button>
+          </div>
+        )}
       </nav>
 
       <main className="pt-20 flex-grow">
@@ -934,6 +949,38 @@ const App = () => {
                 </div>
               </div>
             </div>
+
+            {/* Kompatibilis Kiegészítők Szekció */}
+            {!selectedProduct.category && (
+              <div className="mt-32 pt-16 border-t border-slate-100 animate-in fade-in duration-700">
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl font-black uppercase tracking-tight">Kompatibilis Kiegészítők</h2>
+                  <p className="text-slate-500 text-lg mt-4">Tegye még tökéletesebbé a sétákat a {selectedProduct.name} babakocsihoz tervezett kiegészítőkkel.</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                  {ACCESSORIES.filter(acc => {
+                    if (selectedProduct.id === 'smile-5z') {
+                      return ['changing-bag', 'weather-kit-smile-5z', 'footmuff-smile'].includes(acc.id);
+                    }
+                    if (acc.compatible.includes('Univerzális')) return true;
+                    if (selectedProduct.id === 'rio' && acc.compatible.includes('RIO')) return true;
+                    if (selectedProduct.id === 'flylite' && acc.compatible.includes('FLYLITE')) return true;
+                    return false;
+                  }).map((acc) => (
+                    <div key={acc.id} className="group bg-slate-50 rounded-[2rem] border border-slate-100 p-6 hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col h-full" onClick={() => openProduct(acc)}>
+                      <div className="aspect-square bg-white rounded-[1.5rem] flex items-center justify-center mb-6 relative overflow-hidden shadow-sm">
+                        <CatalogImage product={acc} />
+                      </div>
+                      <div className="flex flex-col flex-1 text-center">
+                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">{acc.category}</span>
+                        <h3 className="text-sm font-bold group-hover:text-blue-900 transition-colors leading-tight mb-4">{acc.name}</h3>
+                        <span className="font-black text-lg text-blue-900 block mt-auto">{formatPrice(acc.price)} Ft</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Főbb Jellemzők (Landing Page Szekció) */}
             {selectedProduct.features && selectedProduct.features.length > 0 && (
