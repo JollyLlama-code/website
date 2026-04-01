@@ -48,6 +48,12 @@ const PRODUCTS = [
         mediaSrc: '/images/smile-5z-feature-02.gif'
       }
     ],
+    awards: [
+      '/images/smile-5z-award-01.jpg',
+      '/images/smile-5z-award-02.jpg',
+      '/images/smile-5z-award-03.jpg',
+      '/images/smile-5z-award-04.jpg'
+    ],
     specs: {
       'Életkor': 'Születéstől 4 éves korig',
       'Max. teherbírás': '29 kg (Ülés: 22 kg, Kosár: 7 kg)',
@@ -123,6 +129,9 @@ const PRODUCTS = [
         mediaType: 'image',
         mediaSrc: '/images/rio-feature-02.jpg'
       }
+    ],
+    awards: [
+      '/images/rio-award-01.jpg'
     ],
     specs: {
       'Életkor': 'Születéstől 4 éves korig',
@@ -861,6 +870,25 @@ const App = () => {
                         )}
                       </div>
                     </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Díjak Szekció */}
+            {selectedProduct.awards && selectedProduct.awards.length > 0 && (
+              <div className="mt-24 pt-16 border-t border-slate-100 animate-in fade-in duration-700">
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl font-black uppercase tracking-tight">Díjak</h2>
+                </div>
+                <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                  {selectedProduct.awards.map((award, idx) => (
+                    <img 
+                      key={idx} 
+                      src={award} 
+                      alt={`Díj ${idx + 1}`} 
+                      className="h-24 md:h-32 object-contain mix-blend-multiply transition-transform hover:scale-105 duration-300" 
+                    />
                   ))}
                 </div>
               </div>
