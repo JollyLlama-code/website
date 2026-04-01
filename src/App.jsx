@@ -553,6 +553,15 @@ const App = () => {
     }
     canonicalLink.setAttribute("href", canonicalUrl);
 
+    let favicon = document.querySelector("link[rel='icon']");
+    if (!favicon) {
+      favicon = document.createElement("link");
+      favicon.setAttribute("rel", "icon");
+      favicon.setAttribute("type", "image/png");
+      document.head.appendChild(favicon);
+    }
+    favicon.setAttribute("href", `${IMAGE_BASE_URL}/favicon.png`);
+
     try {
       window.history.replaceState({}, title, browserUrl);
     } catch (e) {}
@@ -1346,7 +1355,15 @@ const App = () => {
                     PRÉMIUM <br /><span className="text-blue-500 italic">BABAKOCSIK</span>
                   </h1>
                   <p className="text-xl md:text-2xl mb-10 text-slate-300 max-w-xl font-light leading-relaxed mx-auto md:mx-0">Német minőség, amely generációk óta szolgálja és kényezteti a legdrágább kincsünket.</p>
-                  <button onClick={() => document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })} className="bg-blue-600 text-white px-10 py-5 rounded-full font-bold hover:bg-blue-500 transition-all flex items-center gap-3 shadow-xl shadow-blue-600/20 mx-auto md:mx-0">Kollekció megtekintése <ChevronRight className="w-5 h-5" /></button>
+                  
+                  <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5">
+                    <button onClick={() => document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })} className="bg-blue-600 text-white px-10 py-5 rounded-full font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-3 shadow-xl shadow-blue-600/20 w-full sm:w-auto">
+                      Kollekció megtekintése <ChevronRight className="w-5 h-5" />
+                    </button>
+                    <button onClick={() => navigateTo('accessories')} className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-10 py-5 rounded-full font-bold transition-all flex items-center justify-center gap-3 w-full sm:w-auto backdrop-blur-sm">
+                      Kiegészítők megtekintése <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
                   
                   <div className="flex flex-col sm:flex-row items-center md:justify-start justify-center gap-8 mt-12 text-lg font-medium text-slate-300">
                     <a href={`tel:${CONTACT_INFO.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center gap-3 hover:text-white transition-colors group cursor-pointer">
