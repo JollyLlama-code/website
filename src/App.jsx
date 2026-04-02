@@ -513,6 +513,27 @@ const App = () => {
   });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // GOOGLE ADS - Globális Címke Inicializálása
+  useEffect(() => {
+    if (!document.getElementById('google-ads-script')) {
+      const script1 = document.createElement('script');
+      script1.id = 'google-ads-script';
+      script1.async = true;
+      script1.src = 'https://www.googletagmanager.com/gtag/js?id=AW-1068890399';
+      document.head.appendChild(script1);
+
+      const script2 = document.createElement('script');
+      script2.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'AW-1068890399');
+      `;
+      document.head.appendChild(script2);
+    }
+  }, []);
+
   // SEO ÉS CÍMSOR SZINKRONIZÁLÓ MOTOR
   useEffect(() => {
     let title = "Britax Römer Prémium Babakocsik | Babakocsi Szakáruház";
@@ -703,8 +724,20 @@ const App = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
+
       if (response.ok) {
         setOrderComplete(true);
+
+        // GOOGLE ADS - Vásárlás esemény mérése
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+              'send_to': 'AW-1068890399/HEfACNvxwZQCEJ_y1_0D',
+              'value': totalPriceInCart,
+              'currency': 'HUF',
+              'transaction_id': Date.now().toString() // Egyedi azonosító a duplikáció elkerülésére
+          });
+        }
+
         setCart([]);
       } else {
         alert("Hiba történt a rendelés során.");
