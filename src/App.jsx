@@ -505,6 +505,7 @@ const App = () => {
   
   const [validUrls, setValidUrls] = useState([]);
   const [cart, setCart] = useState([]);
+  const [showCartModal, setShowCartModal] = useState(false); // Új állapot a modális ablakhoz
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
 
@@ -660,6 +661,7 @@ const App = () => {
   const currentTotalPrice = calculateCurrentPrice();
   const activeSetId = selectedProduct?.sets?.[activeSetIdx]?.id || 'alone';
 
+  // --- ÚJ KOSÁRBA RAKÓ LOGIKA ---
   const addToCart = () => {
     const isRioEssential = selectedProduct.id === 'rio' && activeSetId === 'essential';
     
@@ -674,11 +676,22 @@ const App = () => {
       quantity: 1,
       image: validUrls[0] || null
     };
+    
     setCart([...cart, item]);
+    setShowCartModal(true); // Modális ablak megjelenítése a navigáció helyett
+  };
+
+  const handleContinueShopping = () => {
+    setShowCartModal(false);
+  };
+
+  const handleGoToCheckout = () => {
+    setShowCartModal(false);
     setSelectedProduct(null);
     setView('checkout');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  // ------------------------------
 
   const removeFromCart = (id) => setCart(cart.filter(item => item.id !== id));
   const totalPriceInCart = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
@@ -750,7 +763,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden flex flex-col relative">
       {/* Navigáció */}
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -923,7 +936,7 @@ const App = () => {
                   )}
                 </div>
 
-                {/* Új funkció: Hordozó színválasztó, ha a RIO Essential szett van kiválasztva */}
+                {/* Hordozó színválasztó, ha a RIO Essential szett van kiválasztva */}
                 {selectedProduct.id === 'rio' && activeSetId === 'essential' && (
                   <div className="pt-4 border-t border-slate-100">
                     <h4 className="font-black uppercase tracking-widest text-[10px] text-slate-400 mb-3">
@@ -1447,9 +1460,52 @@ const App = () => {
             </section>
           </>
         )}
+
+        {/* MODÁLIS ABLAK: KOSÁRBA RAKÁS UTÁN */}
+        {showCartModal && cart.length > 0 && (
+          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 animate-in fade-in duration-300" onClick={handleContinueShopping}>
+            <div className="bg-white rounded-3xl p-6 max-w-sm w-full shadow-2xl animate-in zoom-in-95 duration-300 relative" onClick={e => e.stopPropagation()}>
+              <button onClick={handleContinueShopping} className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition-colors p-1">
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 bg-green-50 text-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Check className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 leading-tight">A termék a kosárba került</h3>
+              </div>
+
+              <div className="flex items-center gap-4 bg-slate-50 p-3 rounded-2xl mb-6 border border-slate-100">
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center p-2 border border-slate-100 flex-shrink-0">
+                  {cart[cart.length - 1]?.image ? <img src={cart[cart.length - 1].image} className="w-full h-full object-contain mix-blend-multiply" alt="Termék" /> : <Package className="w-6 h-6 text-slate-300" />}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-sm text-slate-900 leading-tight mb-1">{cart[cart.length - 1]?.name}</p>
+                  <p className="text-xs text-slate-500 truncate">{cart[cart.length - 1]?.color}</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <button 
+                  onClick={handleGoToCheckout} 
+                  className="w-full bg-slate-900 text-white py-3.5 rounded-xl font-bold hover:bg-slate-800 transition-all text-sm flex justify-center items-center gap-2 shadow-md"
+                >
+                  <ShoppingCart className="w-4 h-4" /> Kosár megtekintése
+                </button>
+                <button 
+                  onClick={handleContinueShopping} 
+                  className="w-full bg-transparent text-slate-500 py-3 rounded-xl font-bold hover:text-slate-800 hover:bg-slate-50 transition-all text-sm"
+                >
+                  Folytatom a vásárlást
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
-      <footer className="bg-slate-950 text-white pt-24 pb-12 mt-auto">
+      <footer className="bg-slate-950 text-white pt-24 pb-12 mt-auto relative z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div>
