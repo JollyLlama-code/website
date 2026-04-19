@@ -722,17 +722,26 @@ const App = () => {
       `${item.name} (${item.setName || 'Alap'}), Szín: ${item.color}${item.carSeatColor ? `, Hordozó szín: ${item.carSeatColor}` : ''}, Ár: ${formatPrice(item.price)} Ft`
     ).join('\n');
     
-    const payload = {
-      ...formData,
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
       teljes_cim: `${formData.zipCode} ${formData.city}, ${formData.street}`,
       rendeles_osszesito: orderSummary,
       vegosszeg: `${formatPrice(totalPriceInCart)} Ft`,
       szallitasi_mod: formData.delivery === 'pickup' ? 'Személyes átvétel (Budapest)' : 'Ingyenes kiszállítás',
       fizetesi_mod: formData.payment === 'cash_pickup' ? 'Készpénz átvételkor' : 'Utánvét (Készpénz/Kártya)'
     };
+
+    const payload = {
+      service_id: 'service_h7f09w9',
+      template_id: 'template_0he06wn',
+      user_id: '4UB5KAZ7doj5gX9UZ',
+      template_params: templateParams
+    };
     
     try {
-      const response = await fetch("https://formspree.io/f/mlgwolay", {
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
