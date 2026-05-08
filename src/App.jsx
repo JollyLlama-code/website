@@ -81,7 +81,7 @@ const PRODUCTS = [
     sets: [
       { id: 'alone', name: 'Britax Römer SMILE 5Z', price: 272990, contents: 'Babakocsi önmagában', imageIndex: 0 },
       { id: 'essential', name: 'Essential set', price: 272990, originalPrice: 381990, contents: 'Babakocsi + SMILE 5Z Mózeskosár', imageIndex: 1 },
-      { id: 'comfort', name: 'Comfort set', price: 476990, originalPrice: 516980, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó', imageIndex: 2 },
+      { id: 'comfort', name: 'Comfort set', price: 381990, originalPrice: 516980, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó', imageIndex: 2 },
       { id: 'comfort-plus', name: 'Comfort Plus set', price: 596990, contents: 'Babakocsi + SMILE 5Z Mózeskosár + BABY-SAFE Pro hordozó + Bázistalp', imageIndex: 3 }
     ],
     generalData: [
